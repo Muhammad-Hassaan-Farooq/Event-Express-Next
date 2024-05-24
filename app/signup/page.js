@@ -79,7 +79,7 @@ function LoginPage() {
 
   return (
     <div className="p-5 vh-100 main-div">
-      <div className="container shadow p-3 bg-light d-flex flex-column border w-50">
+      <div className="container shadow p-3 bg-light d-flex flex-column border ">
         <ul className="nav nav-pills justify-content-center mb-3">
           <li className="nav-item">
             <button

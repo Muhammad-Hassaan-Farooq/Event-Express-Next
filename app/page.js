@@ -4,6 +4,8 @@ import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import { useRouter } from "next/navigation";
+import Loading from "./loading";
+import EventListing from "./components/EventListing";
 
 export default function Home() {
   const token = Cookies.get("token");
@@ -14,38 +16,40 @@ export default function Home() {
 
   useEffect(() => {
     if (!token) {
-      router.push("/signup");
+      setTimeout(() => {
+        router.push("/signup");
+      }, 1000);
+
       setLoading(true);
     } else {
-      setLoading(false);
+      axios
+        .get("http://localhost:3000/event/getEvents", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        .then((res) => {
+          setEvents(res.data.data);
+        })
+        .catch((error) => {
+          console.error("Error fetching events:", error);
+        });
     }
-
-    axios
-      .get("http://localhost:3000/event/getEvents", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((res) => {
-        console.log(res.data);
-        setEvents(res.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching events:", error);
-      });
   }, []);
 
+  useEffect(() => {
+    if (events) {
+      setLoading(false);
+    }
+  }, [events]);
+
   if (loading) {
-    return (
-      <div class="spinner-border text-primary" role="status">
-        <span class="visually-hidden">Loading...</span>
-      </div>
-    );
+    return <Loading />;
   } else {
     return (
       <>
         <Navbar />
-        <h1>Home</h1>
+        <EventListing events={events} />
       </>
     );
   }
