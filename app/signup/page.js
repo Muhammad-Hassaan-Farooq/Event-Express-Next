@@ -4,9 +4,12 @@ import axios from "axios";
 import "./page.css";
 import { login, logout } from "../../redux/features/auth-slice";
 import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from "next/navigation";
+import Cookies from "js-cookie";
 
 function LoginPage() {
   const dispatch = useDispatch();
+  const router = useRouter();
 
   const [activeTab, setActiveTab] = useState("login");
 
@@ -18,6 +21,30 @@ function LoginPage() {
     password: "",
   });
 
+  const [registerInput, setRegisterInput] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    role: "user",
+  });
+
+  const handleSignup = () => {
+    console.log("Signup", registerInput); // Logging input before sending it
+    axios
+      .post("http://localhost:3000/auth/signUp", registerInput)
+      .then((res) => {
+        console.log(res.data); // Logging response data
+        alert("Signup successful!");
+        // Further logic for handling signup success
+      })
+      .catch((error) => {
+        console.error("Signup failed:", error); // Logging error if signup fails
+        alert(`Signup failed: ${error.response.data.message}`);
+        // Further logic for handling signup failure
+      });
+  };
+
   const handleLogin = () => {
     console.log("Login", input); // Logging input before sending it
     axios
@@ -26,6 +53,8 @@ function LoginPage() {
         console.log(res.data); // Logging response data
         alert("Login successful!");
         dispatch(login(res.data.token));
+        Cookies.set("token", res.data.token);
+        router.push("/");
       })
       .catch((error) => {
         console.error("Login failed:", error); // Logging error if login fails
@@ -33,15 +62,20 @@ function LoginPage() {
         // Further logic for handling login failure
       });
   };
+
+  const handleRegisterInput = (e) => {
+    const { name, value } = e.target;
+    setRegisterInput((prevInput) => {
+      return { ...prevInput, [name]: value };
+    });
+  };
+
   const handleinputChange = (e) => {
     const { name, value } = e.target;
     setInput((prevInput) => {
       return { ...prevInput, [name]: value };
     });
   };
-  useEffect(() => {
-    console.log(input);
-  }, [input]);
 
   return (
     <div className="p-5 vh-100 main-div">
@@ -151,15 +185,33 @@ function LoginPage() {
 
             <div className="mb-4">
               <label htmlFor="name">First Name</label>
-              <input type="text" className="form-control" id="name" />
+              <input
+                type="text"
+                className="form-control"
+                id="name"
+                name="firstName"
+                onChange={handleRegisterInput}
+              />
             </div>
             <div className="mb-4">
               <label htmlFor="username">Last Name</label>
-              <input type="text" className="form-control" id="username" />
+              <input
+                type="text"
+                className="form-control"
+                id="username"
+                name="lastName"
+                onChange={handleRegisterInput}
+              />
             </div>
             <div className="mb-4">
               <label htmlFor="registerEmail">Email</label>
-              <input type="email" className="form-control" id="registerEmail" />
+              <input
+                type="email"
+                className="form-control"
+                id="registerEmail"
+                name="email"
+                onChange={handleRegisterInput}
+              />
             </div>
             <div className="mb-4">
               <label htmlFor="registerPassword">Password</label>
@@ -167,6 +219,8 @@ function LoginPage() {
                 type="password"
                 className="form-control"
                 id="registerPassword"
+                name="password"
+                onChange={handleRegisterInput}
               />
             </div>
 
@@ -181,7 +235,12 @@ function LoginPage() {
               </label>
             </div>
 
-            <button className="btn btn-primary mb-4 w-100">Sign up</button>
+            <button
+              className="btn btn-primary mb-4 w-100"
+              onClick={handleSignup}
+            >
+              Sign up
+            </button>
           </div>
         </div>
       </div>
