@@ -1,18 +1,20 @@
 import axios from 'axios';
-import Cookies from "js-cookie";
+import { cookies } from 'next/headers';
 
 const DetialPage = async ({ params }) => {
-    const token = Cookies.get("token");
+    const token = cookies().get("token");
     console.log(token);
     const response = await axios.get(`http://localhost:3000/event/getEvent/${params._id}`,
         {
             headers: {
-                Authorization: `Bearer ${token}`,
+                Authorization: `Bearer ${token.value}`,
             },
         });
     return (
         <div>
-            <h1>{response.data.title}</h1>
+            <h1>{response.data.data.title}</h1>
+            <h1>{response.data.data.description}</h1>
+            <h1>{response.data.data.location}</h1>
         </div>
     );
 }

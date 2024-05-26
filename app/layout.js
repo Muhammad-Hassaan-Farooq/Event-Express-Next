@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import BootstrapClient from "./components/Bootstrapclient";
 import "./globals.css";
 import ReduxProvider from "../redux/provider";
+import 'react-notifications/lib/notifications.css';
 
 const inter = Inter({ subsets: ["latin"] });
 

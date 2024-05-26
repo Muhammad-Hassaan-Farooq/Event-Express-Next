@@ -1,4 +1,5 @@
-import { Navbar, Nav, NavItem } from "react-bootstrap";
+import { Navbar, Nav, NavItem, Dropdown} from "react-bootstrap";
+import Image from "next/image"
 
 function NavbarComponent() {
   return (
@@ -13,6 +14,18 @@ function NavbarComponent() {
           <NavItem>
             <Nav.Link href="/signup">Signup</Nav.Link>
           </NavItem>
+          <Nav.Item style={{ marginLeft: "68rem" }}>
+            <Dropdown align="end">
+              <Dropdown.Toggle as={Nav.Link} id="dropdown-custom-components">
+                <Image src="/user.png" height={30} width={30} />
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                <Dropdown.Item href="/profile">View Profile</Dropdown.Item>
+                <Dropdown.Item href="/signup">Logout</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </Nav.Item>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
