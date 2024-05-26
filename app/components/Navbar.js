@@ -3,16 +3,13 @@ import Image from "next/image"
 
 function NavbarComponent() {
   return (
-    <Navbar bg="dark" data-bs-theme="dark" expand="lg">
+    <Navbar bg="dark" data-bs-theme="dark" expand="lg" className="p-3">
       <Navbar.Brand href="/">Event Express</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="ml-auto">
+      <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+        <Nav className="ml-auto ">
           <NavItem>
-            <Nav.Link href="/signup">Login</Nav.Link>
-          </NavItem>
-          <NavItem>
-            <Nav.Link href="/signup">Signup</Nav.Link>
+            <Nav.Link href="/signup">Sign Up</Nav.Link>
           </NavItem>
           <Nav.Item style={{ marginLeft: "68rem" }}>
             <Dropdown align="end">

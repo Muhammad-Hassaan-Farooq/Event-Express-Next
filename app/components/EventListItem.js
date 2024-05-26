@@ -36,8 +36,14 @@ function EventListItem({ event }) {
               backgroundSize: "cover",
             }}
           >
-            <button style={style} type="button" className="noselect">
-              <Link href={`eventDetail/${event._id}`}>Visit Page</Link>
+
+            <button
+              style={style}
+              type="button"
+              className="noselect event-button"
+            >
+              Visit Page
+
             </button>
           </div>
         </div>
