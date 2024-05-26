@@ -35,7 +35,11 @@ function EventListItem({ event }) {
               backgroundSize: "cover",
             }}
           >
-            <button style={style} type="button" className="noselect">
+            <button
+              style={style}
+              type="button"
+              className="noselect event-button"
+            >
               Visit Page
             </button>
           </div>

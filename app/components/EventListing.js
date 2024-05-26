@@ -4,7 +4,7 @@ import EventListItem from "./EventListItem";
 
 function EventListing({ events }) {
   console.log(events);
-  const [style, setStyle] = useState({ display: "none" });
+
   return (
     <ul className="list-group m-3">
       {events.map((event) => {

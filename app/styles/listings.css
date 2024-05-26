@@ -5,7 +5,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-button {
+.event-button {
   animation: slide-in 0.2s ease-in;
 }
 
@@ -55,7 +55,7 @@ button {
   transition: 1s;
 }
 
-button:hover {
+.event-button:hover {
   background-position: left;
   color: white;
   box-shadow: inset 0px 3px 5px rgba(255, 255, 255, 1),
