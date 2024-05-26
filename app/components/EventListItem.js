@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 
 function EventListItem({ event }) {
   const [style, setStyle] = useState({ display: "none" });
@@ -36,7 +37,7 @@ function EventListItem({ event }) {
             }}
           >
             <button style={style} type="button" className="noselect">
-              Visit Page
+              <Link href={`eventDetail/${event._id}`}>Visit Page</Link>
             </button>
           </div>
         </div>
