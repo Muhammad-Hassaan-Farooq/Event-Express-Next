@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 
 function EventListItem({ event }) {
   const [style, setStyle] = useState({ display: "none" });
@@ -35,12 +36,14 @@ function EventListItem({ event }) {
               backgroundSize: "cover",
             }}
           >
+
             <button
               style={style}
               type="button"
               className="noselect event-button"
             >
               Visit Page
+
             </button>
           </div>
         </div>
