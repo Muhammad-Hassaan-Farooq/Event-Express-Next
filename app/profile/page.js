@@ -19,7 +19,7 @@ const MyProfile = async () => {
     return (
         <div>
             <ProfilePage firstName={response.data.data.firstName} lastName={response.data.data.lastName} 
-             email={response.data.data.email} role= {response.data.data.role} status={response.data.data.status} handleDelete={handleDelete}/>
+             email={response.data.data.email} role= {response.data.data.role} status={response.data.data.status}/>
         </div>
     )
 }
