@@ -18,9 +18,30 @@ const MyProfile = async () => {
     }
   );
 
-  const handleDelete = async () => {
-    //Have to write details for delete button
+  const handleDelete = async function (password) {
+    "use server";
+    try {
+      const response = await axios.post(
+        "http://localhost:3000/profile/deleteMyAccount",
+        {
+          id: decodedToken.id,
+          password: password,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token.value}`,
+          },
+        }
+      );
+      if (response.data.success) {
+        return { success: true, message: response.data.message };
+      }
+      return { success: false, message: response.data.message };
+    } catch (error) {
+      return { success: false, message: response.data.message };
+    }
   };
+
   return (
     <div>
       <ProfilePage
@@ -29,6 +50,7 @@ const MyProfile = async () => {
         email={response.data.data.email}
         role={response.data.data.role}
         status={response.data.data.status}
+        handleDelete={handleDelete}
       />
     </div>
   );
