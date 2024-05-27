@@ -2,6 +2,7 @@ import { Text } from "./Text";
 import { Button } from "./Button";
 import { Container } from "./Container";
 import { useNode, Element } from "@craftjs/core";
+import { Container } from "./Container";
 
 export const Card = ({ background, padding = 20 }) => {
   return (
