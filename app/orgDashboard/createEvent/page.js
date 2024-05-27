@@ -42,7 +42,7 @@ const CreateEvent = () => {
             if (response.data.success) {
                 NotificationManager.success('Event created successfully', 'Success');
                 setTimeout(() => {
-                    router.push("/adminDashboard");
+                    router.push("/orgDashboard");
                 }, 2000);
             } else {
                 NotificationManager.error(response.data.message, 'Error');

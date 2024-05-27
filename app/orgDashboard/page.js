@@ -65,7 +65,7 @@ export default function adminHome() {
                 cursor: 'pointer'
                 
                 }}
-                onClick={() => router.push("/adminDashboard/createEvent")}
+                onClick={() => router.push("/orgDashboard/createEvent")}
             >
                 Create Event
             </button>
