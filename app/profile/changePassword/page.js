@@ -26,7 +26,7 @@ const changePassword = () => {
                 }
             });
             if (response.data.success) {
-                NotificationManager.success('Password changed successfully', 'Success');
+                NotificationManager.success(response.data.message, 'Success');
                 setTimeout(() => {
                     router.push("/signup");
                 }, 2000);
