@@ -25,7 +25,7 @@ const ProfilePage = ({ firstName, lastName, email, role, status, handleDelete })
                             <div class="card mb-4">
                                 <div class="card-body text-center">
                                     <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
-                                        class="rounded-circle img-fluid" style={{ width: "150px" }} />
+                                        class="rounded-circle img-fluid" style={{ width: "133px" }} />
                                     <h5 class="my-3">{firstName} {lastName}</h5>
                                     <p class="text-muted mb-1">{email}</p>
                                     <p class="text-muted mb-4">{role.toUpperCase()}</p>
@@ -52,9 +52,9 @@ const ProfilePage = ({ firstName, lastName, email, role, status, handleDelete })
                                         <div class="col-sm-3">
                                             <p class="mb-0">Password</p>
                                         </div>
-                                        <div class="col-sm-9">
+                                        <div class="col-sm-9" style={{display:"flex"}}>
                                             <p class="text-muted mb-0">********</p>
-                                            <Link href="/profile/changePassword"><Image src="/edit.png" height={20} width={20} /></Link>
+                                            <Link href="/profile/changePassword" style={{marginLeft:"20px"}} ><Image src="/edit.png" height={20} width={20} style={{marginBottom:"5px"}}/></Link>
                                         </div>
                                     </div>
                                     <hr />
