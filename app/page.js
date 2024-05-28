@@ -6,9 +6,11 @@ import Navbar from "./components/Navbar";
 import { useRouter } from "next/navigation";
 import Loading from "./loading";
 import EventListing from "./components/EventListing";
+import { jwtDecode } from "jwt-decode";
 
 export default function Home() {
   const token = Cookies.get("token");
+  const decodetoken = jwtDecode(token);
 
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -21,36 +23,16 @@ export default function Home() {
       }, 1000);
 
       setLoading(true);
-    } else {
-      axios
-        .get("http://localhost:3000/event/getEvents", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        })
-        .then((res) => {
-          setEvents(res.data.data);
-        })
-        .catch((error) => {
-          console.error("Error fetching events:", error);
-        });
     }
-  }, []);
-
-  useEffect(() => {
-    if (events) {
-      setLoading(false);
-    }
-  }, [events]);
-
-  if (loading) {
-    return <Loading />;
-  } else {
-    return (
-      <>
-        <Navbar />
-        <EventListing events={events} />
-      </>
-    );
-  }
+    else{
+      if (decodetoken.role == "admin"){
+        router.push("/adminDashboard");
+      }
+      else if (decodetoken.role == "user"){
+        router.push("/userDashboard");
+      }
+      else if (decodetoken.role == "organizer"){
+        router.push("/orgDashboard");
+      }}
+    });
 }

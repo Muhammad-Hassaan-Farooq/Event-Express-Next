@@ -2,10 +2,10 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
-import Navbar from "./components/Navbar";
+import Navbar from "../components/Navbar";
 import { useRouter } from "next/navigation";
-import Loading from "./loading";
-import EventListing from "./components/EventListing";
+import Loading from "../loading";
+import EventListing from "../components/EventListing";
 
 export default function userHome() {
   const token = Cookies.get("token");

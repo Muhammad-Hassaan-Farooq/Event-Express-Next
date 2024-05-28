@@ -7,9 +7,9 @@ import { useRouter } from "next/navigation";
 import Loading from "../loading";
 import EventListing from "./components/EventListing";
 import NavbarComponent from "../components/Navbar";
-import CreateEvent from "./createEvent/page";
+import NewEvent from "./newEvent/page";
 
-export default function adminHome() {
+export default function orgHome() {
   const token = Cookies.get("token");
   console.log(token);
 
@@ -65,7 +65,7 @@ export default function adminHome() {
                 cursor: 'pointer'
                 
                 }}
-                onClick={() => router.push("/orgDashboard/createEvent")}
+                onClick={() => router.push("/orgDashboard/newEvent")}
             >
                 Create Event
             </button>

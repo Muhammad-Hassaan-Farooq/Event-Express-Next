@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
@@ -8,20 +6,15 @@ import { useRouter } from "next/navigation";
 import NavbarComponent from "@/app/components/Navbar";
 import { jwtDecode } from "jwt-decode";
 
-
 const CreateEvent = () => {
-    const token = Cookies.get("token");
-    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-    console.log(token);
-    const router = useRouter();
- 
-
-
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [date, setDate] = useState('');
     const [location, setLocation] = useState('');
     const [price, setPrice] = useState('');
+
+    const token = Cookies.get("token");
+    const router = useRouter();
 
     const handleCreateEvent = async (e) => {
         e.preventDefault();
@@ -58,10 +51,11 @@ const CreateEvent = () => {
         }
     }
 
+
     return (
         <>
-            <NavbarComponent/>
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+            <h1>Create New Event</h1>
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>               
                 <form onSubmit={handleCreateEvent} style={{ width: '80%', maxWidth: '500px', padding: '20px', borderRadius: '8px', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)', backgroundColor: '#f9f9f9' }}>
                     <div style={{ marginBottom: '15px' }}>
                         <label htmlFor="title" style={{ display: 'block', marginBottom: '5px' }}>Title</label>

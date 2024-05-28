@@ -1,8 +1,10 @@
 import { useState } from "react";
 import Link from "next/link";
 
+import { useRouter } from "next/navigation";
 function EventListItem({ event }) {
   const [style, setStyle] = useState({ display: "none" });
+  const router = useRouter();
   return (
     <>
       <div
@@ -38,11 +40,20 @@ function EventListItem({ event }) {
           >
 
             <button
-              style={style}
+              style={{ ...style, marginRight: '20px' }}
               type="button"
               className="noselect event-button"
             >
               Edit Page
+
+            </button>
+            <button
+              style={style }
+              type="button"
+              className="noselect event-button"
+              onClick={() => router.push(`/orgDashboard/editEvent/${event._id}`)}
+            >
+              Edit Details
 
             </button>
           </div>
