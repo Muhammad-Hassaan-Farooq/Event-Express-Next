@@ -6,8 +6,34 @@ const Timeline1 = require("../../assets/Timeline1.png");
 import EditableHeroSection2 from "./CMSComponents/editableCards/EditHeroSection2";
 import "../styles/LeftMenu.css";
 import Image from "next/image";
+import HeroSection1 from "./CMSComponents/HeroSection1";
 
-function LeftMenu({ currentlySelectedSection }) {
+function LeftMenu({
+  currentlySelectedSection,
+  sections,
+  componentStates,
+  setComponentStates,
+}) {
+  const editableComponentMap = {
+    HeroSection1: EditableHeroSection2,
+    HeroSection2: EditableHeroSection2,
+    TicketSection4: EditableHeroSection2,
+    TimelineSection1: EditableHeroSection2,
+  };
+
+  const renderEditableComponent = (section, componentId) => {
+    const EditableComponent = editableComponentMap[componentId];
+
+    return (
+      <EditableComponent
+        setComponentStates={setComponentStates}
+        state={componentStates[section][componentId]}
+        section={section}
+        componentId={componentId}
+      />
+    );
+  };
+
   return (
     <>
       <div
@@ -199,11 +225,22 @@ function LeftMenu({ currentlySelectedSection }) {
               <h5 className="card-title text-center">
                 Currently selected section
               </h5>
+
               <h6 className="card-text text-center">
                 {currentlySelectedSection}
               </h6>
-
-              <EditableHeroSection2 />
+              <h5 className="card-text text-center">
+                Editing component: {sections[currentlySelectedSection]}
+              </h5>
+              {currentlySelectedSection &&
+                sections[currentlySelectedSection] && (
+                  <div className="mt-3">
+                    {renderEditableComponent(
+                      currentlySelectedSection,
+                      sections[currentlySelectedSection]
+                    )}
+                  </div>
+                )}
             </div>
           </div>
         </div>

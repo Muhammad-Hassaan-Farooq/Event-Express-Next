@@ -6,7 +6,14 @@ import { useState } from "react";
 import "../styles/MainPage.css";
 import initialComponents from "./Values/initialValues";
 
-function MainPage({ setCurrentlySelectedSection, currentlySelectedSection }) {
+function MainPage({
+  setCurrentlySelectedSection,
+  currentlySelectedSection,
+  componentStates,
+  setComponentStates,
+  sections,
+  setSections,
+}) {
   const componentMap = {
     HeroSection1: HeroSection1,
     HeroSection2: HeroSection2,
@@ -26,15 +33,6 @@ function MainPage({ setCurrentlySelectedSection, currentlySelectedSection }) {
     return <Component {...componentStates[section][componentId]} />;
   };
 
-  const [componentStates, setComponentStates] = useState({
-    Section1: {},
-    Section2: {},
-    Section3: {},
-    Section4: {},
-    Section5: {},
-  });
-  console.log(componentStates);
-
   const handleDrop = (e, section) => {
     e.preventDefault();
     const componentId = e.dataTransfer.getData("id");
@@ -50,13 +48,6 @@ function MainPage({ setCurrentlySelectedSection, currentlySelectedSection }) {
     }
   };
 
-  const [sections, setSections] = useState({
-    Section1: "",
-    Section2: "",
-    Section3: "",
-    Section4: "",
-    Section5: "",
-  });
   return (
     <div>
       <div
@@ -84,7 +75,7 @@ function MainPage({ setCurrentlySelectedSection, currentlySelectedSection }) {
         onDragOver={(e) => e.preventDefault()}
         onClick={() => setSection("Section3")}
       >
-        {componentMap[sections.Section3]}
+        {sections.Section3 && renderComponent("Section3", sections.Section3)}
       </div>
       <div
         id="Section4"
@@ -94,7 +85,7 @@ function MainPage({ setCurrentlySelectedSection, currentlySelectedSection }) {
         onClick={() => setSection("Section4")}
       >
         {" "}
-        {componentMap[sections.Section4]}
+        {sections.Section4 && renderComponent("Section4", sections.Section4)}
       </div>
       <div
         id="Section5"
@@ -103,7 +94,7 @@ function MainPage({ setCurrentlySelectedSection, currentlySelectedSection }) {
         onDragOver={(e) => e.preventDefault()}
         onClick={() => setSection("Section5")}
       >
-        {componentMap[sections.Section5]}
+        {sections.Section5 && renderComponent("Section5", sections.Section5)}
       </div>
     </div>
   );
