@@ -20,7 +20,7 @@ export default function page() {
           <div className="col">
             <Frame>
               <Element is={Container} padding={5} background="#eee" canvas>
-                <Card />
+                <Card text={"Hello im card"} />
 
                 <Element
                   is={Button}
