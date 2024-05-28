@@ -48,7 +48,7 @@ function EventListItem({ event }) {
 
             </button>
             <button
-              style={style }
+               style={{ ...style, marginRight: '20px' }}
               type="button"
               className="noselect event-button"
               onClick={() => router.push(`/orgDashboard/editEvent/${event._id}`)}
@@ -56,6 +56,18 @@ function EventListItem({ event }) {
               Edit Details
 
             </button>
+            <button
+              style={style }
+              type="button"
+              className="noselect event-button"
+              onClick={() => router.push(`/orgDashboard/deleteEvent/${event._id}`)}
+            >
+              Delete 
+
+            </button>
+            
+            
+
           </div>
         </div>
       </div>
