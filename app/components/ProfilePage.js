@@ -1,19 +1,30 @@
-"use client"
+"use client";
 import Navbar from "./Navbar";
-import Image from "next/image"
-import Link from "next/link"
-import { useState } from 'react';
-import { NotificationContainer, NotificationManager } from "react-notifications";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import {
+  NotificationContainer,
+  NotificationManager,
+} from "react-notifications";
 import { useRouter } from "next/navigation";
 
-const ProfilePage = ({ firstName, lastName, email, role, status, handleDelete }) => {
-    const [showModal, setShowModal] = useState(false);
-    const [password, setPassword] = useState("");
-    const router = useRouter();
+const ProfilePage = ({
+  firstName,
+  lastName,
+  email,
+  role,
+  status,
+  handleDelete,
+}) => {
+  const [showModal, setShowModal] = useState(false);
+  const [password, setPassword] = useState("");
+  const router = useRouter();
 
-    const ModalOpen = () => {
-        setShowModal(true);
-    }
+  const ModalOpen = () => {
+    setShowModal(true);
+  };
+
 
     return (
         <>
@@ -125,12 +136,22 @@ const ProfilePage = ({ firstName, lastName, email, role, status, handleDelete })
                             </div>
                             <div className={`modal-backdrop fade ${showModal ? 'show' : ''}`} style={{ display: showModal ? 'block' : 'none' }}></div>
                         </div>
+
                     </div>
+                  </div>
                 </div>
-            </section>
-            <NotificationContainer />
-        </>
-    )
-}
+              </div>
+              <div
+                className={`modal-backdrop fade ${showModal ? "show" : ""}`}
+                style={{ display: showModal ? "block" : "none" }}
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <NotificationContainer />
+    </>
+  );
+};
 
 export default ProfilePage;
