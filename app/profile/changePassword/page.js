@@ -26,7 +26,7 @@ const changePassword = () => {
                 }
             });
             if (response.data.success) {
-                NotificationManager.success('Password changed successfully', 'Success');
+                NotificationManager.success(response.data.message, 'Success');
                 setTimeout(() => {
                     router.push("/signup");
                 }, 2000);
@@ -49,20 +49,20 @@ const changePassword = () => {
             <div class="card-header">
                 <h3 class="mb-0">Change Password</h3>
             </div>
-            <div class="card-body">
+            <div class="card-body" style={{display:"flex" , alignItems:"center", justifyContent:"center"}}>
                 <form class="form" role="form" autocomplete="off">
-                    <div class="form-group">
+                    <div class="form-group" style={{paddingBottom:"15px"}}>
                         <label for="inputPasswordOld">Current Password</label>
                         <input type="password" class="form-control" id="inputPasswordOld" required="" value={Oldpassword} onChange={(e) => setOldPassword(e.target.value)} />
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" style={{paddingBottom:"15px"}}>
                         <label for="inputPasswordNew">New Password</label>
                         <input type="password" class="form-control" id="inputPasswordNew" required="" value={Newpassword} onChange={(e) => setNewPassword(e.target.value)} />
                         <span class="form-text small text-muted">
                             The password must be 8-20 characters, and must <em>not</em> contain spaces.
                         </span>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" style={{paddingBottom:"15px"}}>
                         <label for="inputPasswordNewVerify">Confirm Password</label>
                         <input type="password" class="form-control" id="inputPasswordNewVerify" required="" value={ConfirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
                         <span class="form-text small text-muted">
