@@ -1,10 +1,30 @@
 import { Navbar, Nav, NavItem, Dropdown} from "react-bootstrap";
 import Image from "next/image"
+import { useRouter } from "next/navigation";
+import Cookies from "js-cookie";
+import { jwtDecode } from "jwt-decode";
 
 function NavbarComponent() {
+
+  const token = Cookies.get("token");
+  const decodetoken = jwtDecode(token);
+  const router = useRouter();
+
+  const handleRedirect = () => {
+    if (decodetoken.role === 'organizer') {
+      router.push('/orgDashboard');
+    } else if (decodetoken.role === 'user') {
+      router.push('/userDashboard');
+    }
+    else if (decodetoken.role === 'admin') {
+      router.push('/adminDashboard');
+    }
+  };
+
+
   return (
     <Navbar bg="dark" data-bs-theme="dark" expand="lg" className="p-3">
-      <Navbar.Brand href="/">Event Express</Navbar.Brand>
+      <Navbar.Brand onClick={handleRedirect} style={{ cursor: 'pointer' }}>Event Express</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
         <Nav className="ml-auto ">

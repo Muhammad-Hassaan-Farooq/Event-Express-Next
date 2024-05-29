@@ -40,6 +40,7 @@ const MyProfile = async () => {
     } catch (error) {
       return { success: false, message: response.data.message };
     }
+
   };
 
   return (
@@ -55,5 +56,6 @@ const MyProfile = async () => {
     </div>
   );
 };
+
 
 export default MyProfile;
