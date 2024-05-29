@@ -4,25 +4,26 @@ import Navbar from "../../components/Navbar";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { NotificationContainer, NotificationManager } from "react-notifications";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
-const AdminDashboardUsersPage = () => {
-    const [users, setUsers] = useState([]);
+const AdminDashboardOrganizerPage = () => {
+    const [organizers, setOrganizers] = useState([]);
     const [name, setName] = useState("");
     const token = Cookies.get("token");
     const router = useRouter();
 
     useEffect(() => {
-        const fetchUsers = async () => {
+        const fetchOrganizers = async () => {
             try {
-                const response = await axios.get("http://localhost:3000/accountManagement/getUsers", {
+                const response = await axios.get("http://localhost:3000/accountManagement/getOrganizers", {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
                 });
-                console.log(response.data);
                 if (response.data.success) {
-                    setUsers(response.data.data);
+                    setOrganizers(response.data.data);
                     NotificationManager.success(response.data.message, "Success");
                 }
                 else {
@@ -34,16 +35,17 @@ const AdminDashboardUsersPage = () => {
             }
         };
 
-        fetchUsers();
+        fetchOrganizers();
     }, []);
 
     const findByName = async () => {
         try {
-            const response = await axios.post("http://localhost:3000/accountManagement/getUserByName", { name: name }, {
+            const response = await axios.post("http://localhost:3000/accountManagement/getOrganizerByName", { name: name }, {
                 headers: { Authorization: `Bearer ${token}` }
             });
+            console.log(response.data);
             if (response.data.success) {
-                setUsers(response.data.data);
+                setOrganizers(response.data.data);
                 NotificationManager.success(response.data.message, "Success");
             }
             else {
@@ -56,14 +58,14 @@ const AdminDashboardUsersPage = () => {
 
     const handleChangeRole = async (email) => {
         try {
-            const response = await axios.post("http://localhost:3000/accountManagement/changeRole", { email: email, role: "organizer" },
+            const response = await axios.post("http://localhost:3000/accountManagement/changeRole", { email: email, role: "user" },
                 {
                     headers: { Authorization: `Bearer ${token}` }
                 });
             if (response.data.success) {
                 NotificationManager.success(response.data.message, "Success", 1000);
                 setTimeout(() => {
-                    router.push("/adminDashboard");
+                    router.push("/adminDashboard/users");
                 }, 2000);
             }
             else {
@@ -75,7 +77,7 @@ const AdminDashboardUsersPage = () => {
         }
     }
 
-    const handleDeleteUser = async (email) => {
+    const handleDeleteOrganizer = async (email) => {
         try {
             const response = await axios.post("http://localhost:3000/accountManagement/deleteAccount", { email: email },
                 {
@@ -84,7 +86,7 @@ const AdminDashboardUsersPage = () => {
             if (response.data.success) {
                 NotificationManager.success(response.data.message, "Success", 1000);
                 setTimeout(() => {
-                    router.push("/adminDashboard/users");
+                    router.push("/adminDashboard");
                 }, 2000);
             }
             else {
@@ -111,21 +113,22 @@ const AdminDashboardUsersPage = () => {
                     </div>
                 </div>
             </div>
+
             {
                 <div class="container">
                     <div class="row">
-                        {users.map((user) => (
+                        {organizers.map((organizer) => (
                             <div class="col-lg-3 col-md-6 mb-4">
                                 <div class="card h-100">
                                     <div class="card-body text-center">
                                         <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
                                             class="rounded-circle img-fluid" style={{ width: "133px" }} />
-                                        <h5 class="my-3">{user.firstName} {user.lastName}</h5>
-                                        <p class="text-muted mb-1">{user.email}</p>
-                                        <p class="text-muted mb-4">{user.role.toUpperCase()}</p>
+                                        <h5 class="my-3">{organizer.firstName} {organizer.lastName}</h5>
+                                        <p class="text-muted mb-1">{organizer.email}</p>
+                                        <p class="text-muted mb-4">{organizer.role.toUpperCase()}</p>
                                         <div class="d-flex justify-content-center mb-2">
-                                            <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-sm mx-3" onClick={() => handleChangeRole(user.email)}>Change Role To Organizer</button>
-                                            <button type="button" class="btn btn-outline-secondary btn-sm p-1 mx-2" onClick={() => handleDeleteUser(user.email)}>
+                                            <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-sm mx-3" onClick={() => handleChangeRole(organizer.email)}>Change Role To User</button>
+                                            <button type="button" class="btn btn-outline-secondary btn-sm p-1 mx-2" onClick={() => handleDeleteOrganizer(organizer.email)}>
                                                 <img src="/delete.png" width="20" height="20" alt="delete" />
                                             </button>
                                         </div>
@@ -138,7 +141,8 @@ const AdminDashboardUsersPage = () => {
             }
             <NotificationContainer />
         </div>
-    );
-}
 
-export default AdminDashboardUsersPage;
+    );
+};
+
+export default AdminDashboardOrganizerPage;
