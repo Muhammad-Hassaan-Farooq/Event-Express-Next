@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 function EditableHeroSection2({
   setComponentStates,
   state,
@@ -32,6 +34,24 @@ function EditableHeroSection2({
     }));
   };
 
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setComponentStates((prevStates) => ({
+        ...prevStates,
+        [section]: {
+          ...prevStates[section],
+          [componentId]: {
+            ...prevStates[section][componentId],
+            backgroundImage: `url(${reader.result})`,
+          },
+        },
+      }));
+    };
+    reader.readAsDataURL(file);
+  };
+
   return (
     <div className="form-group">
       <label for="title">Title</label>
@@ -52,7 +72,12 @@ function EditableHeroSection2({
       <label for="formFile" class="form-label">
         Upload bg image
       </label>
-      <input class="form-control mb-3" type="file" id="formFile" />
+      <input
+        class="form-control mb-3"
+        type="file"
+        id="formFile"
+        onChange={handleFileChange}
+      />
     </div>
   );
 }
