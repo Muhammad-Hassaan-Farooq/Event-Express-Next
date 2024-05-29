@@ -26,6 +26,7 @@ const ProfilePage = ({
     };
 
 
+
     return (
         <>
             <Navbar />
@@ -136,6 +137,7 @@ const ProfilePage = ({
                             </div>
                             <div className={`modal-backdrop fade ${showModal ? 'show' : ''}`} style={{ display: showModal ? 'block' : 'none' }}></div>
                         </div>
+
 
                     </div>
                 </div>
