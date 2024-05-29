@@ -4,26 +4,26 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import {
-  NotificationContainer,
-  NotificationManager,
+    NotificationContainer,
+    NotificationManager,
 } from "react-notifications";
 import { useRouter } from "next/navigation";
 
 const ProfilePage = ({
-  firstName,
-  lastName,
-  email,
-  role,
-  status,
-  handleDelete,
+    firstName,
+    lastName,
+    email,
+    role,
+    status,
+    handleDelete,
 }) => {
-  const [showModal, setShowModal] = useState(false);
-  const [password, setPassword] = useState("");
-  const router = useRouter();
+    const [showModal, setShowModal] = useState(false);
+    const [password, setPassword] = useState("");
+    const router = useRouter();
 
-  const ModalOpen = () => {
-    setShowModal(true);
-  };
+    const ModalOpen = () => {
+        setShowModal(true);
+    };
 
 
     return (
@@ -63,9 +63,9 @@ const ProfilePage = ({
                                         <div class="col-sm-3">
                                             <p class="mb-0">Password</p>
                                         </div>
-                                        <div class="col-sm-9" style={{display:"flex"}}>
+                                        <div class="col-sm-9" style={{ display: "flex" }}>
                                             <p class="text-muted mb-0">********</p>
-                                            <Link href="/profile/changePassword" style={{marginLeft:"20px"}} ><Image src="/edit.png" height={20} width={20} style={{marginBottom:"5px"}}/></Link>
+                                            <Link href="/profile/changePassword" style={{ marginLeft: "20px" }} ><Image src="/edit.png" height={20} width={20} style={{ marginBottom: "5px" }} /></Link>
                                         </div>
                                     </div>
                                     <hr />
@@ -138,20 +138,12 @@ const ProfilePage = ({
                         </div>
 
                     </div>
-                  </div>
                 </div>
-              </div>
-              <div
-                className={`modal-backdrop fade ${showModal ? "show" : ""}`}
-                style={{ display: showModal ? "block" : "none" }}
-              ></div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <NotificationContainer />
-    </>
-  );
+
+            </section>
+            <NotificationContainer />
+        </>
+    );
 };
 
 export default ProfilePage;
