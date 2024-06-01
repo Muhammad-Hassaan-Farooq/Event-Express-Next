@@ -44,7 +44,6 @@ function NavbarComponent() {
               <Dropdown.Toggle as={Nav.Link} id="dropdown-custom-components">
                 <Image src="/user.png" height={30} width={30} />
               </Dropdown.Toggle>
-
               <Dropdown.Menu>
                 <Dropdown.Item href="/profile">View Profile</Dropdown.Item>
                 <Dropdown.Item href="/signup">Logout</Dropdown.Item>
