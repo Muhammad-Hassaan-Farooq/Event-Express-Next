@@ -4,6 +4,8 @@ import BootstrapClient from "./components/Bootstrapclient";
 import "./globals.css";
 import ReduxProvider from "../redux/provider";
 import 'react-notifications/lib/notifications.css';
+import Footer from "./components/Footer";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <ReduxProvider>{children}</ReduxProvider>
-
+        <Footer/>
         <BootstrapClient />
       </body>
     </html>

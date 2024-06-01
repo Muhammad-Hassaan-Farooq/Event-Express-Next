@@ -1,5 +1,4 @@
 "use client";
-import Footer from "../components/Footer";
 import Link from "next/link";
 import NavbarComponent from "../components/Navbar";
 
@@ -12,7 +11,6 @@ const AdminDashboard = () => {
       <Link href="/adminDashboard/users">Users Information</Link>
       <br />
       <Link href="/adminDashboard/organizers">Organizers Information</Link>
-      <Footer/>
     </div>
   );
 };
