@@ -6,12 +6,16 @@ import { login, logout } from "../../redux/features/auth-slice";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
+import { Button } from "react-bootstrap";
+import { NotificationManager, NotificationContainer } from "react-notifications";
 
 function LoginPage() {
   const dispatch = useDispatch();
   const router = useRouter();
 
+  const [forgotEmail, setForgotEmail] = useState("");
   const [activeTab, setActiveTab] = useState("login");
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
@@ -20,6 +24,10 @@ function LoginPage() {
     email: "",
     password: "",
   });
+
+  const handleModal = () => {
+    setIsModalOpen(true);
+  }
 
   const [registerInput, setRegisterInput] = useState({
     firstName: "",
@@ -77,6 +85,23 @@ function LoginPage() {
     });
   };
 
+  const handleSendResetLink = async () => {
+    try {
+      const response = await axios.post("http://localhost:3000/auth/forgetPassword", { email: forgotEmail });
+      if (response.data.success) {
+        NotificationManager.success(response.data.message, "Success", 1500)
+        setIsModalOpen(false);
+      }
+      else {
+        NotificationManager.error(response.data.message, "Error", 1500)
+        setIsModalOpen(false);
+      }
+    }
+    catch (error) {
+      NotificationManager.error("Server Error", "Error", 1500)
+    }
+  }
+
   return (
     <div className="p-5 vh-100 main-div">
       <div className="container shadow p-3 bg-light d-flex flex-column border ">
@@ -101,9 +126,8 @@ function LoginPage() {
 
         <div className="tab-content">
           <div
-            className={`tab-pane fade ${
-              activeTab === "login" ? "show active" : ""
-            }`}
+            className={`tab-pane fade ${activeTab === "login" ? "show active" : ""
+              }`}
           >
             <div className="text-center mb-3">
               <p>Sign in with:</p>
@@ -148,8 +172,43 @@ function LoginPage() {
                   Remember me
                 </label>
               </div>
-              <a href="#!">Forgot password?</a>
+              <Button onClick={handleModal}>Forgot password?</Button>
             </div>
+            {isModalOpen && (
+              <div className="modal show d-block" role="dialog">
+                <div className="modal-dialog" role="document">
+                  <div className="modal-content">
+                    <div className="modal-header">
+                      <h5 className="modal-title">Forgot Password</h5>
+                      <button style={{ backgroundColor: "black" }} type="button" className="close" onClick={() => setIsModalOpen(false)}>
+                        <span>&times;</span>
+                      </button>
+                    </div>
+                    <div className="modal-body">
+                      <div className="mb-4">
+                        <label htmlFor="forgotEmail">Email address</label>
+                        <input
+                          type="email"
+                          className="form-control"
+                          id="forgotEmail"
+                          name="forgotEmail"
+                          value={forgotEmail}
+                          onChange={(e) => setForgotEmail(e.target.value)}
+                        />
+                      </div>
+                    </div>
+                    <div className="modal-footer">
+                      <button type="button" className="btn btn-secondary" onClick={() => setIsModalOpen(false)}>
+                        Close
+                      </button>
+                      <button type="button" className="btn btn-primary" onClick={handleSendResetLink}>
+                        Send Reset Link
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
 
             <button
               className="btn btn-primary mb-4 w-100"
@@ -166,9 +225,8 @@ function LoginPage() {
           </div>
 
           <div
-            className={`tab-pane fade ${
-              activeTab === "register" ? "show active" : ""
-            }`}
+            className={`tab-pane fade ${activeTab === "register" ? "show active" : ""
+              }`}
           >
             <div className="text-center mb-3">
               <p>Sign up with:</p>
@@ -244,6 +302,7 @@ function LoginPage() {
           </div>
         </div>
       </div>
+      <NotificationContainer />
     </div>
   );
 }
