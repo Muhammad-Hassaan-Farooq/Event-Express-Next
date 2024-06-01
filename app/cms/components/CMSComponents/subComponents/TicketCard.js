@@ -1,9 +1,4 @@
-function TicketingSection4({ numberOfCards, cards }) {
-  if (numberOfCards < 1) numberOfCards = 1;
-  if (numberOfCards > 4) numberOfCards = 4;
-  console.log(cards);
-
-  console.log;
+function TicketCard({ numberOfCards = 2 }) {
   return (
     <section class="bg-white">
       <div class="container py-5">
@@ -15,9 +10,12 @@ function TicketingSection4({ numberOfCards, cards }) {
                   <div class="card-header p-4 bg-info border-0">
                     <div class="text-light">
                       <h2 class="text-sm-center pb-4 mb-4 align-items-center">
-                        <span>{cards[index].title}</span>
+                        <span>Beginer</span>
                       </h2>
-                      <p class="text-sm-center pb-2">{cards[index].subtitle}</p>
+                      <p class="text-sm-center pb-2">
+                        Integer ac iaculis dui, a interdum tortor. Morbi
+                        ultricies convallis quam.
+                      </p>
                     </div>
                   </div>
                   <div class="card-body p-4 bg-light">
@@ -25,17 +23,25 @@ function TicketingSection4({ numberOfCards, cards }) {
                       <div>
                         <h1 class="pb-2 mb-2 align-items-center text-sm-center">
                           <span class="h4 ml-1">$</span>
-                          <span>{cards[index].price}</span>
+                          <span>1.99</span>
+                          <span class="h5 ml-1 text-black-50 font-normal text-lg">
+                            /mo
+                          </span>
                         </h1>
-
-                        {cards[index].perks.map((feature) => {
-                          return (
-                            <p class="pb-2 mb-2">
-                              <i class="fas fa-check-circle pr-2 text-info"></i>
-                              {feature}
-                            </p>
-                          );
-                        })}
+                        <p class="pb-2 mb-2">
+                          <i class="fas fa-check-circle pr-2 text-info"></i>20
+                          users included
+                        </p>
+                        <p class="pb-2 mb-2 text-muted">
+                          <i class="fas fa-times-circle pr-2"></i>10 GB of
+                          storage
+                        </p>
+                        <p class="pb-2 mb-2 text-muted">
+                          <i class="fas fa-times-circle pr-2"></i>Email support
+                        </p>
+                        <p class="pb-2 mb-2 text-muted">
+                          <i class="fas fa-times-circle pr-2"></i>AI Chatbot
+                        </p>
                       </div>
                       <div class="mt-4">
                         <a
@@ -58,4 +64,4 @@ function TicketingSection4({ numberOfCards, cards }) {
   );
 }
 
-export default TicketingSection4;
+export default TicketCard;

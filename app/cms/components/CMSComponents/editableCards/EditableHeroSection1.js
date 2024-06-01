@@ -1,12 +1,23 @@
-import { useState } from "react";
-
-function EditableHeroSection2({
+function EditableHeroSection1({
   setComponentStates,
   state,
   section,
   componentId,
 }) {
-  const { title, subtitle } = state;
+  const { hook, title, subtitle, backgroundImage, picture } = state;
+
+  const handleHookChange = (e) => {
+    setComponentStates((prevStates) => ({
+      ...prevStates,
+      [section]: {
+        ...prevStates[section],
+        [componentId]: {
+          ...prevStates[section][componentId],
+          hook: e.target.value,
+        },
+      },
+    }));
+  };
 
   const handleTitleChange = (e) => {
     setComponentStates((prevStates) => ({
@@ -34,26 +45,16 @@ function EditableHeroSection2({
     }));
   };
 
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      setComponentStates((prevStates) => ({
-        ...prevStates,
-        [section]: {
-          ...prevStates[section],
-          [componentId]: {
-            ...prevStates[section][componentId],
-            backgroundImage: `url(${reader.result})`,
-          },
-        },
-      }));
-    };
-    reader.readAsDataURL(file);
-  };
-
   return (
     <div className="form-group">
+      <label for="hook">Hook</label>
+      <input
+        type="text"
+        className="form-control mb-3"
+        id="hook"
+        value={hook}
+        onChange={handleHookChange}
+      />
       <label for="title">Title</label>
       <input
         type="text"
@@ -63,23 +64,23 @@ function EditableHeroSection2({
         onChange={handleTitleChange}
       />
       <label for="subtitle">Subtitle</label>
-      <textarea
-        class="form-control mb-3"
-        aria-label="With textarea"
+      <input
+        type="text"
+        className="form-control mb-3"
+        id="subtitle"
         value={subtitle}
         onChange={handleSubtitleChange}
-      ></textarea>
-      <label for="formFile" class="form-label">
-        Upload bg image
-      </label>
+      />
+      <label for="picture">Picture</label>
+      <input type="file" className="form-control-file mb-3" id="picture" />
+      <label for="backgroundImage">Background Image</label>
       <input
-        class="form-control mb-3"
         type="file"
-        id="formFile"
-        onChange={handleFileChange}
+        className="form-control-file mb-3"
+        id="backgroundImage"
       />
     </div>
   );
 }
 
-export default EditableHeroSection2;
+export default EditableHeroSection1;

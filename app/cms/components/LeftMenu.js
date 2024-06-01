@@ -3,10 +3,12 @@ const Hero2 = require("../../assets/Hero2.png");
 const Ticket4 = require("../../assets/Ticket4.png");
 const Timeline1 = require("../../assets/Timeline1.png");
 
+import EditableHeroSection1 from "./CMSComponents/editableCards/EditableHeroSection1";
 import EditableHeroSection2 from "./CMSComponents/editableCards/EditHeroSection2";
 import "../styles/LeftMenu.css";
 import Image from "next/image";
 import HeroSection1 from "./CMSComponents/HeroSection1";
+import EditableTicketSection from "./CMSComponents/editableCards/EditableTicketSection";
 
 function LeftMenu({
   currentlySelectedSection,
@@ -15,9 +17,9 @@ function LeftMenu({
   setComponentStates,
 }) {
   const editableComponentMap = {
-    HeroSection1: EditableHeroSection2,
+    HeroSection1: EditableHeroSection1,
     HeroSection2: EditableHeroSection2,
-    TicketSection4: EditableHeroSection2,
+    TicketSection4: EditableTicketSection,
     TimelineSection1: EditableHeroSection2,
   };
 
