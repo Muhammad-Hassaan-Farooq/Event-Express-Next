@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 import { useRouter } from "next/navigation";
 import Loading from "../loading";
 import EventListing from "../components/EventListing";
+import SearchBar from "../components/SearchBar";
 
 export default function userHome() {
   const token = Cookies.get("token");
@@ -13,6 +14,9 @@ export default function userHome() {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
+
+
+
 
   useEffect(() => {
     if (!token) {
@@ -49,6 +53,7 @@ export default function userHome() {
     return (
       <>
         <Navbar />
+        <SearchBar setEvents = {setEvents} events = {events} />
         <EventListing events={events} />
       </>
     );

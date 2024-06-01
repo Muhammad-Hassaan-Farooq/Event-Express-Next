@@ -14,7 +14,7 @@ const DeleteEvent = () => {
     const token = Cookies.get("token");
     const [showModal, setShowModal] = useState(true);
     const router = useRouter();
-    
+
     const deleteEvent = async () => {
         try {
            const response = await axios.post("http://localhost:3000/event/deleteEvent", {
@@ -28,12 +28,12 @@ const DeleteEvent = () => {
                 NotificationManager.success('Event deleted successfully', 'Success');
                 setTimeout(() => {
                     router.push("/orgDashboard");
-                }, 2000);
+                }, 1000);
+                
             } else {
                 NotificationManager.error(response.data.message, 'Error');
             }
         } catch (error) {
-            console.log("AAAAAAAA")
             console.error(error);
         }
     }
