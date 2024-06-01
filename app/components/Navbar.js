@@ -22,7 +22,7 @@ function NavbarComponent() {
   };
 
   return (
-    <Navbar bg="light" data-bs-theme="light" expand="lg" className="p-3">
+    <Navbar expand="lg" className="p-3 navbar-main" fixed="top">
       <Navbar.Brand onClick={handleRedirect} style={{ cursor: "pointer" }}>
         <Image
           src={logo}
@@ -34,9 +34,15 @@ function NavbarComponent() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
         <Nav className="me-auto ">
-          <Nav.Link href="/signup">Home</Nav.Link>
-          <Nav.Link href="/signup">About</Nav.Link>
-          <Nav.Link href="/signup">Contact</Nav.Link>
+          <Nav.Item>
+            <Nav.Link href="/signup">Home</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href="/signup">About</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href="/signup">Contact</Nav.Link>
+          </Nav.Item>
         </Nav>
         <Nav>
           <Nav.Item>
