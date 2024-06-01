@@ -5,6 +5,7 @@ import ProfilePage from "../components/ProfilePage";
 
 const MyProfile = async () => {
   const token = cookies().get("token");
+
   const decodedToken = jwtDecode(token.value);
   const response = await axios.post(
     "http://localhost:3000/profile/viewProfile",
@@ -40,7 +41,6 @@ const MyProfile = async () => {
     } catch (error) {
       return { success: false, message: response.data.message };
     }
-
   };
 
   return (
@@ -56,6 +56,5 @@ const MyProfile = async () => {
     </div>
   );
 };
-
 
 export default MyProfile;

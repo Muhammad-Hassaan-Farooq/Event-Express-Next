@@ -15,7 +15,7 @@ function EventListItem({ event }) {
             <div className="card-body">
               <h5 className="card-title">{event.title}</h5>
               <h6 className="card-subtitle mb-2 text-muted">
-                {new Date(event.date).toDateString()}
+                {new Date(event.startDate).toDateString()}
               </h6>
               <p className="card-text">{event.description}</p>
               <p className="card-text">
@@ -36,14 +36,12 @@ function EventListItem({ event }) {
               backgroundSize: "cover",
             }}
           >
-
             <button
               style={style}
               type="button"
               className="noselect event-button"
             >
               Visit Page
-
             </button>
           </div>
         </div>

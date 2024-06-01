@@ -17,7 +17,7 @@ function EventListItem({ event }) {
             <div className="card-body">
               <h5 className="card-title">{event.title}</h5>
               <h6 className="card-subtitle mb-2 text-muted">
-                {new Date(event.date).toDateString()}
+                {new Date(event.startDate).toDateString()}
               </h6>
               <p className="card-text">{event.description}</p>
               <p className="card-text">
@@ -38,36 +38,33 @@ function EventListItem({ event }) {
               backgroundSize: "cover",
             }}
           >
-
             <button
-              style={{ ...style, marginRight: '20px' }}
+              style={{ ...style, marginRight: "20px" }}
               type="button"
               className="noselect event-button"
             >
               Edit Page
-
             </button>
             <button
-               style={{ ...style, marginRight: '20px' }}
+              style={{ ...style, marginRight: "20px" }}
               type="button"
               className="noselect event-button"
-              onClick={() => router.push(`/orgDashboard/editEvent/${event._id}`)}
+              onClick={() =>
+                router.push(`/orgDashboard/editEvent/${event._id}`)
+              }
             >
               Edit Details
-
             </button>
             <button
-              style={style }
+              style={style}
               type="button"
               className="noselect event-button"
-              onClick={() => router.push(`/orgDashboard/deleteEvent/${event._id}`)}
+              onClick={() =>
+                router.push(`/orgDashboard/deleteEvent/${event._id}`)
+              }
             >
-              Delete 
-
+              Delete
             </button>
-            
-            
-
           </div>
         </div>
       </div>
