@@ -24,3 +24,7 @@
 .navbar .navbar-nav .nav-item:hover::after {
   width: 100%;
 }
+
+.navbar-main {
+  background-color: white;
+}
