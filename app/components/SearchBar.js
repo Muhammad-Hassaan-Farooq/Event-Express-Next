@@ -206,7 +206,7 @@ const SearchBar = ({ setEvents, events }) => {
         </div>
         <div className="col">
           <input
-            className="form-control border-secondary border-right-0 rounded-0"
+            className="form-control border-secondary border-right-0 rounded-5"
             type="date"
             value={date}
             onChange={handleInputChange(setDate, "date")}
