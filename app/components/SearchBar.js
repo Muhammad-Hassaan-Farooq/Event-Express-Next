@@ -144,23 +144,24 @@ const SearchBar = ({ setEvents, events }) => {
 
   const handleDefault = async () => {
     try {
-        const response = await axios.get("http://localhost:3000/event/getEvents", {
-            headers: {
-                Authorization: `Bearer ${token}`,
-            },
-        });
-        if (response.data.success) {
-            setEvents(response.data.data);
-            NotificationManager.success(response.data.message, "Success");
+      const response = await axios.get(
+        "http://localhost:3000/event/getEvents",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         }
-        else {
-            NotificationManager.error(response.data.message, "Error");
-        }
+      );
+      if (response.data.success) {
+        setEvents(response.data.data);
+        NotificationManager.success(response.data.message, "Success");
+      } else {
+        NotificationManager.error(response.data.message, "Error");
+      }
     } catch (error) {
-        NotificationManager.error("Server Error", "Error");
+      NotificationManager.error("Server Error", "Error");
     }
-}
-
+  };
 
   const handleClear = async () => {
     setName("");
@@ -170,8 +171,7 @@ const SearchBar = ({ setEvents, events }) => {
     setPrice("");
     setCategory("");
     handleDefault();
-
-}
+  };
 
   const handleSearch = () => {
     switch (category) {
@@ -287,14 +287,14 @@ const SearchBar = ({ setEvents, events }) => {
           </button>
         </div>
         <div className="col-auto">
-                    <button
-                        className="btn btn-outline-secondary border-left-0 rounded-0 rounded-right ml-2"
-                        type="button"
-                        onClick={handleClear}
-                    >
-                        Clear <i className="fa fa-times"></i>
-                    </button>
-                </div>   
+          <button
+            className="btn btn-outline-secondary border-left-0 rounded-5 rounded-right ml-2"
+            type="button"
+            onClick={handleClear}
+          >
+            Clear <i className="fa fa-times"></i>
+          </button>
+        </div>
       </div>
     </div>
   );
