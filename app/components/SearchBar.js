@@ -21,6 +21,25 @@ const SearchBar = ({setEvents, events}) => {
     const [price, setPrice] = useState("");
     const [category, setCategory] = useState("");
 
+    const handleSearchbyDate = async () => {
+        try {
+            const response = await axios.post("http://localhost:3000/event/getByDate", {date: date} , {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+            if (response.data.success) {
+                setEvents(response.data.data);
+                NotificationManager.success(response.data.message, "Success");
+            }
+            else {
+                NotificationManager.error(response.data.message, "Error");
+            }
+        } catch (error) {
+            NotificationManager.error("Server Error", "Error");
+        }
+    }
+
 
     const handleSearchbyLocation = async () => {
         try {
@@ -120,6 +139,9 @@ const SearchBar = ({setEvents, events}) => {
             case "price":
                 handleSearchByPrice();
                 break;
+            case "date":
+                handleSearchbyDate();
+                break;
             default:
                 setName("");
                 handleSearchbyName();
@@ -136,12 +158,13 @@ const SearchBar = ({setEvents, events}) => {
         if (category !== "location") setLocation("");
         if (category !== "org") setOrganizer("");
         if (category !== "price") setPrice("");
+        if (category !== "date") setDate("");
     };
 
 
     return (
         <div>
-            <div className="row no-gutters align-items-center">
+            <div className="row no-gutters align-items-center" style={{padding:"8px"}}>
                 <div className="col">
                     <input
                         className="form-control border-secondary border-right-0 rounded-0"
@@ -162,6 +185,17 @@ const SearchBar = ({setEvents, events}) => {
                         placeholder="Location"
                     />
                 </div>
+                <div className="col">
+                    <input
+                        className="form-control border-secondary border-right-0 rounded-0"
+                        type="date"
+                        value={date}
+                        onChange={handleInputChange(setDate, "date")}
+                        id="example-search-input2"
+                        placeholder="Date"
+                    />
+                </div>
+
                 <div className="col">
                     <input
                         className="form-control border-secondary border-right-0 rounded-0"
