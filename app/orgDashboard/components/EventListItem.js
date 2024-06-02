@@ -29,6 +29,9 @@ function EventListItem({ event }) {
               <p className="card-text">
                 <strong>Organized by:</strong> {event.createdBy}
               </p>
+              <p className="card-text">
+                <strong>Attendees:</strong> {event.attendeesCount}/{event.attendeesLimit}
+              </p>
             </div>
           </div>
           <div
