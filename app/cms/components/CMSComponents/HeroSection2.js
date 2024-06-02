@@ -4,9 +4,9 @@ function HeroSection2({
   backgroundImage = "url('https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg')",
 }) {
   return (
-    <section class="h-100">
+    <section className="h-100">
       <div
-        class="position-absolute h-100 w-100"
+        className="position-absolute h-100 w-100"
         style={{
           zIndex: -1,
           backgroundImage: backgroundImage,
@@ -16,15 +16,15 @@ function HeroSection2({
           backgroundPosition: "center",
         }}
       ></div>
-      <div class="container d-flex flex-column justify-content-around h-100 py-5">
-        <div class="d-flex justify-content-center align-items-center mb-3">
-          <div class="col-sm-8 text-center">
-            <h1 class="display-5 font-weight-bold">{title}</h1>
+      <div className="container d-flex flex-column justify-content-around h-100 py-5">
+        <div className="d-flex justify-content-center align-items-center mb-3">
+          <div className="col-sm-8 text-center">
+            <h1 className="display-5 font-weight-bold">{title}</h1>
           </div>
         </div>
-        <div class="d-flex justify-content-center align-items-center mb-3">
-          <div class="col-sm-8 text-center">
-            <h5 class="text-muted font-weight-normal">{subtitle}</h5>
+        <div className="d-flex justify-content-center align-items-center mb-3">
+          <div className="col-sm-8 text-center">
+            <h5 className="text-muted font-weight-normal">{subtitle}</h5>
           </div>
         </div>
       </div>

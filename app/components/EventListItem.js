@@ -1,7 +1,13 @@
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 function EventListItem({ event }) {
+  const router = useRouter();
+
+  const handleRedirect = () => {
+    router.push(`/event/${event._id}`);
+  };
   const [style, setStyle] = useState({ display: "none" });
   return (
     <>
@@ -40,6 +46,7 @@ function EventListItem({ event }) {
               style={style}
               type="button"
               className="noselect event-button"
+              onClick={handleRedirect}
             >
               Visit Page
             </button>
