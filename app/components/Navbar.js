@@ -1,3 +1,5 @@
+"use client";
+
 import { Navbar, Nav, NavItem, Dropdown } from "react-bootstrap";
 import Image from "next/image";
 import { useRouter } from "next/navigation";

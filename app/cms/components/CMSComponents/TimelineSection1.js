@@ -1,18 +1,18 @@
 function TimelineSection1(props) {
   return (
-    <section class="bg-white h-100">
-      <div class="container py-5">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item py-4">
-            <div class="row">
-              <div class="col-md-4">
-                <h5 class="row">
-                  <div class="col-1 col-md-2 col-lg-2 pr-1 d-flex justify-content-center align-items-center">
+    <section className="bg-white h-100">
+      <div className="container py-5">
+        <ul className="list-group list-group-flush">
+          <li className="list-group-item py-4">
+            <div className="row">
+              <div className="col-md-4">
+                <h5 className="row">
+                  <div className="col-1 col-md-2 col-lg-2 pr-1 d-flex justify-content-center align-items-center">
                     <svg
                       width="1em"
                       height="1em"
                       viewBox="0 0 16 16"
-                      class="bi bi-calendar2-date text-primary"
+                      className="bi bi-calendar2-date text-primary"
                       fill="currentColor"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -28,20 +28,20 @@ function TimelineSection1(props) {
                       <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z"></path>
                     </svg>
                   </div>
-                  <div class="col">
+                  <div className="col">
                     <span>
                       {" "}
                       19<sup>th</sup> Aug, 2020{" "}
                     </span>
                   </div>
                 </h5>
-                <h6 class="text-muted row">
-                  <div class="col-1 col-md-2 col-lg-2 pr-1 d-flex justify-content-center align-items-center">
+                <h6 className="text-muted row">
+                  <div className="col-1 col-md-2 col-lg-2 pr-1 d-flex justify-content-center align-items-center">
                     <svg
                       width="1em"
                       height="1em"
                       viewBox="0 0 16 16"
-                      class="bi bi-bookmark-check text-primary"
+                      className="bi bi-bookmark-check text-primary"
                       fill="currentColor"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -55,17 +55,17 @@ function TimelineSection1(props) {
                       ></path>
                     </svg>
                   </div>
-                  <div class="col">
+                  <div className="col">
                     <span> Location </span>
                   </div>
                 </h6>
-                <h6 class="text-muted row">
-                  <div class="col-1 col-md-2 col-lg-2 pr-1 d-flex justify-content-center align-items-center">
+                <h6 className="text-muted row">
+                  <div className="col-1 col-md-2 col-lg-2 pr-1 d-flex justify-content-center align-items-center">
                     <svg
                       width="1em"
                       height="1em"
                       viewBox="0 0 16 16"
-                      class="bi bi-clock text-primary"
+                      className="bi bi-clock text-primary"
                       fill="currentColor"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -79,16 +79,16 @@ function TimelineSection1(props) {
                       ></path>
                     </svg>
                   </div>
-                  <div class="col">
+                  <div className="col">
                     <span> 1200 Hrs </span>
                   </div>
                 </h6>
               </div>
-              <div class="col-md-8">
-                <div class="px-0 px-md-3 py-2 py-md-0 d-flex flex-column justify-content-between h-100">
+              <div className="col-md-8">
+                <div className="px-0 px-md-3 py-2 py-md-0 d-flex flex-column justify-content-between h-100">
                   <div>
-                    <h3 class="card-title">The Wildlife diary</h3>
-                    <p class="card-text">
+                    <h3 className="card-title">The Wildlife diary</h3>
+                    <p className="card-text">
                       A wonderful serenity has taken possession of my entire
                       soul, like these sweet mornings of spring which I enjoy
                       with my whole heart. I am alone, and feel the charm of
@@ -97,17 +97,17 @@ function TimelineSection1(props) {
                     </p>
                   </div>
                   <div>
-                    <div class="d-flex justify-content-between align-items-center">
-                      <div class="text-muted">
-                        <small class="">Last updated 5 mins ago</small>
+                    <div className="d-flex justify-content-between align-items-center">
+                      <div className="text-muted">
+                        <small className="">Last updated 5 mins ago</small>
                       </div>
-                      <div class="btn btn-sm btn-primary">
+                      <div className="btn btn-sm btn-primary">
                         See more
                         <svg
                           width="1em"
                           height="1em"
                           viewBox="0 0 16 16"
-                          class="bi bi-arrow-right"
+                          className="bi bi-arrow-right"
                           fill="currentColor"
                           xmlns="http://www.w3.org/2000/svg"
                         >
@@ -127,16 +127,16 @@ function TimelineSection1(props) {
               </div>
             </div>
           </li>
-          <li class="list-group-item py-4">
-            <div class="row">
-              <div class="col-md-4">
-                <h5 class="row">
-                  <div class="col-1 col-md-2 col-lg-2 pr-1 d-flex justify-content-center align-items-center">
+          <li className="list-group-item py-4">
+            <div className="row">
+              <div className="col-md-4">
+                <h5 className="row">
+                  <div className="col-1 col-md-2 col-lg-2 pr-1 d-flex justify-content-center align-items-center">
                     <svg
                       width="1em"
                       height="1em"
                       viewBox="0 0 16 16"
-                      class="bi bi-calendar2-date text-primary"
+                      className="bi bi-calendar2-date text-primary"
                       fill="currentColor"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -152,20 +152,20 @@ function TimelineSection1(props) {
                       <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z"></path>
                     </svg>
                   </div>
-                  <div class="col">
+                  <div className="col">
                     <span>
                       {" "}
                       19<sup>th</sup> Aug, 2020{" "}
                     </span>
                   </div>
                 </h5>
-                <h6 class="text-muted row">
-                  <div class="col-1 col-md-2 col-lg-2 pr-1 d-flex justify-content-center align-items-center">
+                <h6 className="text-muted row">
+                  <div className="col-1 col-md-2 col-lg-2 pr-1 d-flex justify-content-center align-items-center">
                     <svg
                       width="1em"
                       height="1em"
                       viewBox="0 0 16 16"
-                      class="bi bi-bookmark-check text-primary"
+                      className="bi bi-bookmark-check text-primary"
                       fill="currentColor"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -179,17 +179,17 @@ function TimelineSection1(props) {
                       ></path>
                     </svg>
                   </div>
-                  <div class="col">
+                  <div className="col">
                     <span> Location </span>
                   </div>
                 </h6>
-                <h6 class="text-muted row">
-                  <div class="col-1 col-md-2 col-lg-2 pr-1 d-flex justify-content-center align-items-center">
+                <h6 className="text-muted row">
+                  <div className="col-1 col-md-2 col-lg-2 pr-1 d-flex justify-content-center align-items-center">
                     <svg
                       width="1em"
                       height="1em"
                       viewBox="0 0 16 16"
-                      class="bi bi-clock text-primary"
+                      className="bi bi-clock text-primary"
                       fill="currentColor"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -203,16 +203,16 @@ function TimelineSection1(props) {
                       ></path>
                     </svg>
                   </div>
-                  <div class="col">
+                  <div className="col">
                     <span> 1200 Hrs </span>
                   </div>
                 </h6>
               </div>
-              <div class="col-md-8">
-                <div class="px-0 px-md-3 py-2 py-md-0 d-flex flex-column justify-content-between h-100">
+              <div className="col-md-8">
+                <div className="px-0 px-md-3 py-2 py-md-0 d-flex flex-column justify-content-between h-100">
                   <div>
-                    <h3 class="card-title">The Wildlife diary</h3>
-                    <p class="card-text">
+                    <h3 className="card-title">The Wildlife diary</h3>
+                    <p className="card-text">
                       A wonderful serenity has taken possession of my entire
                       soul, like these sweet mornings of spring which I enjoy
                       with my whole heart. I am alone, and feel the charm of
@@ -221,17 +221,17 @@ function TimelineSection1(props) {
                     </p>
                   </div>
                   <div>
-                    <div class="d-flex justify-content-between align-items-center">
-                      <div class="text-muted">
-                        <small class="">Last updated 5 mins ago</small>
+                    <div className="d-flex justify-content-between align-items-center">
+                      <div className="text-muted">
+                        <small className="">Last updated 5 mins ago</small>
                       </div>
-                      <div class="btn btn-sm btn-primary">
+                      <div className="btn btn-sm btn-primary">
                         See more
                         <svg
                           width="1em"
                           height="1em"
                           viewBox="0 0 16 16"
-                          class="bi bi-arrow-right"
+                          className="bi bi-arrow-right"
                           fill="currentColor"
                           xmlns="http://www.w3.org/2000/svg"
                         >
@@ -251,16 +251,16 @@ function TimelineSection1(props) {
               </div>
             </div>
           </li>
-          <li class="list-group-item py-4">
-            <div class="row">
-              <div class="col-md-4">
-                <h5 class="row">
-                  <div class="col-1 col-md-2 col-lg-2 pr-1 d-flex justify-content-center align-items-center">
+          <li className="list-group-item py-4">
+            <div className="row">
+              <div className="col-md-4">
+                <h5 className="row">
+                  <div className="col-1 col-md-2 col-lg-2 pr-1 d-flex justify-content-center align-items-center">
                     <svg
                       width="1em"
                       height="1em"
                       viewBox="0 0 16 16"
-                      class="bi bi-calendar2-date text-primary"
+                      className="bi bi-calendar2-date text-primary"
                       fill="currentColor"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -276,20 +276,20 @@ function TimelineSection1(props) {
                       <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z"></path>
                     </svg>
                   </div>
-                  <div class="col">
+                  <div className="col">
                     <span>
                       {" "}
                       19<sup>th</sup> Aug, 2020{" "}
                     </span>
                   </div>
                 </h5>
-                <h6 class="text-muted row">
-                  <div class="col-1 col-md-2 col-lg-2 pr-1 d-flex justify-content-center align-items-center">
+                <h6 className="text-muted row">
+                  <div className="col-1 col-md-2 col-lg-2 pr-1 d-flex justify-content-center align-items-center">
                     <svg
                       width="1em"
                       height="1em"
                       viewBox="0 0 16 16"
-                      class="bi bi-bookmark-check text-primary"
+                      className="bi bi-bookmark-check text-primary"
                       fill="currentColor"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -303,17 +303,17 @@ function TimelineSection1(props) {
                       ></path>
                     </svg>
                   </div>
-                  <div class="col">
+                  <div className="col">
                     <span> Location </span>
                   </div>
                 </h6>
-                <h6 class="text-muted row">
-                  <div class="col-1 col-md-2 col-lg-2 pr-1 d-flex justify-content-center align-items-center">
+                <h6 className="text-muted row">
+                  <div className="col-1 col-md-2 col-lg-2 pr-1 d-flex justify-content-center align-items-center">
                     <svg
                       width="1em"
                       height="1em"
                       viewBox="0 0 16 16"
-                      class="bi bi-clock text-primary"
+                      className="bi bi-clock text-primary"
                       fill="currentColor"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -327,16 +327,16 @@ function TimelineSection1(props) {
                       ></path>
                     </svg>
                   </div>
-                  <div class="col">
+                  <div className="col">
                     <span> 1200 Hrs </span>
                   </div>
                 </h6>
               </div>
-              <div class="col-md-8">
-                <div class="px-0 px-md-3 py-2 py-md-0 d-flex flex-column justify-content-between h-100">
+              <div className="col-md-8">
+                <div className="px-0 px-md-3 py-2 py-md-0 d-flex flex-column justify-content-between h-100">
                   <div>
-                    <h3 class="card-title">The Wildlife diary</h3>
-                    <p class="card-text">
+                    <h3 className="card-title">The Wildlife diary</h3>
+                    <p className="card-text">
                       A wonderful serenity has taken possession of my entire
                       soul, like these sweet mornings of spring which I enjoy
                       with my whole heart. I am alone, and feel the charm of
@@ -345,17 +345,17 @@ function TimelineSection1(props) {
                     </p>
                   </div>
                   <div>
-                    <div class="d-flex justify-content-between align-items-center">
-                      <div class="text-muted">
-                        <small class="">Last updated 5 mins ago</small>
+                    <div className="d-flex justify-content-between align-items-center">
+                      <div className="text-muted">
+                        <small className="">Last updated 5 mins ago</small>
                       </div>
-                      <div class="btn btn-sm btn-primary">
+                      <div className="btn btn-sm btn-primary">
                         See more
                         <svg
                           width="1em"
                           height="1em"
                           viewBox="0 0 16 16"
-                          class="bi bi-arrow-right"
+                          className="bi bi-arrow-right"
                           fill="currentColor"
                           xmlns="http://www.w3.org/2000/svg"
                         >
