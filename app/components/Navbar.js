@@ -43,6 +43,9 @@ function NavbarComponent() {
           <Nav.Item>
             <Nav.Link href="/contact-us">Contact</Nav.Link>
           </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href="/FAQs">FAQ's</Nav.Link>
+          </Nav.Item>
         </Nav>
         <Nav>
           <Nav.Item>
