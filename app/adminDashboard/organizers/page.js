@@ -137,45 +137,72 @@ const AdminDashboardOrganizerPage = () => {
       {
         <div class="container">
           <div class="row">
+            <div
+              class="section_heading text-center wow fadeInUp"
+              data-wow-delay="0.2s"
+              style={{
+                visibility: "visible",
+                animationDelay: "0.2s",
+                animationName: "fadeInUp",
+              }}
+            >
+              <h3>
+                Organizers <span> Team</span>
+              </h3>
+              <div class="line"></div>
+            </div>
             {organizers.map((organizer) => (
-              <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card h-100">
-                  <div class="card-body text-center">
-                    <img
-                      src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
-                      alt="avatar"
-                      class="rounded-circle img-fluid"
-                      style={{ width: "133px" }}
-                    />
-                    <h5 class="my-3">
-                      {organizer.firstName} {organizer.lastName}
-                    </h5>
-                    <p class="text-muted mb-1">{organizer.email}</p>
-                    <p class="text-muted mb-4">
-                      {organizer.role.toUpperCase()}
-                    </p>
-                    <div class="d-flex justify-content-center mb-2">
-                      <button
-                        type="button"
-                        data-mdb-button-init
-                        data-mdb-ripple-init
-                        class="btn btn-primary btn-sm mx-3"
-                        onClick={() => handleChangeRole(organizer.email)}
-                      >
-                        Change Role To User
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-outline-secondary btn-sm p-1 mx-2"
-                        onClick={() => handleDeleteOrganizer(organizer.email)}
-                      >
+              <div class="container">
+                <div class="row justify-content-center">
+                  <div class="col-12 col-sm-8 col-lg-6"></div>
+                </div>
+                <div class="row">
+                  <div class="col-12 col-sm-6 col-lg-3">
+                    <div
+                      class="single_advisor_profile wow fadeInUp"
+                      data-wow-delay="0.2s"
+                      style={{
+                        visibility: "visible",
+                        animationDelay: "0.2s",
+                        animationName: "fadeInUp",
+                      }}
+                    >
+                      <div class="advisor_thumb">
                         <img
-                          src="/delete.png"
-                          width="20"
-                          height="20"
-                          alt="delete"
+                          src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                          alt=""
                         />
-                      </button>
+                      </div>
+
+                      <div class="single_advisor_details_info">
+                        <h6>
+                          {organizer.firstName} {organizer.lastName}
+                        </h6>
+                        <p class="designation">
+                          {organizer.role.toUpperCase()}
+                        </p>
+                        <button
+                          type="button"
+                          data-mdb-button-init
+                          data-mdb-ripple-init
+                          class="btn btn-primary btn-sm mx-3"
+                          onClick={() => handleChangeRole(organizer.email)}
+                        >
+                          Change Role To User
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-outline-secondary btn-sm p-1 mx-2"
+                          onClick={() => handleDeleteOrganizer(organizer.email)}
+                        >
+                          <img
+                            src="/delete.png"
+                            width="20"
+                            height="20"
+                            alt="delete"
+                          />
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
