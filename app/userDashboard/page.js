@@ -15,9 +15,6 @@ export default function userHome() {
   const [loading, setLoading] = useState(true);
   const router = useRouter();
 
-
-
-
   useEffect(() => {
     if (!token) {
       setTimeout(() => {
@@ -53,10 +50,9 @@ export default function userHome() {
     return (
       <>
         <Navbar />
-        <SearchBar setEvents = {setEvents} events = {events} />
+        <SearchBar setEvents={setEvents} events={events} />
         <EventListing events={events} />
       </>
     );
   }
 }
-
