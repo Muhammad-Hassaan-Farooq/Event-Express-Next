@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer
       class="text-center text-lg-start text-white"
-      style={{ backgroundColor: "#1c2331" }}
+      style={{ backgroundColor: "#1c2331"}}
     >
       <section
         class="d-flex justify-content-between p-4"

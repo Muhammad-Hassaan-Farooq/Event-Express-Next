@@ -1,6 +1,7 @@
 "use client";
 import NavbarComponent from "../components/Navbar";
 
+
 const AboutPage = () => {
   return (
     <>
@@ -90,7 +91,16 @@ const AboutPage = () => {
         </div>
       </div>
 
-      <div className="bg-light py-5">
+      <div
+        className="bg-light py-5"
+        style={{
+          backgroundImage:
+            "url('https://png.pngtree.com/thumb_back/fh260/back_our/20190622/ourmid/pngtree-silhouette-of-the-team-s-success-image_215394.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+        }}
+      >
         <div className="container py-5">
           <div className="row mb-4">
             <div className="col-lg-5">
