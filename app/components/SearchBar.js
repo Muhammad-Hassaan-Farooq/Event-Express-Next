@@ -20,7 +20,8 @@ const SearchBar = ({ setEvents, events }) => {
   const [location, setLocation] = useState("");
   const [date, setDate] = useState("");
   const [organizer, setOrganizer] = useState("");
-  const [price, setPrice] = useState("");
+  const [maxPrice, setMaxPrice] = useState("");
+  const [minPrice, setMinPrice] = useState("");
   const [category, setCategory] = useState("");
   const handleSearchbyDate = async () => {
     try {
@@ -99,15 +100,50 @@ const SearchBar = ({ setEvents, events }) => {
 
   const handleSearchByPrice = async () => {
     try {
-      const response = await axios.post(
+      let response = null;
+      
+      if(maxPrice ===  undefined || maxPrice === ""){
+        console.log("maxPrice is undefined");
+         response = await axios.post(
+          "http://localhost:3000/event/getByPrice",
+          { minPrice: minPrice},
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+      }
+      else if (minPrice === undefined || minPrice === ""){
+        console.log("minPrice is undefined")
+         response = await axios.post(
+          "http://localhost:3000/event/getByPrice",
+          { maxPrice: maxPrice},
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+      }
+      // else if(maxPrice < minPrice){
+      //   console.log("maxPrice is less than minPrice");
+      //   NotificationManager.error("Maximum price should be greater than minimum price", "Error");
+      // }
+      else{
+        console.log("both are defined")
+       response = await axios.post(
         "http://localhost:3000/event/getByPrice",
-        { price: price },
+        { maxPrice: maxPrice,
+          minPrice: minPrice
+         },
         {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         }
       );
+    }
       if (response.data.success) {
         setEvents(response.data.data);
         NotificationManager.success(response.data.message, "Success");
@@ -168,7 +204,8 @@ const SearchBar = ({ setEvents, events }) => {
     setLocation("");
     setDate("");
     setOrganizer("");
-    setPrice("");
+    setMaxPrice("");
+    setMinPrice("");
     setCategory("");
     handleDefault();
   };
@@ -202,11 +239,22 @@ const SearchBar = ({ setEvents, events }) => {
     setCategory(category);
 
     // Clear other fields
-    if (category !== "name") setName("");
-    if (category !== "location") setLocation("");
-    if (category !== "org") setOrganizer("");
-    if (category !== "price") setPrice("");
-    if (category !== "date") setDate("");
+    if (category !== "name") {
+      setName("");
+    }
+    if (category !== "location") {
+      setLocation("");
+    }
+    if (category !== "org") {
+      setOrganizer("");
+    }
+    if (category !== "price") {
+      setMaxPrice("");
+      setMinPrice("");
+    }
+    if (category !== "date") {
+      setDate("");
+    }
   };
 
   return (
@@ -260,8 +308,8 @@ const SearchBar = ({ setEvents, events }) => {
           <input
             className="form-control border-secondary border-right-0 rounded-5"
             type="search"
-            value={price}
-            onChange={handleInputChange(setPrice, "price")}
+            value={minPrice}
+            onChange={handleInputChange(setMinPrice, "price")}
             id="example-search-input4"
             placeholder="Minimum price"
           />
@@ -270,9 +318,9 @@ const SearchBar = ({ setEvents, events }) => {
           <input
             className="form-control border-secondary border-right-0 rounded-5"
             type="search"
-            value={price}
-            onChange={handleInputChange(setPrice, "price")}
-            id="example-search-input4"
+            value={maxPrice}
+            onChange={handleInputChange(setMaxPrice, "price")}
+            id="example-search-input5"
             placeholder="Maximum price"
           />
         </div>
