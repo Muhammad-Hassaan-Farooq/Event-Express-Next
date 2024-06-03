@@ -5,8 +5,11 @@ import PreviewButton from "./components/PreviewButton";
 import { useState } from "react";
 import Slider from "./components/Slider";
 import NavbarComponent from "../components/Navbar";
+import { usePathname, useSearchParams } from "next/navigation";
 
 function Page({ event }) {
+  const eventID = useSearchParams().get("eventId");
+
   const [currentlySelectedSection, setCurrentlySelectedSection] = useState("");
 
   const [componentStates, setComponentStates] = useState({
@@ -42,6 +45,7 @@ function Page({ event }) {
         sections={sections}
         componentStates={componentStates}
         setComponentStates={setComponentStates}
+        eventID={eventID}
       />
     </>
   );

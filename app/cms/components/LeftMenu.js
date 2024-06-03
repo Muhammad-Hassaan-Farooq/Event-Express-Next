@@ -3,6 +3,9 @@ const Hero2 = require("../../assets/Hero2.png");
 const Ticket4 = require("../../assets/Ticket4.png");
 const Timeline1 = require("../../assets/Timeline1.png");
 
+import axios from "axios";
+import Cookies from "js-cookie";
+
 import EditableHeroSection1 from "./CMSComponents/editableCards/EditableHeroSection1";
 import EditableHeroSection2 from "./CMSComponents/editableCards/EditHeroSection2";
 import "../styles/LeftMenu.css";
@@ -15,8 +18,38 @@ function LeftMenu({
   sections,
   componentStates,
   setComponentStates,
+  eventID,
 }) {
-  const handleSave = () => {};
+  const handleSave = async () => {
+    const token = Cookies.get("token");
+
+    try {
+      const response = await axios.post(
+        `http://localhost:3000/eventPage/setEventPage/${eventID}`,
+        {
+          sections: sections,
+          componentStates: componentStates,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      if (response.data.success) {
+        console.log("Event updated successfully");
+      } else {
+        console.error(response.data.message);
+      }
+    } catch (error) {
+      if (error.response && error.response.data) {
+        console.error("Error response data:", error.response.data);
+      } else {
+        console.error("Unexpected error:", error);
+      }
+    }
+  };
 
   const editableComponentMap = {
     HeroSection1: EditableHeroSection1,
@@ -251,6 +284,7 @@ function LeftMenu({
             <button
               className="btn btn-outline-secondary border-left-0 rounded-5 rounded-right ml-2"
               type="button"
+              onClick={handleSave}
             >
               Save <i className="fa fa-times"></i>
             </button>

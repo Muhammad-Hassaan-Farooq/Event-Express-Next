@@ -30,23 +30,28 @@ async function page({ params }) {
     const renderComponent = (section, componentId) => {
       const Component = componentMap[componentId];
 
+      if (!Component) {
+        return null;
+      }
+
       return <Component {...componentStates[section][componentId]} />;
     };
 
     return (
       <div>
         <NavbarComponent />
-        {Object.entries(sections).map(([section, componentIds]) => (
-          <div key={section} className="vh-100">
-            {renderComponent(section, componentIds)}
-          </div>
-        ))}
+        {Object.entries(sections).map(
+          ([section, componentIds]) =>
+            componentIds.length > 0 && (
+              <div key={section} className="vh-100">
+                {renderComponent(section, componentIds)}
+              </div>
+            )
+        )}
       </div>
     );
   } catch (error) {
-    if (error.response.data.message === "Event page not found") {
-      return <div>Page not found</div>;
-    }
+    console.log(error);
   }
 }
 
