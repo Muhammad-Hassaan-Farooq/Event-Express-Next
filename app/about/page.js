@@ -5,7 +5,15 @@ const AboutPage = () => {
   return (
     <>
       <NavbarComponent />
-      <div className="bg-light">
+      <div
+        className="bg-light"
+        style={{
+          backgroundImage:
+            "url('https://visitabudhabi.ae/-/media/project/vad/homepage/november-2023/box-overlay/relaxing-at-nurai-island.jpg?cx=0.26&cy=0.51&cw=2046&ch=924&hash=95CE13079C8BE65F6BE3262469B1A439')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <div className="container py-5">
           <div className="row h-100 align-items-center py-5">
             <div className="col-lg-6">
@@ -18,23 +26,24 @@ const AboutPage = () => {
                 the academic experience.
               </p>
             </div>
-            <div className="col-lg-6 d-none d-lg-block">
-              <img
-                src= "https://bootstrapious.com/i/snippets/sn-about/img-1.jpg"
-                alt=""
-                className="img-fluid"
-              />
-            </div>
           </div>
         </div>
       </div>
 
-      <div className="bg-white py-5">
+      <div
+        className="bg-white py-5"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <div className="container py-5">
           <div className="row align-items-center mb-5">
             <div className="col-lg-6 order-2 order-lg-1">
               <i className="fa fa-bar-chart fa-2x mb-3 text-primary"></i>
-              <h2 className="font-weight-light">Our Vision</h2>
+              <h2 className="font-weight-light ">Our Vision</h2>
               <p className="font-italic text-muted mb-4">
                 We envision a future where every university event is not just an
                 isolated activity but a pivotal part of the campus experience,
@@ -46,22 +55,9 @@ const AboutPage = () => {
                 Learn More
               </a>
             </div>
-            <div className="col-lg-5 px-5 mx-auto order-1 order-lg-2">
-              <img
-                src="https://bootstrapious.com/i/snippets/sn-about/img-1.jpg"
-                alt=""
-                className="img-fluid mb-4 mb-lg-0"
-              />
-            </div>
           </div>
           <div className="row align-items-center">
-            <div className="col-lg-5 px-5 mx-auto">
-              <img
-                src="https://bootstrapious.com/i/snippets/sn-about/img-2.jpg"
-                alt=""
-                className="img-fluid mb-4 mb-lg-0"
-              />
-            </div>
+            <div className="col-lg-5 px-5 mx-auto"></div>
             <div className="col-lg-6">
               <i className="fa fa-leaf fa-2x mb-3 text-primary"></i>
               <h2 className="font-weight-light">Why Choose Us?</h2>
@@ -107,7 +103,7 @@ const AboutPage = () => {
             <div className="col-xl-3 col-sm-6 mb-5">
               <div className="bg-white rounded shadow-sm py-5 px-4">
                 <img
-                  src="https://bootstrapious.com/i/snippets/sn-about/avatar-4.png"
+                  src="https://bootstrapious.com/i/snippets/sn-about/avatar-1.png"
                   alt=""
                   width="100"
                   className="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
@@ -143,7 +139,7 @@ const AboutPage = () => {
             <div className="col-xl-3 col-sm-6 mb-5">
               <div className="bg-white rounded shadow-sm py-5 px-4">
                 <img
-                  src="https://bootstrapious.com/i/snippets/sn-about/avatar-3.png"
+                  src="https://bootstrapious.com/i/snippets/sn-about/avatar-2.png"
                   alt=""
                   width="100"
                   className="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
@@ -179,14 +175,14 @@ const AboutPage = () => {
             <div className="col-xl-3 col-sm-6 mb-5">
               <div className="bg-white rounded shadow-sm py-5 px-4">
                 <img
-                  src="https://bootstrapious.com/i/snippets/sn-about/avatar-2.png"
+                  src="https://bootstrapious.com/i/snippets/sn-about/avatar-1.png"
                   alt=""
                   width="100"
                   className="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
                 />
                 <h5 className="mb-0">Burhanuddin Markra</h5>
                 <span className="small text-uppercase text-muted">
-                  Assistant Manager
+                  COO - Co-Founder
                 </span>
                 <ul className="social mb-0 list-inline mt-3">
                   <li className="list-inline-item">
@@ -215,14 +211,14 @@ const AboutPage = () => {
             <div className="col-xl-3 col-sm-6 mb-5">
               <div className="bg-white rounded shadow-sm py-5 px-4">
                 <img
-                  src="https://bootstrapious.com/i/snippets/sn-about/avatar-1.png"
+                  src="https://bootstrapious.com/i/snippets/sn-about/avatar-3.png"
                   alt=""
                   width="100"
                   className="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
                 />
-                <h5 className="mb-0">John Tarly</h5>
+                <h5 className="mb-0">Sami Ul Ahbab</h5>
                 <span className="small text-uppercase text-muted">
-                  CEO - Founder
+                  CEO - Technyx Solutions
                 </span>
                 <ul className="social mb-0 list-inline mt-3">
                   <li className="list-inline-item">
