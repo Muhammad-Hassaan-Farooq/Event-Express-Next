@@ -1,13 +1,12 @@
 "use client";
 import NavbarComponent from "../components/Navbar";
 
-
 const AboutPage = () => {
   return (
     <>
       <NavbarComponent />
       <div
-        className="bg-light"
+        className="bg-light vh-100"
         style={{
           backgroundImage:
             "url('https://visitabudhabi.ae/-/media/project/vad/homepage/november-2023/box-overlay/relaxing-at-nurai-island.jpg?cx=0.26&cy=0.51&cw=2046&ch=924&hash=95CE13079C8BE65F6BE3262469B1A439')",
@@ -33,7 +32,7 @@ const AboutPage = () => {
       </div>
 
       <div
-        className="bg-white py-5"
+        className="bg-white py-5 vh-100"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
@@ -92,7 +91,7 @@ const AboutPage = () => {
       </div>
 
       <div
-        className="bg-light py-5"
+        className="bg-light py-5 vh-100"
         style={{
           backgroundImage:
             "url('https://png.pngtree.com/thumb_back/fh260/back_our/20190622/ourmid/pngtree-silhouette-of-the-team-s-success-image_215394.jpg')",
