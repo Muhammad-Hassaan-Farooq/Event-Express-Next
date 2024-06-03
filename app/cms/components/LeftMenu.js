@@ -16,6 +16,8 @@ function LeftMenu({
   componentStates,
   setComponentStates,
 }) {
+  const handleSave = () => {};
+
   const editableComponentMap = {
     HeroSection1: EditableHeroSection1,
     HeroSection2: EditableHeroSection2,
@@ -244,6 +246,14 @@ function LeftMenu({
                   </div>
                 )}
             </div>
+          </div>
+          <div className="d-flex justify-content-center m-3">
+            <button
+              className="btn btn-outline-secondary border-left-0 rounded-5 rounded-right ml-2"
+              type="button"
+            >
+              Save <i className="fa fa-times"></i>
+            </button>
           </div>
         </div>
       </div>
