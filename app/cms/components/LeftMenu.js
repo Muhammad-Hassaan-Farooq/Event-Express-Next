@@ -5,6 +5,7 @@ const Timeline1 = require("../../assets/Timeline1.png");
 
 import axios from "axios";
 import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
 
 import EditableHeroSection1 from "./CMSComponents/editableCards/EditableHeroSection1";
 import EditableHeroSection2 from "./CMSComponents/editableCards/EditHeroSection2";
@@ -20,6 +21,7 @@ function LeftMenu({
   setComponentStates,
   eventID,
 }) {
+  const router = useRouter();
   const handleSave = async () => {
     const token = Cookies.get("token");
 
@@ -39,6 +41,7 @@ function LeftMenu({
 
       if (response.data.success) {
         console.log("Event updated successfully");
+        router.push(`/event/${eventID}`);
       } else {
         console.error(response.data.message);
       }
