@@ -48,22 +48,17 @@ function EditableHeroSection1({
     }));
   };
 
-  const handleBackgroundImageChange = (e) => {
-    const file = e.target.files[0];
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      setComponentStates((prevStates) => ({
-        ...prevStates,
-        [section]: {
-          ...prevStates[section],
-          [componentId]: {
-            ...prevStates[section][componentId],
-            backgroundImage: `url(${reader.result})`,
-          },
+  const handleBackgroundImageChange = async (e) => {
+    setComponentStates((prevStates) => ({
+      ...prevStates,
+      [section]: {
+        ...prevStates[section],
+        [componentId]: {
+          ...prevStates[section][componentId],
+          backgroundImage: `url('${e.info.url}')`,
         },
-      }));
-    };
-    reader.readAsDataURL(file);
+      },
+    }));
   };
 
   const handlePictureChange = async (e) => {
@@ -109,14 +104,15 @@ function EditableHeroSection1({
       <CldUploadButton
         onSuccess={handlePictureChange}
         uploadPreset="dzpzqu4x"
-        options={{
-          maxImageHeight: 350,
-          maxImageWidth: 500,
-        }}
+        className="btn btn-primary"
       >
         Upload Picture
       </CldUploadButton>
-      <CldUploadButton uploadPreset="dzpzqu4x">
+      <CldUploadButton
+        uploadPreset="dzpzqu4x"
+        onSuccess={handleBackgroundImageChange}
+        className="btn btn-primary"
+      >
         Upload Background Image
       </CldUploadButton>
     </div>

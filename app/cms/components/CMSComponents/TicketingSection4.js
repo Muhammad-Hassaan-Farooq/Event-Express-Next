@@ -1,11 +1,9 @@
 function TicketingSection4({ numberOfCards, cards }) {
   if (numberOfCards < 1) numberOfCards = 1;
   if (numberOfCards > 4) numberOfCards = 4;
-  console.log(cards);
 
-  console.log;
   return (
-    <section className="bg-white">
+    <section className="bg-white h-100">
       <div className="container py-5">
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3">
           {Array.from({ length: numberOfCards }).map((_, index) => {
