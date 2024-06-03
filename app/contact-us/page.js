@@ -1,11 +1,11 @@
-"use client"
+"use client";
 import NavbarComponent from "../components/Navbar";
 import "../styles/contact-us.css";
 
 const ContactUsPage = () => {
   return (
     <>
-    <NavbarComponent/>
+      <NavbarComponent />
       <section class="contact-address-area">
         <div class="container">
           <div class="sec-title-style1 text-center max-width">
@@ -21,9 +21,9 @@ const ContactUsPage = () => {
             </div>
             <div class="bottom-text">
               <p>
-                Fixyman is proud to be the name that nearly 1 million homeowners
-                have trusted since 1996 for home improvement and repair,
-                providing virtually any home repair.
+                Our event management app is the trusted choice for university
+                students and staff, simplifying event discovery, management, and
+                ticket purchases for all campus activities.
               </p>
             </div>
           </div>
@@ -57,7 +57,7 @@ const ContactUsPage = () => {
               <h2>Lorem Ipsum is simply dummy</h2>
             </div>
             <div class="col-sm-4 single-contact-address-box main-branch">
-              <h3>Lorem Ipsum</h3>
+              <h3>Contact Info</h3>
               <div class="inner">
                 <ul>
                   <li>
@@ -66,8 +66,11 @@ const ContactUsPage = () => {
                     </div>
                     <div class="text">
                       <p>
-                        Lorem Ipsum, 40C, Lorem Ipsum dummy,
-                        <br /> Lorem Ipsum, Ch 98054
+                        University Events Office,
+                        <br />
+                        123 University Avenue
+                        <br />
+                        Karachi, Pakistam
                       </p>
                     </div>
                   </li>
@@ -77,7 +80,7 @@ const ContactUsPage = () => {
                     </div>
                     <div class="text">
                       <p>
-                        +123 456 789 <br /> test@info.com
+                        +(92) 333 1234567 <br /> info@eventexpress.com
                       </p>
                     </div>
                   </li>
@@ -87,8 +90,11 @@ const ContactUsPage = () => {
                     </div>
                     <div class="text">
                       <p>
-                        Mon-Fri: 9:30am - 6:30pm
-                        <br /> Sat-Sun: Closed
+                        Monday to Friday: 9 AM - 5 PM
+                        <br />
+                        Saturday: 10 AM - 2 PM
+                        <br />
+                        Sunday: Closed
                       </p>
                     </div>
                   </li>
@@ -110,7 +116,7 @@ const ContactUsPage = () => {
           </div>
         </div>
       </section>
-      <section class="contact-info-area">
+      {/* <section class="contact-info-area">
         <div class="container">
           <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
@@ -228,7 +234,7 @@ const ContactUsPage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };

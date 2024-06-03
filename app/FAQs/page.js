@@ -1,11 +1,11 @@
-"use client"
+"use client";
 import NavbarComponent from "../components/Navbar";
 
 const FAQPage = () => {
   return (
     <div>
       <NavbarComponent />
-      <section class="bsb-faq-3 py-3 py-md-5 py-xl-8">
+      <section class="bsb-faq-3 py-3 py-md-5 py-xl-8" style={{backgroundImage:"url('https://images.pexels.com/photos/7130555/pexels-photo-7130555.jpeg?cs=srgb&dl=pexels-codioful-7130555.jpg&fm=jpg')"}}>
         <div class="container">
           <div class="row justify-content-md-center">
             <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
@@ -190,7 +190,7 @@ const FAQPage = () => {
               <div class="col-11 col-xl-10">
                 <div class="d-flex align-items-end mb-5">
                   <i class="bi bi-cart-plus me-3 lh-1 display-5"></i>
-                  <h3 class="m-0">Placing an Order</h3>
+                  <h3 class="m-0 mt-3">Placing an Order</h3>
                 </div>
               </div>
               <div class="col-11 col-xl-10">
@@ -205,7 +205,7 @@ const FAQPage = () => {
                         aria-expanded="false"
                         aria-controls="faqOrderCollapse1"
                       >
-                        Do I need to create an account to place an order?
+                        Do I need to create an account to buy an event ticket?
                       </button>
                     </h2>
                     <div
@@ -215,9 +215,9 @@ const FAQPage = () => {
                     >
                       <div class="accordion-body">
                         <p>
-                          You can order as a guest if you create an account.
-                          However, creating an account allows for faster
-                          checkout and order tracking.
+                          Yes, you should have an account to buy an event
+                          ticket. Creating an account allows you to track your
+                          past buying history and manage your tickets easily.
                         </p>
                       </div>
                     </div>
@@ -232,7 +232,8 @@ const FAQPage = () => {
                         aria-expanded="false"
                         aria-controls="faqOrderCollapse2"
                       >
-                        Can I change or cancel my order after it's been placed?
+                        Can I change or cancel my ticket after it's been
+                        purchased?
                       </button>
                     </h2>
                     <div
@@ -242,9 +243,11 @@ const FAQPage = () => {
                     >
                       <div class="accordion-body">
                         <p>
-                          Orders can be modified or canceled within a short time
-                          after placing them. Contact our customer support as
-                          soon as possible to make any changes.
+                          Tickets can be modified or canceled within a short
+                          time after purchasing them. You can click the cancel
+                          ticket button on the event Page or Contact our
+                          customer support as soon as possible to make any
+                          changes.
                         </p>
                       </div>
                     </div>
@@ -315,7 +318,7 @@ const FAQPage = () => {
                         aria-expanded="false"
                         aria-controls="faqOrderCollapse5"
                       >
-                        How do I track the status of my order?
+                        How do I know if my ticket purchase was successful??
                       </button>
                     </h2>
                     <div
@@ -325,10 +328,8 @@ const FAQPage = () => {
                     >
                       <div class="accordion-body">
                         <p>
-                          You can track your order by logging into your account
-                          (if you have one) and accessing the order history.
-                          We'll also send you email updates as your order
-                          progresses through the fulfillment process.
+                          You can check the "My Events" section in your account
+                          for your purchase details.
                         </p>
                       </div>
                     </div>
@@ -344,7 +345,7 @@ const FAQPage = () => {
               <div class="col-11 col-xl-10">
                 <div class="d-flex align-items-end mb-5">
                   <i class="bi bi-bag-dash me-3 lh-1 display-5"></i>
-                  <h3 class="m-0">Refunds and Exchanges</h3>
+                  <h3 class="m-0 mt-3">Event Details</h3>
                 </div>
               </div>
               <div class="col-11 col-xl-10">
@@ -359,7 +360,7 @@ const FAQPage = () => {
                         aria-expanded="false"
                         aria-controls="faqRefundCollapse1"
                       >
-                        How do I request a refund or exchange?
+                        How can I get more information about an event?
                       </button>
                     </h2>
                     <div
@@ -369,23 +370,11 @@ const FAQPage = () => {
                     >
                       <div class="accordion-body">
                         <p>
-                          To request a refund or exchange, please follow these
-                          steps:
+                          Each event has a detailed page with information about
+                          the schedule, location, organizers, and any special
+                          instructions. You can also contact the event organizer
+                          directly through the provided contact information.
                         </p>
-                        <ul>
-                          <li>
-                            Contact our customer support team within 30 days of
-                            the purchase.
-                          </li>
-                          <li>
-                            Provide your order number and a detailed reason for
-                            the request.
-                          </li>
-                          <li>
-                            Wait for our customer support team to assess your
-                            request and provide further instructions.
-                          </li>
-                        </ul>
                       </div>
                     </div>
                   </div>
@@ -399,7 +388,7 @@ const FAQPage = () => {
                         aria-expanded="false"
                         aria-controls="faqRefundCollapse2"
                       >
-                        What items are eligible for a refund or exchange?
+                        Are there any age restrictions for events?
                       </button>
                     </h2>
                     <div
@@ -409,18 +398,10 @@ const FAQPage = () => {
                     >
                       <div class="accordion-body">
                         <p>
-                          Eligible items for a refund or exchange must meet the
-                          following criteria:
+                          Some events may have age restrictions. This
+                          information will be clearly mentioned in the event
+                          description. Please check before purchasing a ticket.
                         </p>
-                        <ul>
-                          <li>
-                            They are in their original condition, unused, and in
-                            their original packaging.
-                          </li>
-                          <li>
-                            The request is made within the specified timeframe.
-                          </li>
-                        </ul>
                       </div>
                     </div>
                   </div>
@@ -434,7 +415,7 @@ const FAQPage = () => {
                         aria-expanded="false"
                         aria-controls="faqRefundCollapse3"
                       >
-                        What if I receive a damaged or defective item?
+                        How do I become an event organizer?
                       </button>
                     </h2>
                     <div
@@ -444,10 +425,9 @@ const FAQPage = () => {
                     >
                       <div class="accordion-body">
                         <p>
-                          If you receive a damaged or defective item, please
-                          contact our customer support team immediately. We will
-                          guide you on the return process and offer a refund or
-                          replacement, as appropriate.
+                          To become an Event organizer you need to contact to
+                          your Social Affairs department in your university to
+                          give you the role to create and manage events.
                         </p>
                       </div>
                     </div>
@@ -462,7 +442,7 @@ const FAQPage = () => {
                         aria-expanded="false"
                         aria-controls="faqRefundCollapse4"
                       >
-                        Who covers the shipping costs for exchanges?
+                        How can I find events that match my interests?
                       </button>
                     </h2>
                     <div
@@ -472,10 +452,9 @@ const FAQPage = () => {
                     >
                       <div class="accordion-body">
                         <p>
-                          Shipping costs for returning the item for an exchange
-                          and sending the new item are usually the
-                          responsibility of the customer, unless the exchange is
-                          due to an error on our part.
+                          You can use the search and filter features on the
+                          "Events" page to find events by keywords, categories,
+                          dates, and more.
                         </p>
                       </div>
                     </div>
@@ -490,8 +469,7 @@ const FAQPage = () => {
                         aria-expanded="false"
                         aria-controls="faqRefundCollapse5"
                       >
-                        Can I change my mind and cancel my refund or exchange
-                        request?
+                        Are there any free events available?
                       </button>
                     </h2>
                     <div
@@ -501,11 +479,8 @@ const FAQPage = () => {
                     >
                       <div class="accordion-body">
                         <p>
-                          If you change your mind about a refund or exchange
-                          request, please contact our customer support team as
-                          soon as possible. We will do our best to accommodate
-                          your request, but once a refund or exchange is
-                          processed, it may not be reversible.
+                          Yes, many events are free to attend. You can filter
+                          events by price to find those that are free of charge.
                         </p>
                       </div>
                     </div>
