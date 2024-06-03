@@ -49,7 +49,7 @@ function NavbarComponent() {
             <Nav.Link href="/FAQs">FAQ's</Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href="/userDashboard/MyEvents">Your Events</Nav.Link>
+            <Nav.Link href="/orgDashboard/History"> Past Event</Nav.Link>
           </Nav.Item>
         </Nav>
         <Nav>

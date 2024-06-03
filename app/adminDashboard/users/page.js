@@ -27,7 +27,6 @@ const AdminDashboardUsersPage = () => {
             },
           }
         );
-        console.log(response.data);
         if (response.data.success) {
           setUsers(response.data.data);
           NotificationManager.success(response.data.message, "Success", 1500);
@@ -35,7 +34,7 @@ const AdminDashboardUsersPage = () => {
           NotificationManager.error(response.data.message, "Error", 1500);
         }
       } catch (error) {
-        NotificationManager.error(response.data.message, "Error", 1500);
+        NotificationManager.error("Server Error", "Error", 1500);
       }
     };
 

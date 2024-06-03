@@ -11,20 +11,23 @@ const EditEventDetails = (details) => {
 
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
-    const [date, setDate] = useState('');
+    const [startDate, setDate] = useState('');
     const [location, setLocation] = useState('');
     const [price, setPrice] = useState('');
+    const [attendeesLimit, setAttendeesLimit] = useState('');
     const router = useRouter();
     const token = Cookies.get("token");
     const {id} = useParams();
 
     useEffect(() => {
         if (details) {
+            console.log(details);
             setTitle(details.details.title);
             setDescription(details.details.description);
-            setDate(details.details.date);
+            setDate(details.details.startDate);
             setLocation(details.details.location);
             setPrice(details.details.price);
+            setAttendeesLimit(details.details.attendeesLimit);
         }
     }, [details]);
 
@@ -38,9 +41,10 @@ const EditEventDetails = (details) => {
                 id: id,
                 title,
                 description,
-                date,
+                startDate,
                 location,
-                price
+                price,
+                attendeesLimit
             }, {
                 headers: {
                     Authorization: `Bearer ${token}`
@@ -100,7 +104,7 @@ const EditEventDetails = (details) => {
                         <input
                             type="date"
                             id="date"
-                            value={date}
+                            value={startDate}
                             onChange={(e) => setDate(e.target.value)}
                             required
                             style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}
@@ -124,6 +128,17 @@ const EditEventDetails = (details) => {
                             id="price"
                             value={price}
                             onChange={(e) => setPrice(e.target.value)}
+                            required
+                            style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}
+                        />
+                    </div>
+                    <div style={{ marginBottom: '15px' }}>
+                        <label htmlFor="price" style={{ display: 'block', marginBottom: '5px' }}>Event Capacity</label>
+                        <input
+                            type="number"
+                            id="attendeesLimit"
+                            value={attendeesLimit}
+                            onChange={(e) => setAttendeesLimit(e.target.value)}
                             required
                             style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}
                         />

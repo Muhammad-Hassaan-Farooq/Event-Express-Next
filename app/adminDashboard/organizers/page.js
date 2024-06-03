@@ -35,7 +35,7 @@ const AdminDashboardOrganizerPage = () => {
           NotificationManager.error(response.data.message, "Error", 1500);
         }
       } catch (error) {
-        NotificationManager.error(response.data.message, "Error", 1500);
+        NotificationManager.error("Server Error", "Error", 1500);
       }
     };
 
