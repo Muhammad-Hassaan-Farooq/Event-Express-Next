@@ -4,8 +4,9 @@ import MainPage from "./components/MainPage";
 import PreviewButton from "./components/PreviewButton";
 import { useState } from "react";
 import Slider from "./components/Slider";
+import NavbarComponent from "../components/Navbar";
 
-function Page() {
+function Page({ event }) {
   const [currentlySelectedSection, setCurrentlySelectedSection] = useState("");
 
   const [componentStates, setComponentStates] = useState({
@@ -26,6 +27,7 @@ function Page() {
 
   return (
     <>
+      <NavbarComponent />
       <PreviewButton />
       <MainPage
         setCurrentlySelectedSection={setCurrentlySelectedSection}

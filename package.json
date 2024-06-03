@@ -17,6 +17,7 @@
     "jwt-decode": "^4.0.0",
     "mdb-react-ui-kit": "^8.0.0",
     "next": "^14.2.1",
+    "next-cloudinary": "^6.6.2",
     "npm": "^10.6.0",
     "react": "^18",
     "react-bootstrap": "^2.10.2",

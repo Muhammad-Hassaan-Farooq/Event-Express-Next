@@ -1,3 +1,6 @@
+"use client";
+import { CldUploadButton, getCldImageUrl } from "next-cloudinary";
+
 function EditableHeroSection1({
   setComponentStates,
   state,
@@ -45,6 +48,37 @@ function EditableHeroSection1({
     }));
   };
 
+  const handleBackgroundImageChange = (e) => {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setComponentStates((prevStates) => ({
+        ...prevStates,
+        [section]: {
+          ...prevStates[section],
+          [componentId]: {
+            ...prevStates[section][componentId],
+            backgroundImage: `url(${reader.result})`,
+          },
+        },
+      }));
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const handlePictureChange = async (e) => {
+    setComponentStates((prevStates) => ({
+      ...prevStates,
+      [section]: {
+        ...prevStates[section],
+        [componentId]: {
+          ...prevStates[section][componentId],
+          picture: e.info.url,
+        },
+      },
+    }));
+  };
+
   return (
     <div className="form-group">
       <label for="hook">Hook</label>
@@ -71,14 +105,20 @@ function EditableHeroSection1({
         value={subtitle}
         onChange={handleSubtitleChange}
       />
-      <label for="picture">Picture</label>
-      <input type="file" className="form-control-file mb-3" id="picture" />
-      <label for="backgroundImage">Background Image</label>
-      <input
-        type="file"
-        className="form-control-file mb-3"
-        id="backgroundImage"
-      />
+
+      <CldUploadButton
+        onSuccess={handlePictureChange}
+        uploadPreset="dzpzqu4x"
+        options={{
+          maxImageHeight: 350,
+          maxImageWidth: 500,
+        }}
+      >
+        Upload Picture
+      </CldUploadButton>
+      <CldUploadButton uploadPreset="dzpzqu4x">
+        Upload Background Image
+      </CldUploadButton>
     </div>
   );
 }

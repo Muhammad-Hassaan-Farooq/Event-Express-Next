@@ -12,6 +12,7 @@ const CreateEvent = () => {
     const [date, setDate] = useState('');
     const [location, setLocation] = useState('');
     const [price, setPrice] = useState('');
+    const [attendeesLimit, setAttendeesLimit] = useState('');
 
     const token = Cookies.get("token");
     const router = useRouter();
@@ -24,7 +25,8 @@ const CreateEvent = () => {
                 description,
                 date,
                 location,
-                price
+                price,
+                attendeesLimit
             }, {
                 headers: {
                     Authorization: `Bearer ${token}`
@@ -107,6 +109,17 @@ const CreateEvent = () => {
                             id="price"
                             value={price}
                             onChange={(e) => setPrice(e.target.value)}
+                            required
+                            style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}
+                        />
+                    </div>
+                    <div style={{ marginBottom: '15px' }}>
+                        <label htmlFor="price" style={{ display: 'block', marginBottom: '5px' }}>Event Capacity</label>
+                        <input
+                            type="number"
+                            id="attendeesLimit"
+                            value={attendeesLimit}
+                            onChange={(e) => setAttendeesLimit(e.target.value)}
                             required
                             style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}
                         />

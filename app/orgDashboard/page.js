@@ -6,8 +6,9 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Loading from "../loading";
 import EventListing from "./components/EventListing";
-import NavbarComponent from "../components/Navbar";
+
 import NewEvent from "./newEvent/page";
+import NavbarComponent from "./components/Navbar";
 
 export default function orgHome() {
   const token = Cookies.get("token");
