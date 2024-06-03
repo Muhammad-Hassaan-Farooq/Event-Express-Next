@@ -151,36 +151,31 @@ const AdminDashboardOrganizerPage = () => {
               </h3>
               <div class="line"></div>
             </div>
-            {organizers.map((organizer) => (
-              <div class="container">
-                <div class="row justify-content-center">
-                  <div class="col-12 col-sm-8 col-lg-6"></div>
-                </div>
-                <div class="row">
-                  <div class="col-12 col-sm-6 col-lg-3">
-                    <div
-                      class="single_advisor_profile wow fadeInUp"
-                      data-wow-delay="0.2s"
-                      style={{
-                        visibility: "visible",
-                        animationDelay: "0.2s",
-                        animationName: "fadeInUp",
-                      }}
-                    >
-                      <div class="advisor_thumb">
-                        <img
-                          src="https://bootdey.com/img/Content/avatar/avatar7.png"
-                          alt=""
-                        />
-                      </div>
+            <div class="d-flex flex-row flex-wrap justify-content-evenly">
+              {organizers.map((organizer) => (
+                <div class="col-12 col-sm-6 col-lg-3 m-3">
+                  <div
+                    class="single_advisor_profile wow fadeInUp"
+                    data-wow-delay="0.2s"
+                    style={{
+                      visibility: "visible",
+                      animationDelay: "0.2s",
+                      animationName: "fadeInUp",
+                    }}
+                  >
+                    <div class="advisor_thumb">
+                      <img
+                        src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                        alt=""
+                      />
+                    </div>
 
-                      <div class="single_advisor_details_info">
-                        <h6>
-                          {organizer.firstName} {organizer.lastName}
-                        </h6>
-                        <p class="designation">
-                          {organizer.role.toUpperCase()}
-                        </p>
+                    <div class="single_advisor_details_info">
+                      <h6>
+                        {organizer.firstName} {organizer.lastName}
+                      </h6>
+                      <p class="designation">{organizer.role.toUpperCase()}</p>
+                      <div className="d-flex mt-3">
                         <button
                           type="button"
                           data-mdb-button-init
@@ -206,8 +201,8 @@ const AdminDashboardOrganizerPage = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       }

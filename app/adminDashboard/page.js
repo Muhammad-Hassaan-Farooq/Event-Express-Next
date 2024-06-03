@@ -1,6 +1,8 @@
 "use client";
 import Link from "next/link";
 import NavbarComponent from "../components/Navbar";
+import { PiStudentFill } from "react-icons/pi";
+import { FaPeopleRobbery } from "react-icons/fa6";
 import "./admin-dashboard.css";
 import axios from "axios";
 import Cookies from "js-cookie";
@@ -8,8 +10,8 @@ import { useState } from "react";
 
 const AdminDashboard = () => {
   const token = Cookies.get("token");
-  const [users, setUsers] = useState(0)
-  const [organizers, setOrganizers] = useState(0)
+  const [users, setUsers] = useState(0);
+  const [organizers, setOrganizers] = useState(0);
 
   const fetchData = async () => {
     const usersResponse = await axios.get(
@@ -27,7 +29,7 @@ const AdminDashboard = () => {
           Authorization: `Bearer ${token}`,
         },
       }
-    )
+    );
     setUsers(usersResponse.data.data);
     setOrganizers(organizersResponse.data.data);
   };
@@ -36,13 +38,13 @@ const AdminDashboard = () => {
   return (
     <>
       <NavbarComponent />
-      <div class="container bootstrap snippet">
+      <div class="container bootstrap snippet vh-100">
         <div class="row">
           <div class="col-lg-2 col-sm-6">
             <div class="circle-tile ">
               <a href="#">
                 <div class="circle-tile-heading dark-blue">
-                  <i class="fa fa-users fa-fw fa-3x"></i>
+                  <PiStudentFill size={70} />
                 </div>
               </a>
               <div class="circle-tile-content dark-blue">
@@ -59,7 +61,7 @@ const AdminDashboard = () => {
             <div class="circle-tile ">
               <a href="#">
                 <div class="circle-tile-heading red">
-                  <i class="fa fa-users fa-fw fa-3x"></i>
+                  <FaPeopleRobbery size={70} />
                 </div>
               </a>
               <div class="circle-tile-content red">
