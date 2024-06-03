@@ -7,7 +7,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import { Button } from "react-bootstrap";
-import { NotificationManager, NotificationContainer } from "react-notifications";
+import {
+  NotificationManager,
+  NotificationContainer,
+} from "react-notifications";
 
 function LoginPage() {
   const dispatch = useDispatch();
@@ -27,7 +30,7 @@ function LoginPage() {
 
   const handleModal = () => {
     setIsModalOpen(true);
-  }
+  };
 
   const [registerInput, setRegisterInput] = useState({
     firstName: "",
@@ -87,20 +90,21 @@ function LoginPage() {
 
   const handleSendResetLink = async () => {
     try {
-      const response = await axios.post("http://localhost:3000/auth/forgetPassword", { email: forgotEmail });
+      const response = await axios.post(
+        "http://localhost:3000/auth/forgetPassword",
+        { email: forgotEmail }
+      );
       if (response.data.success) {
-        NotificationManager.success(response.data.message, "Success", 1500)
+        NotificationManager.success(response.data.message, "Success", 1500);
+        setIsModalOpen(false);
+      } else {
+        NotificationManager.error(response.data.message, "Error", 1500);
         setIsModalOpen(false);
       }
-      else {
-        NotificationManager.error(response.data.message, "Error", 1500)
-        setIsModalOpen(false);
-      }
+    } catch (error) {
+      NotificationManager.error("Server Error", "Error", 1500);
     }
-    catch (error) {
-      NotificationManager.error("Server Error", "Error", 1500)
-    }
-  }
+  };
 
   return (
     <div className="p-5 vh-100 main-div">

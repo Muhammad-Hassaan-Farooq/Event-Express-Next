@@ -75,7 +75,7 @@ const AdminDashboardOrganizerPage = () => {
       if (response.data.success) {
         NotificationManager.success(response.data.message, "Success", 1500);
         setTimeout(() => {
-          router.push("/adminDashboard/users");
+          router.push("/adminDashboard");
         }, 2000);
       } else {
         NotificationManager.error(response.data.message, "Error", 1500);
