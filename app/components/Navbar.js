@@ -7,8 +7,13 @@ import Cookies from "js-cookie";
 import logo from "../assets/logo.png";
 import { jwtDecode } from "jwt-decode";
 import "./navbar.css";
+import axios from "axios";
+import {
+  NotificationContainer,
+  NotificationManager,
+} from "react-notifications";
 
-function NavbarComponent() {
+function NavbarComponent({ eventId }) {
   const router = useRouter();
 
   const handleRedirect = () => {
@@ -20,6 +25,33 @@ function NavbarComponent() {
       router.push("/userDashboard");
     } else if (decodetoken.role === "admin") {
       router.push("/adminDashboard");
+    }
+  };
+
+  const MarkAsAttending = async () => {
+    try {
+      const token = Cookies.get("token");
+      const decodedToken = jwtDecode(token);
+      const userId = decodedToken.id;
+      const response = await axios.post(
+        `http://localhost:3000/event/attendingEvent/`,
+        {
+          id: eventId,
+          userId: userId,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      if (response.data.success) {
+        NotificationManager.success(response.data.message, "Success", 1500);
+      } else {
+        NotificationManager.error(response.data.message, "Error", 1500);
+      }
+    } catch (error) {
+      NotificationManager.error("Server Error", "Error", 1500);
     }
   };
 
@@ -51,6 +83,9 @@ function NavbarComponent() {
           <Nav.Item>
             <Nav.Link href="/userDashboard/MyEvents">My Events</Nav.Link>
           </Nav.Item>
+          <Nav.Item>
+            <Nav.Link onClick={MarkAsAttending}>Extra Button</Nav.Link>
+          </Nav.Item>
         </Nav>
         <Nav>
           <Nav.Item>
@@ -60,12 +95,20 @@ function NavbarComponent() {
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item href="/profile">View Profile</Dropdown.Item>
-                <Dropdown.Item href="/signup" onClick={()=> {Cookies.remove("token")}}>Logout</Dropdown.Item>
+                <Dropdown.Item
+                  href="/signup"
+                  onClick={() => {
+                    Cookies.remove("token");
+                  }}
+                >
+                  Logout
+                </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </Nav.Item>
         </Nav>
       </Navbar.Collapse>
+      <NotificationContainer />
     </Navbar>
   );
 }

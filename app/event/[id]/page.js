@@ -39,7 +39,7 @@ async function page({ params }) {
 
     return (
       <div>
-        <NavbarComponent />
+        <NavbarComponent eventId = {params.id} />
         {Object.entries(sections).map(
           ([section, componentIds]) =>
             componentIds.length > 0 && (
