@@ -125,12 +125,14 @@ const SearchBar = ({ setEvents, events }) => {
             },
           }
         );
-      }
-      // else if(maxPrice < minPrice){
-      //   console.log("maxPrice is less than minPrice");
-      //   NotificationManager.error("Maximum price should be greater than minimum price", "Error");
-      // }
-      else {
+      } else if (parseInt(maxPrice) < parseInt(minPrice)) {
+        console.log("maxPrice is less than minPrice");
+        NotificationManager.error(
+          "Maximum price should be greater than minimum price",
+          "Error"
+        );
+        return;
+      } else {
         console.log("both are defined");
         response = await axios.post(
           "http://localhost:3000/event/getByPrice",
@@ -305,7 +307,7 @@ const SearchBar = ({ setEvents, events }) => {
         <div className="col">
           <input
             className="form-control border-secondary border-right-0 rounded-5"
-            type="search"
+            type="number"
             value={minPrice}
             onChange={handleInputChange(setMinPrice, "price")}
             id="example-search-input4"
@@ -315,7 +317,7 @@ const SearchBar = ({ setEvents, events }) => {
         <div className="col">
           <input
             className="form-control border-secondary border-right-0 rounded-5"
-            type="search"
+            type="number"
             value={maxPrice}
             onChange={handleInputChange(setMaxPrice, "price")}
             id="example-search-input5"

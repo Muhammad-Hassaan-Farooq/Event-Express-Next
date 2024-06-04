@@ -8,6 +8,7 @@ import {
 import { useRouter } from "next/navigation";
 import NavbarComponent from "@/app/components/Navbar";
 import { jwtDecode } from "jwt-decode";
+import { CldUploadButton } from "next-cloudinary";
 
 const CreateEvent = () => {
   const [title, setTitle] = useState("");
@@ -16,9 +17,14 @@ const CreateEvent = () => {
   const [location, setLocation] = useState("");
   const [price, setPrice] = useState("");
   const [attendeesLimit, setAttendeesLimit] = useState("");
+  const [image, setImage] = useState("");
 
   const token = Cookies.get("token");
   const router = useRouter();
+
+  const handleImageUpload = async (e) => {
+    setImage(e.info.url);
+  };
 
   const handleCreateEvent = async (e) => {
     e.preventDefault();
@@ -32,6 +38,7 @@ const CreateEvent = () => {
           location,
           price,
           attendeesLimit,
+          image,
         },
         {
           headers: {
@@ -61,7 +68,6 @@ const CreateEvent = () => {
 
   return (
     <>
-      <h1>Create New Event</h1>
       <div
         style={{
           display: "flex",
@@ -205,6 +211,15 @@ const CreateEvent = () => {
                 border: "1px solid #ccc",
               }}
             />
+            <div className="d-flex justify-content-center mt-3">
+              <CldUploadButton
+                className="btn btn-dark"
+                onSuccess={handleImageUpload}
+                uploadPreset="dzpzqu4x"
+              >
+                Upload Image
+              </CldUploadButton>
+            </div>
           </div>
           <button
             type="submit"

@@ -12,7 +12,6 @@ import NavbarComponent from "./components/Navbar";
 
 export default function orgHome() {
   const token = Cookies.get("token");
-  console.log(token);
 
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -52,28 +51,34 @@ export default function orgHome() {
     return (
       <>
         <NavbarComponent />
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <h1>Organizer Dashboard</h1>
-            <button
-                type="button"
-                className="noselect"
-                style={{
-                backgroundColor: 'darkgray',
-                border: 'none',
-                color: 'white',
-                padding: '10px 20px',
-                margin: '10px',
-                cursor: 'pointer'
-                
-                }}
-                onClick={() => router.push("/orgDashboard/newEvent")}
-            >
-                Create Event
-            </button>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginLeft: "1.5em",
+            marginRight: "1.5em",
+          }}
+        >
+          <h1>Your Dashboard</h1>
+          <button
+            type="button"
+            className="noselect"
+            style={{
+              backgroundColor: "darkgray",
+              border: "none",
+              color: "white",
+              padding: "10px 20px",
+              margin: "10px",
+              cursor: "pointer",
+            }}
+            onClick={() => router.push("/orgDashboard/newEvent")}
+          >
+            Create Event
+          </button>
         </div>
         <EventListing events={events} />
       </>
     );
   }
 }
-

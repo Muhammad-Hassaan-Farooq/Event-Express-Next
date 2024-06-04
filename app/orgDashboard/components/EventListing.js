@@ -1,11 +1,8 @@
-
 import "../styles/listings.css";
 import { useState } from "react";
 import EventListItem from "./EventListItem";
 
 function EventListing({ events }) {
-  console.log(events);
-
   return (
     <ul className="list-group m-3">
       {events.map((event) => {

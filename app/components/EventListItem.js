@@ -9,6 +9,8 @@ function EventListItem({ event }) {
     router.push(`/event/${event._id}`);
   };
   const [style, setStyle] = useState({ display: "none" });
+
+  const image = event.image ? event.image : "https://i.imgur.com/GV2rUU0.jpg";
   return (
     <>
       <div
@@ -38,7 +40,7 @@ function EventListItem({ event }) {
           <div
             className="col-md-2 w-50 img-container d-flex align-items-center justify-content-center"
             style={{
-              backgroundImage: 'url("https://i.imgur.com/GV2rUU0.jpg")',
+              backgroundImage: `url("${image}")`,
               backgroundSize: "cover",
             }}
           >

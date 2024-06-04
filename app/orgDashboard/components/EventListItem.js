@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 function EventListItem({ event }) {
   const [style, setStyle] = useState({ display: "none" });
   const router = useRouter();
+
+  const image = event.image ? event.image : "https://i.imgur.com/GV2rUU0.jpg";
   return (
     <>
       <div
@@ -30,14 +32,15 @@ function EventListItem({ event }) {
                 <strong>Organized by:</strong> {event.createdBy}
               </p>
               <p className="card-text">
-                <strong>Attendees:</strong> {event.attendeesCount}/{event.attendeesLimit}
+                <strong>Attendees:</strong> {event.attendeesCount}/
+                {event.attendeesLimit}
               </p>
             </div>
           </div>
           <div
             className="col-md-2 w-50 img-container d-flex align-items-center justify-content-center"
             style={{
-              backgroundImage: 'url("https://i.imgur.com/GV2rUU0.jpg")',
+              backgroundImage: `url("${image}")`,
               backgroundSize: "cover",
             }}
           >
