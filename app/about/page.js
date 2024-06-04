@@ -18,8 +18,8 @@ const AboutPage = () => {
         <div className="container py-5">
           <div className="row h-100 align-items-center py-5">
             <div className="col-lg-6">
-              <h1 className="display-4">Our Mission</h1>
-              <p className="lead text-muted mb-0">
+              <h1 className="display-4" style={{fontFamily:"sans-serif"}}>Our Mission</h1>
+              <p className="lead text-muted mb-0" style={{color:"black", fontWeight:"bold"}}>
                 Welcome to Event Express, where our mission is to revolutionize
                 the way universities manage and promote their events. We believe
                 in the power of bringing students together through engaging and
@@ -45,8 +45,8 @@ const AboutPage = () => {
           <div className="row align-items-center mb-5">
             <div className="col-lg-6 order-2 order-lg-1">
               <i className="fa fa-bar-chart fa-2x mb-3 text-primary"></i>
-              <h2 className="font-weight-light ">Our Vision</h2>
-              <p className="font-italic text-muted mb-4">
+              <h2 className="font-weight-light" style={{fontFamily:"sans-serif", color:"white"}}>Our Vision</h2>
+              <p className="font-italic text-muted mb-4" style={{color:"white", fontWeight:"bold"}}>
                 We envision a future where every university event is not just an
                 isolated activity but a pivotal part of the campus experience,
                 connecting students, faculty, and the broader university
@@ -81,10 +81,6 @@ const AboutPage = () => {
                 continually enhancing our platform based on user feedback and
                 the latest technological advancements.
               </p>
-
-              <a href="#" className="btn btn-light px-5 rounded-pill shadow-sm">
-                Learn More
-              </a>
             </div>
           </div>
         </div>
@@ -103,9 +99,15 @@ const AboutPage = () => {
         <div className="container py-5">
           <div className="row mb-4">
             <div className="col-lg-5">
-              <h2 className="display-4 font-weight-light">Our team</h2>
-              <p className="font-italic text-muted">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              <h2
+                className="display-4 font-weight-light"
+                style={{ color: "white" }}
+              >
+                Our team
+              </h2>
+              <p>
+                Meet the talented individuals behind Event Express who are on a
+                mission to transform the university event experience.
               </p>
             </div>
           </div>

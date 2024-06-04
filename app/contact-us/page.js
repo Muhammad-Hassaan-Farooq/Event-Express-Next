@@ -53,8 +53,10 @@ const ContactUsPage = () => {
                   <span class="path20"></span>
                 </span>
               </div>
-              <h3>Lorem Ipsum</h3>
-              <h2>Lorem Ipsum is simply dummy</h2>
+              <h2>
+                We can't wait to help you plan your next event. Contact us
+                today!
+              </h2>
             </div>
             <div class="col-sm-4 single-contact-address-box main-branch">
               <h3>Contact Info</h3>
@@ -110,131 +112,13 @@ const ContactUsPage = () => {
                   <span class="path4"></span>
                 </span>
               </div>
-              <h3>Lorem Ipsum</h3>
-              <h2>Lorem Ipsum is simply dummy</h2>
+              <h2>
+                "They made our wedding unforgettable!" <br />- Jane D.
+              </h2>
             </div>
           </div>
         </div>
       </section>
-      {/* <section class="contact-info-area">
-        <div class="container">
-          <div class="row">
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-              <div class="contact-form">
-                <div class="row">
-                  <div class="col-xl-12">
-                    <div class="sec-title-style1 float-left">
-                      <div class="title">Send Your Message</div>
-                      <div class="text">
-                        <div class="decor-left">
-                          <span></span>
-                        </div>
-                        <p>Contact Form</p>
-                      </div>
-                    </div>
-                    <div class="text-box float-right">
-                      <p>
-                        Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry.{" "}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="inner-box">
-                  <form
-                    id="contact-form"
-                    name="contact_form"
-                    class="default-form"
-                    action="inc/sendmail.php"
-                    method="post"
-                  >
-                    <div class="row">
-                      <div class="col-xl-6 col-lg-12">
-                        <div class="row">
-                          <div class="col-xl-6">
-                            <div class="input-box">
-                              <input
-                                type="text"
-                                name="form_name"
-                                value=""
-                                placeholder="Name"
-                                required=""
-                              />
-                            </div>
-                            <div class="input-box">
-                              <input
-                                type="text"
-                                name="form_phone"
-                                value=""
-                                placeholder="Phone"
-                              />
-                            </div>
-                          </div>
-                          <div class="col-xl-6">
-                            <div class="input-box">
-                              <input
-                                type="email"
-                                name="form_email"
-                                value=""
-                                placeholder="Email"
-                                required=""
-                              />
-                            </div>
-                            <div class="input-box">
-                              <input
-                                type="text"
-                                name="form_website"
-                                value=""
-                                placeholder="Website"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-xl-12">
-                            <div class="input-box">
-                              <input
-                                type="text"
-                                name="form_subject"
-                                value=""
-                                placeholder="Subject"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-xl-6 col-lg-12">
-                        <div class="input-box">
-                          <textarea
-                            name="form_message"
-                            placeholder="Your Message..."
-                            required=""
-                          ></textarea>
-                        </div>
-                        <div class="button-box">
-                          <input
-                            id="form_botcheck"
-                            name="form_botcheck"
-                            class="form-control"
-                            type="hidden"
-                            value=""
-                          />
-                          <button
-                            type="submit"
-                            data-loading-text="Please wait..."
-                          >
-                            Send Message<span class="flaticon-next"></span>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
     </>
   );
 };

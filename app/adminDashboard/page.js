@@ -1,12 +1,16 @@
 "use client";
 import Link from "next/link";
-import NavbarComponent from "../components/Navbar";
 import { PiStudentFill } from "react-icons/pi";
 import { FaPeopleRobbery } from "react-icons/fa6";
 import "./admin-dashboard.css";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { useState } from "react";
+import {
+  NotificationManager,
+  NotificationContainer,
+} from "react-notifications";
+import NavbarComponent from "./components/Navbar";
 
 const AdminDashboard = () => {
   const token = Cookies.get("token");
@@ -14,24 +18,28 @@ const AdminDashboard = () => {
   const [organizers, setOrganizers] = useState(0);
 
   const fetchData = async () => {
-    const usersResponse = await axios.get(
-      "http://localhost:3000/accountManagement/countUsers",
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
-    const organizersResponse = await axios.get(
-      "http://localhost:3000/accountManagement/countOrganizers",
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
-    setUsers(usersResponse.data.data);
-    setOrganizers(organizersResponse.data.data);
+    try {
+      const usersResponse = await axios.get(
+        "http://localhost:3000/accountManagement/countUsers",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      const organizersResponse = await axios.get(
+        "http://localhost:3000/accountManagement/countOrganizers",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      setUsers(usersResponse.data.data);
+      setOrganizers(organizersResponse.data.data);
+    } catch (error) {
+      NotificationManager.error("An unexpected Error Occured", "Error",1000);
+    }
   };
 
   fetchData();
@@ -78,6 +86,7 @@ const AdminDashboard = () => {
           </div>
         </div>
       </div>
+      <NotificationContainer />
     </>
   );
 };

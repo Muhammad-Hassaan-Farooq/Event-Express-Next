@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Navbar from "../../components/Navbar";
+
 import axios from "axios";
 import Cookies from "js-cookie";
 import {
@@ -10,6 +10,8 @@ import {
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import "../users/profile-styles.css";
+import NavbarComponent from "../components/Navbar";
 
 const AdminDashboardOrganizerPage = () => {
   const [organizers, setOrganizers] = useState([]);
@@ -109,7 +111,7 @@ const AdminDashboardOrganizerPage = () => {
 
   return (
     <div>
-      <Navbar />
+      <NavbarComponent />
       <div class="d-flex justify-content-end">
         <div class="row no-gutters align-items-center">
           <div class="col">
