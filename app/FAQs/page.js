@@ -190,7 +190,7 @@ const FAQPage = () => {
               <div class="col-11 col-xl-10">
                 <div class="d-flex align-items-end mb-5">
                   <i class="bi bi-cart-plus me-3 lh-1 display-5"></i>
-                  <h3 class="m-0 mt-3">Placing an Order</h3>
+                  <h3 class="m-0 mt-3">Buying A Ticket</h3>
                 </div>
               </div>
               <div class="col-11 col-xl-10">

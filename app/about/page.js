@@ -18,8 +18,18 @@ const AboutPage = () => {
         <div className="container py-5">
           <div className="row h-100 align-items-center py-5">
             <div className="col-lg-6">
-              <h1 className="display-4" style={{fontFamily:"sans-serif"}}>Our Mission</h1>
-              <p className="lead text-muted mb-0" style={{color:"black", fontWeight:"bold"}}>
+              <h1 className="display-4" style={{ fontFamily: "sans-serif" }}>
+                Our Mission
+              </h1>
+              <p
+                className="lead mb-0"
+                style={{
+                  color: "black",
+                  fontWeight: "bold",
+                  webKitTextStrokeWidth: "3px",
+                  webKitTextStrokeColor: "white",
+                }}
+              >
                 Welcome to Event Express, where our mission is to revolutionize
                 the way universities manage and promote their events. We believe
                 in the power of bringing students together through engaging and
@@ -32,7 +42,7 @@ const AboutPage = () => {
       </div>
 
       <div
-        className="bg-white py-5 vh-100"
+        className="bg-white py-5 "
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
@@ -41,28 +51,38 @@ const AboutPage = () => {
           backgroundAttachment: "fixed",
         }}
       >
-        <div className="container py-5">
+        <div className="container py-5 vh-100">
           <div className="row align-items-center mb-5">
             <div className="col-lg-6 order-2 order-lg-1">
               <i className="fa fa-bar-chart fa-2x mb-3 text-primary"></i>
-              <h2 className="font-weight-light" style={{fontFamily:"sans-serif", color:"white"}}>Our Vision</h2>
-              <p className="font-italic text-muted mb-4" style={{color:"white", fontWeight:"bold"}}>
+              <h2
+                className="font-weight-light"
+                style={{ fontFamily: "sans-serif", color: "white" }}
+              >
+                Our Vision
+              </h2>
+              <p
+                className="font-italic mb-4"
+                style={{ color: "white", fontWeight: "bold" }}
+              >
                 We envision a future where every university event is not just an
                 isolated activity but a pivotal part of the campus experience,
                 connecting students, faculty, and the broader university
                 community. By leveraging technology, we aim to make event
                 management more efficient, engaging, and impactful.
               </p>
-              <a href="#" className="btn btn-light px-5 rounded-pill shadow-sm">
-                Learn More
-              </a>
             </div>
           </div>
           <div className="row align-items-center">
             <div className="col-lg-5 px-5 mx-auto"></div>
             <div className="col-lg-6">
               <i className="fa fa-leaf fa-2x mb-3 text-primary"></i>
-              <h2 className="font-weight-light">Why Choose Us?</h2>
+              <h2
+                className="font-weight-light"
+                style={{ color: "white", fontWeight: "bold" }}
+              >
+                Why Choose Us?
+              </h2>
               <p class="font-italic text-muted mb-4 p-3 border rounded shadow-sm bg-light">
                 <strong>Tailored for Universities:</strong> Unlike generic event
                 management platforms, our features are specifically designed to
@@ -105,7 +125,7 @@ const AboutPage = () => {
               >
                 Our team
               </h2>
-              <p>
+              <p style={{ color: "white" }}>
                 Meet the talented individuals behind Event Express who are on a
                 mission to transform the university event experience.
               </p>
