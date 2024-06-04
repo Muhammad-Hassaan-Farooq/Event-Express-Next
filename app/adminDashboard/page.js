@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import NavbarComponent from "../components/Navbar";
 import { PiStudentFill } from "react-icons/pi";
 import { FaPeopleRobbery } from "react-icons/fa6";
 import "./admin-dashboard.css";
@@ -11,6 +10,7 @@ import {
   NotificationManager,
   NotificationContainer,
 } from "react-notifications";
+import NavbarComponent from "./components/Navbar";
 
 const AdminDashboard = () => {
   const token = Cookies.get("token");

@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Navbar from "../../components/Navbar";
+
 import axios from "axios";
 import Cookies from "js-cookie";
 import {
@@ -9,6 +9,7 @@ import {
 } from "react-notifications";
 import { useRouter } from "next/navigation";
 import "./profile-styles.css";
+import NavbarComponent from "../components/Navbar";
 
 const AdminDashboardUsersPage = () => {
   const [users, setUsers] = useState([]);
@@ -107,7 +108,7 @@ const AdminDashboardUsersPage = () => {
 
   return (
     <div>
-      <Navbar />
+      <NavbarComponent />
       <div class="d-flex justify-content-end">
         <div class="row no-gutters align-items-center">
           <div class="col">

@@ -4,7 +4,7 @@ import { Navbar, Nav, NavItem, Dropdown } from "react-bootstrap";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
-import logo from "../assets/logo.png";
+import logo from "../../assets/logo.png";
 import { jwtDecode } from "jwt-decode";
 import "./navbar.css";
 
@@ -40,6 +40,12 @@ function NavbarComponent() {
             <Nav.Link href="/">Home</Nav.Link>
           </Nav.Item>
           <Nav.Item>
+            <Nav.Link href="/adminDashboard/users">USER</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href="/adminDashboard/organizers">ORGANIZER</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
             <Nav.Link href="/about">About</Nav.Link>
           </Nav.Item>
           <Nav.Item>
@@ -48,9 +54,7 @@ function NavbarComponent() {
           <Nav.Item>
             <Nav.Link href="/FAQs">FAQ's</Nav.Link>
           </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/userDashboard/MyEvents">My Events</Nav.Link>
-          </Nav.Item>
+
         </Nav>
         <Nav>
           <Nav.Item>
@@ -60,7 +64,7 @@ function NavbarComponent() {
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item href="/profile">View Profile</Dropdown.Item>
-                <Dropdown.Item href="/signup" onClick={()=> {Cookies.remove("token")}}>Logout</Dropdown.Item>
+                <Dropdown.Item href="/signup">Logout</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </Nav.Item>
