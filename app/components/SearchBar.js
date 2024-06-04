@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
+import "./searchbar.css";
 
 import axios from "axios";
 import Cookies from "js-cookie";
@@ -101,24 +102,23 @@ const SearchBar = ({ setEvents, events }) => {
   const handleSearchByPrice = async () => {
     try {
       let response = null;
-      
-      if(maxPrice ===  undefined || maxPrice === ""){
+
+      if (maxPrice === undefined || maxPrice === "") {
         console.log("maxPrice is undefined");
-         response = await axios.post(
+        response = await axios.post(
           "http://localhost:3000/event/getByPrice",
-          { minPrice: minPrice},
+          { minPrice: minPrice },
           {
             headers: {
               Authorization: `Bearer ${token}`,
             },
           }
         );
-      }
-      else if (minPrice === undefined || minPrice === ""){
-        console.log("minPrice is undefined")
-         response = await axios.post(
+      } else if (minPrice === undefined || minPrice === "") {
+        console.log("minPrice is undefined");
+        response = await axios.post(
           "http://localhost:3000/event/getByPrice",
-          { maxPrice: maxPrice},
+          { maxPrice: maxPrice },
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -130,20 +130,18 @@ const SearchBar = ({ setEvents, events }) => {
       //   console.log("maxPrice is less than minPrice");
       //   NotificationManager.error("Maximum price should be greater than minimum price", "Error");
       // }
-      else{
-        console.log("both are defined")
-       response = await axios.post(
-        "http://localhost:3000/event/getByPrice",
-        { maxPrice: maxPrice,
-          minPrice: minPrice
-         },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-    }
+      else {
+        console.log("both are defined");
+        response = await axios.post(
+          "http://localhost:3000/event/getByPrice",
+          { maxPrice: maxPrice, minPrice: minPrice },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+      }
       if (response.data.success) {
         setEvents(response.data.data);
         NotificationManager.success(response.data.message, "Success");
@@ -260,7 +258,7 @@ const SearchBar = ({ setEvents, events }) => {
   return (
     <div>
       <div
-        className="row no-gutters align-items-center m-2"
+        className="row no-gutters align-items-center m-2 searchBar"
         style={{ padding: "8px" }}
       >
         <div className="col">

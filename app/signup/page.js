@@ -37,7 +37,7 @@ function LoginPage() {
     role: "user",
   });
 
-  const handleSignup = async() => {
+  const handleSignup = async () => {
     await axios
       .post("http://localhost:3000/auth/signUp", registerInput)
       .then((res) => {
@@ -116,8 +116,8 @@ function LoginPage() {
         <div class="container">
           <div class="row full-height justify-content-center">
             <div class="col-12 text-center align-self-center py-5">
-              <div class="section pb-5 pt-5 pt-sm-2 text-center">
-                <h6 class="mb-0 pb-3">
+              <div class="section pb-5 pt-5 pt-sm-2 text-center login-container">
+                <h6 class="mb-0 pb-3 login-text">
                   <span>Log In </span>
                   <span>Sign Up</span>
                 </h6>
