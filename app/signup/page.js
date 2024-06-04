@@ -11,18 +11,15 @@ import {
   NotificationManager,
   NotificationContainer,
 } from "react-notifications";
+import logo from "../assets/logo.png";
+import Image from "next/image";
 
 function LoginPage() {
-  const dispatch = useDispatch();
   const router = useRouter();
 
   const [forgotEmail, setForgotEmail] = useState("");
-  const [activeTab, setActiveTab] = useState("login");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleTabChange = (tab) => {
-    setActiveTab(tab);
-  };
   const [input, setInput] = useState({
     email: "",
     password: "",
@@ -40,37 +37,40 @@ function LoginPage() {
     role: "user",
   });
 
-  const handleSignup = () => {
-    console.log("Signup", registerInput); // Logging input before sending it
-    axios
+  const handleSignup = async() => {
+    await axios
       .post("http://localhost:3000/auth/signUp", registerInput)
       .then((res) => {
-        console.log(res.data); // Logging response data
-        alert("Signup successful!");
-        // Further logic for handling signup success
+        if (res.data.success) {
+          setTimeout(() => {
+            NotificationManager.success(res.data.message, "Success", 1500);
+          }, 1500);
+          router.push("/signup");
+        } else {
+          NotificationManager.error(res.data.message, "Error", 1500);
+        }
       })
       .catch((error) => {
-        console.error("Signup failed:", error); // Logging error if signup fails
-        alert(`Signup failed: ${error.response.data.message}`);
-        // Further logic for handling signup failure
+        NotificationManager.error("Server Error", "Error", 1500);
       });
   };
 
-  const handleLogin = () => {
-    console.log("Login", input); // Logging input before sending it
-    axios
+  const handleLogin = async () => {
+    await axios
       .post("http://localhost:3000/auth/login", input)
       .then((res) => {
-        console.log(res.data); // Logging response data
-        alert("Login successful!");
-        dispatch(login(res.data.token));
-        Cookies.set("token", res.data.token);
-        router.push("/");
+        if (res.data.success) {
+          setTimeout(() => {
+            NotificationManager.success(res.data.message, "Success", 1500);
+          }, 1500);
+          Cookies.set("token", res.data.token);
+          router.push("/");
+        } else {
+          NotificationManager.error(res.data.message, "Error", 1500);
+        }
       })
       .catch((error) => {
-        console.error("Login failed:", error); // Logging error if login fails
-        alert(`Login failed: ${error.response.data.message}`);
-        // Further logic for handling login failure
+        NotificationManager.error("Server Error", "Error", 1500);
       });
   };
 
@@ -107,207 +107,181 @@ function LoginPage() {
   };
 
   return (
-    <div className="p-5 vh-100 main-div">
-      <div className="container shadow p-3 bg-light d-flex flex-column border ">
-        <ul className="nav nav-pills justify-content-center mb-3">
-          <li className="nav-item">
-            <button
-              className={`nav-link ${activeTab === "login" ? "active" : ""}`}
-              onClick={() => handleTabChange("login")}
-            >
-              Login
-            </button>
-          </li>
-          <li className="nav-item">
-            <button
-              className={`nav-link ${activeTab === "register" ? "active" : ""}`}
-              onClick={() => handleTabChange("register")}
-            >
-              Register
-            </button>
-          </li>
-        </ul>
+    <>
+      <div className="logo">
+        <Image src={logo} alt="" />
+      </div>
 
-        <div className="tab-content">
-          <div
-            className={`tab-pane fade ${activeTab === "login" ? "show active" : ""
-              }`}
-          >
-            <div className="text-center mb-3">
-              <p>Sign in with:</p>
-
-              <div
-                className="d-flex justify-content-between mx-auto"
-                style={{ width: "40%" }}
-              >
-                {/* Add your social media login buttons here */}
-              </div>
-
-              <p className="text-center mt-3">or:</p>
-            </div>
-
-            <div className="mb-4">
-              <label htmlFor="email">Email address</label>
-              <input
-                type="email"
-                className="form-control"
-                name="email"
-                onChange={handleinputChange}
-              />
-            </div>
-            <div className="mb-4">
-              <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                className="form-control"
-                name="password"
-                onChange={handleinputChange}
-              />
-            </div>
-
-            <div className="d-flex justify-content-between mx-4 mb-4">
-              <div className="form-check">
+      <div class="section">
+        <div class="container">
+          <div class="row full-height justify-content-center">
+            <div class="col-12 text-center align-self-center py-5">
+              <div class="section pb-5 pt-5 pt-sm-2 text-center">
+                <h6 class="mb-0 pb-3">
+                  <span>Log In </span>
+                  <span>Sign Up</span>
+                </h6>
                 <input
-                  className="form-check-input"
+                  class="checkbox"
                   type="checkbox"
-                  id="rememberMe"
+                  id="reg-log"
+                  name="reg-log"
                 />
-                <label className="form-check-label" htmlFor="rememberMe">
-                  Remember me
-                </label>
-              </div>
-              <Button onClick={handleModal}>Forgot password?</Button>
-            </div>
-            {isModalOpen && (
-              <div className="modal show d-block" role="dialog">
-                <div className="modal-dialog" role="document">
-                  <div className="modal-content">
-                    <div className="modal-header">
-                      <h5 className="modal-title">Forgot Password</h5>
-                      <button style={{ backgroundColor: "black" }} type="button" className="close" onClick={() => setIsModalOpen(false)}>
-                        <span>&times;</span>
-                      </button>
-                    </div>
-                    <div className="modal-body">
-                      <div className="mb-4">
-                        <label htmlFor="forgotEmail">Email address</label>
-                        <input
-                          type="email"
-                          className="form-control"
-                          id="forgotEmail"
-                          name="forgotEmail"
-                          value={forgotEmail}
-                          onChange={(e) => setForgotEmail(e.target.value)}
-                        />
+                <label for="reg-log"></label>
+                <div class="card-3d-wrap mx-auto">
+                  <div class="card-3d-wrapper">
+                    <div class="card-front">
+                      <div class="center-wrap">
+                        <div class="section text-center">
+                          <h4 class="mb-4 pb-3">Log In</h4>
+                          <div class="form-group">
+                            <input
+                              type="email"
+                              name="email"
+                              class="form-style"
+                              placeholder="Your Email"
+                              id="logemail"
+                              autoComplete="off"
+                              onChange={handleinputChange}
+                            />
+                            <i class="input-icon uil uil-at"></i>
+                          </div>
+                          <div class="form-group mt-2">
+                            <input
+                              type="password"
+                              name="password"
+                              class="form-style"
+                              placeholder="Your Password"
+                              id="logpass"
+                              autoComplete="off"
+                              onChange={handleinputChange}
+                            />
+                            <i class="input-icon uil uil-lock-alt"></i>
+                          </div>
+                          <a class="btn mt-4" onClick={handleLogin}>
+                            Login
+                          </a>
+                          <p class="mb-0 mt-4 text-center">
+                            <a class="link" onClick={handleModal}>
+                              Forgot your password?
+                            </a>
+                          </p>
+                          {isModalOpen && (
+                            <div className="modal show d-block" role="dialog">
+                              <div className="modal-dialog" role="document">
+                                <div className="modal-content">
+                                  <div className="modal-header">
+                                    <h5 className="modal-title">
+                                      Forgot Password
+                                    </h5>
+                                  </div>
+                                  <div className="modal-body">
+                                    <div className="mb-4">
+                                      <label htmlFor="forgotEmail">
+                                        Email address
+                                      </label>
+                                      <input
+                                        type="email"
+                                        className="form-control"
+                                        id="forgotEmail"
+                                        name="forgotEmail"
+                                        value={forgotEmail}
+                                        onChange={(e) =>
+                                          setForgotEmail(e.target.value)
+                                        }
+                                      />
+                                    </div>
+                                  </div>
+                                  <div className="modal-footer">
+                                    <button
+                                      type="button"
+                                      className="btn btn-secondary"
+                                      onClick={() => setIsModalOpen(false)}
+                                    >
+                                      Close
+                                    </button>
+                                    <button
+                                      type="button"
+                                      className="btn btn-primary"
+                                      onClick={handleSendResetLink}
+                                    >
+                                      Send Reset Link
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          )}
+                        </div>
                       </div>
                     </div>
-                    <div className="modal-footer">
-                      <button type="button" className="btn btn-secondary" onClick={() => setIsModalOpen(false)}>
-                        Close
-                      </button>
-                      <button type="button" className="btn btn-primary" onClick={handleSendResetLink}>
-                        Send Reset Link
-                      </button>
+                    <div class="card-back">
+                      <div class="center-wrap">
+                        <div class="section text-center">
+                          <h4 class="mb-4 pb-3">Sign Up</h4>
+                          <div class="form-group">
+                            <input
+                              type="text"
+                              name="firstName"
+                              class="form-style"
+                              placeholder="First Name"
+                              id="logname"
+                              autocomplete="off"
+                              onChange={handleRegisterInput}
+                            />
+                            <i class="input-icon uil uil-user"></i>
+                          </div>
+                          <div class="form-group mt-2">
+                            <input
+                              type="text"
+                              name="lastName"
+                              class="form-style"
+                              placeholder="Last Name"
+                              id="logname"
+                              autocomplete="off"
+                              onChange={handleRegisterInput}
+                            />
+                            <i class="input-icon uil uil-user"></i>
+                          </div>
+                          <div class="form-group mt-2">
+                            <input
+                              type="email"
+                              name="email"
+                              class="form-style"
+                              placeholder="Your Email"
+                              id="logemail"
+                              autocomplete="off"
+                              onChange={handleRegisterInput}
+                            />
+                            <i class="input-icon uil uil-at"></i>
+                          </div>
+                          <div class="form-group mt-2">
+                            <input
+                              type="password"
+                              name="password"
+                              class="form-style"
+                              placeholder="Your Password"
+                              id="logpass"
+                              autocomplete="off"
+                              onChange={handleRegisterInput}
+                            />
+                            <i class="input-icon uil uil-lock-alt"></i>
+                          </div>
+                          <a onClick={handleSignup} class="btn mt-4">
+                            SignUp
+                          </a>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            )}
-
-            <button
-              className="btn btn-primary mb-4 w-100"
-              onClick={handleLogin}
-            >
-              Sign in
-            </button>
-            <p className="text-center">
-              Not a member?{" "}
-              <a href="#!" onClick={() => handleTabChange("register")}>
-                Register
-              </a>
-            </p>
-          </div>
-
-          <div
-            className={`tab-pane fade ${activeTab === "register" ? "show active" : ""
-              }`}
-          >
-            <div className="text-center mb-3">
-              <p>Sign up with:</p>
-
-              <div
-                className="d-flex justify-content-between mx-auto"
-                style={{ width: "40%" }}
-              >
-                {/* Add your social media login buttons here */}
-              </div>
-
-              <p className="text-center mt-3">or:</p>
             </div>
-
-            <div className="mb-4">
-              <label htmlFor="name">First Name</label>
-              <input
-                type="text"
-                className="form-control"
-                id="name"
-                name="firstName"
-                onChange={handleRegisterInput}
-              />
-            </div>
-            <div className="mb-4">
-              <label htmlFor="username">Last Name</label>
-              <input
-                type="text"
-                className="form-control"
-                id="username"
-                name="lastName"
-                onChange={handleRegisterInput}
-              />
-            </div>
-            <div className="mb-4">
-              <label htmlFor="registerEmail">Email</label>
-              <input
-                type="email"
-                className="form-control"
-                id="registerEmail"
-                name="email"
-                onChange={handleRegisterInput}
-              />
-            </div>
-            <div className="mb-4">
-              <label htmlFor="registerPassword">Password</label>
-              <input
-                type="password"
-                className="form-control"
-                id="registerPassword"
-                name="password"
-                onChange={handleRegisterInput}
-              />
-            </div>
-
-            <div className="form-check d-flex justify-content-center mb-4">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                id="termsAgreement"
-              />
-              <label className="form-check-label" htmlFor="termsAgreement">
-                I have read and agree to the terms
-              </label>
-            </div>
-
-            <button
-              className="btn btn-primary mb-4 w-100"
-              onClick={handleSignup}
-            >
-              Sign up
-            </button>
           </div>
         </div>
+        <NotificationContainer />
       </div>
-      <NotificationContainer />
-    </div>
+    </>
   );
 }
 
