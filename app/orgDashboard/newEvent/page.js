@@ -18,7 +18,6 @@ const newEvent = () => {
        <>
             <NavbarComponent/>
             <CreateEvent />
-            
         </>
             
     );

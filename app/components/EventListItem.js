@@ -2,6 +2,10 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import "../styles/eventListItem.css";
+import { CiLocationOn } from "react-icons/ci";
+import { FaUser } from "react-icons/fa";
+import { MdOutlineReduceCapacity } from "react-icons/md";
+
 
 function EventListItem({ event }) {
   const router = useRouter();
@@ -56,42 +60,44 @@ function EventListItem({ event }) {
           </div>
         </div>
       </div> */}
-      <article class="postcard dark blue">
-        <a class="postcard__img_link" href="#">
-          <img
-            class="postcard__img"
-            src="https://picsum.photos/1000/1000"
-            alt="Image Title"
-          />
-        </a>
-        <div class="postcard__text">
-          <h1 class="postcard__title blue">
-            <a href="#">{event.title}</a>
-          </h1>
-          <div class="postcard__subtitle small">
-            <time datetime="2020-05-25 12:00:00">
-              <i class="fas fa-calendar-alt mr-2"></i>{new Date(event.startDate).toDateString()}
-            </time>
-          </div>
-          <div class="postcard__bar"></div>
-          <div class="postcard__preview-txt">
-            {event.description}
-          </div>
-          <ul class="postcard__tagbox">
-            <li class="tag__item">
-              <i class="fas fa-tag mr-2"></i>{event.location}
-            </li>
-            <li class="tag__item">
-              <i class="fas fa-clock mr-2"></i>{event.price}
-            </li>
-            <li class="tag__item play blue">
-              <a href="#">
-                <i class="fas fa-play mr-2"></i>{event.createdBy}
-              </a>
-            </li>
-          </ul>
-        </div>
-      </article>
+          <article class="postcard dark blue">
+            <a class="postcard__img_link" onClick={handleRedirect} style={{cursor:"pointer"}}>
+              <img
+                class="postcard__img"
+                src={image}
+                alt="Image Title"
+              />
+            </a>
+            <div class="postcard__text">
+              <h1 class="postcard__title blue">
+                <a onClick={handleRedirect} style={{cursor:"pointer"}}>{event.title}</a>
+              </h1>
+              <div class="postcard__subtitle small">
+                <time datetime="2020-05-25 12:00:00">
+                  <i class="fas fa-calendar-alt mr-2"></i>
+                  {new Date(event.startDate).toDateString()}
+                </time>
+              </div>
+              <div class="postcard__bar"></div>
+              <div class="postcard__preview-txt">{event.description}</div>
+              <ul class="postcard__tagbox">
+                <li class="tag__item">
+                  <i class="fas fa-tag mr-2"><CiLocationOn/></i>
+                  {event.location}
+                </li>
+                <li class="tag__item">
+                  <i class="fas fa-clock mr-2"><MdOutlineReduceCapacity/></i>
+                  {event.price}
+                </li>
+                <li class="tag__item play blue">
+                  <a href="#">
+                    <i class="fas fa-play mr-2"><FaUser/></i>
+                    {event.createdBy}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </article>
     </>
   );
 }
