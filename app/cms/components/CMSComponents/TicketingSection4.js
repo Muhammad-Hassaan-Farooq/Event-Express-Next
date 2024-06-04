@@ -37,15 +37,6 @@ function TicketingSection4({ numberOfCards, cards }) {
                           );
                         })}
                       </div>
-                      <div className="mt-4">
-                        <a
-                          className="btn btn-block btn-info btn-lg text-center"
-                          href="#"
-                          role="button"
-                        >
-                          Buy
-                        </a>
-                      </div>
                     </div>
                   </div>
                 </div>

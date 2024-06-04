@@ -2,12 +2,13 @@
 
 import { Navbar, Nav, NavItem, Dropdown } from "react-bootstrap";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import logo from "../assets/logo.png";
 import { jwtDecode } from "jwt-decode";
 import "./navbar.css";
 import axios from "axios";
+import { useEffect, useState } from "react";
 import {
   NotificationContainer,
   NotificationManager,
@@ -15,6 +16,17 @@ import {
 
 function NavbarComponent({ eventId }) {
   const router = useRouter();
+  const [isOnEventPage, setIsOnEventPage] = useState(false);
+
+  const pathName = usePathname();
+
+  useEffect(() => {
+    if (pathName.includes("event")) {
+      setIsOnEventPage(true);
+    } else {
+      setIsOnEventPage(false);
+    }
+  }, [pathName]);
 
   const handleRedirect = () => {
     const token = Cookies.get("token");
@@ -83,13 +95,23 @@ function NavbarComponent({ eventId }) {
           <Nav.Item>
             <Nav.Link href="/userDashboard/MyEvents">My Events</Nav.Link>
           </Nav.Item>
-          <Nav.Item>
-            <Nav.Link onClick={MarkAsAttending}>Extra Button</Nav.Link>
-          </Nav.Item>
         </Nav>
         <Nav>
+          {isOnEventPage && (
+            <Nav.Item>
+              <Nav.Link
+                onClick={MarkAsAttending}
+                style={{
+                  backgroundColor: "gold",
+                  borderRadius: "5px",
+                }}
+              >
+                Mark Yourself Attending
+              </Nav.Link>
+            </Nav.Item>
+          )}
           <Nav.Item>
-            <Dropdown align="end">
+            <Dropdown align="end" style={{ marginLeft: "1.5em" }}>
               <Dropdown.Toggle as={Nav.Link} id="dropdown-custom-components">
                 <Image src="/user.png" height={30} width={30} />
               </Dropdown.Toggle>
