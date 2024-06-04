@@ -30,7 +30,46 @@ const initialComponents = {
       { title: "Card 4", subtitle: "Desc Card 4", price: 25, perks: [] },
     ],
   },
-  TimelineSection1: { text: "Timeline Section 1 Text" },
+  TimelineSection1: {
+    numberOfEvents: 5,
+    events: [
+      {
+        date: "19th Aug, 2020",
+        location: "Location",
+        time: "1200",
+        title: "The Wildlife diary",
+        desc: "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.",
+      },
+      {
+        date: "20th Aug, 2020",
+        location: "Location",
+        time: "1200",
+        title: "The Wildlife diary",
+        desc: "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.",
+      },
+      {
+        date: "19th Aug, 2020",
+        location: "Location",
+        time: "1200",
+        title: "The Wildlife diary",
+        desc: "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.",
+      },
+      {
+        date: "19th Aug, 2020",
+        location: "Location",
+        time: "1200",
+        title: "The Wildlife diary",
+        desc: "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.",
+      },
+      {
+        date: "19th Aug, 2020",
+        location: "Location",
+        time: "1200",
+        title: "The Wildlife diary",
+        desc: "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.",
+      },
+    ],
+  },
 };
 
 export default initialComponents;
