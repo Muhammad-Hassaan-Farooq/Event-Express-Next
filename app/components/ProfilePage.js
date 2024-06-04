@@ -45,24 +45,6 @@ const ProfilePage = ({
                   </h5>
                   <p className="text-muted mb-1">{email}</p>
                   <p className="text-muted mb-4">{role.toUpperCase()}</p>
-                  <div className="d-flex justify-content-center mb-2">
-                    <button
-                      type="button"
-                      data-mdb-button-init
-                      data-mdb-ripple-init
-                      className="btn btn-primary"
-                    >
-                      Follow
-                    </button>
-                    <button
-                      type="button"
-                      data-mdb-button-init
-                      data-mdb-ripple-init
-                      className="btn btn-outline-primary ms-1"
-                    >
-                      Message
-                    </button>
-                  </div>
                 </div>
               </div>
             </div>
@@ -94,7 +76,7 @@ const ProfilePage = ({
                           src="/edit.png"
                           height={20}
                           width={20}
-                          style={{ marginBottom: "5px" }}
+                          style={{ marginBottom: "23px" }}
                         />
                       </Link>
                     </div>

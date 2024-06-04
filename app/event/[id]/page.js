@@ -39,7 +39,7 @@ async function page({ params }) {
 
     return (
       <div>
-        <NavbarComponent eventId = {params.id} />
+        <NavbarComponent eventId={params.id} />
         {Object.entries(sections).map(
           ([section, componentIds]) =>
             componentIds.length > 0 && (
@@ -50,9 +50,7 @@ async function page({ params }) {
         )}
       </div>
     );
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 }
 
 export default page;

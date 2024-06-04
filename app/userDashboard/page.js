@@ -32,9 +32,7 @@ export default function userHome() {
         .then((res) => {
           setEvents(res.data.data);
         })
-        .catch((error) => {
-          console.error("Error fetching events:", error);
-        });
+        .catch((error) => {});
     }
   }, []);
 

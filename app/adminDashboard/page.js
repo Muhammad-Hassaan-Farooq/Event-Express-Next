@@ -38,7 +38,7 @@ const AdminDashboard = () => {
       setUsers(usersResponse.data.data);
       setOrganizers(organizersResponse.data.data);
     } catch (error) {
-      NotificationManager.error("An unexpected Error Occured", "Error",1000);
+      NotificationManager.error("An unexpected Error Occured", "Error", 1000);
     }
   };
 
@@ -46,9 +46,12 @@ const AdminDashboard = () => {
   return (
     <>
       <NavbarComponent />
-      <div class="container bootstrap snippet vh-100">
-        <div class="row">
-          <div class="col-lg-2 col-sm-6">
+      <div className="d-flex flex-column">
+        <div>
+          <h1 className="text-dark text-center">Admin Dashboard</h1>
+        </div>
+        <div class="d-flex justify-content-center bootstrap snippet vh-100">
+          <div class="col-lg-2 col-sm-6 m-3">
             <div class="circle-tile ">
               <a href="#">
                 <div class="circle-tile-heading dark-blue">
@@ -65,7 +68,7 @@ const AdminDashboard = () => {
             </div>
           </div>
 
-          <div class="col-lg-2 col-sm-6">
+          <div class="col-lg-2 col-sm-6 m-3">
             <div class="circle-tile ">
               <a href="#">
                 <div class="circle-tile-heading red">

@@ -57,10 +57,8 @@ const CreateEvent = () => {
       }
     } catch (error) {
       if (error.response && error.response.data) {
-        console.error("Error response data:", error.response.data);
         NotificationManager.error(error.response.data.message, "Error");
       } else {
-        console.error("Unexpected error:", error);
         NotificationManager.error("An unexpected error occurred", "Error");
       }
     }
@@ -68,6 +66,9 @@ const CreateEvent = () => {
 
   return (
     <>
+      <div className="d-flex justify-content-center">
+        <h1 className="text-dark">Create Event</h1>
+      </div>
       <div
         style={{
           display: "flex",
@@ -91,6 +92,7 @@ const CreateEvent = () => {
             <label
               htmlFor="title"
               style={{ display: "block", marginBottom: "5px" }}
+              className="text-dark"
             >
               Title
             </label>
@@ -112,6 +114,7 @@ const CreateEvent = () => {
             <label
               htmlFor="description"
               style={{ display: "block", marginBottom: "5px" }}
+              className="text-dark"
             >
               Description
             </label>
@@ -132,6 +135,7 @@ const CreateEvent = () => {
             <label
               htmlFor="date"
               style={{ display: "block", marginBottom: "5px" }}
+              className="text-dark"
             >
               Date
             </label>
@@ -153,6 +157,7 @@ const CreateEvent = () => {
             <label
               htmlFor="location"
               style={{ display: "block", marginBottom: "5px" }}
+              className="text-dark"
             >
               Location
             </label>
@@ -174,6 +179,7 @@ const CreateEvent = () => {
             <label
               htmlFor="price"
               style={{ display: "block", marginBottom: "5px" }}
+              className="text-dark"
             >
               Price
             </label>
@@ -195,6 +201,7 @@ const CreateEvent = () => {
             <label
               htmlFor="price"
               style={{ display: "block", marginBottom: "5px" }}
+              className="text-dark"
             >
               Event Capacity
             </label>

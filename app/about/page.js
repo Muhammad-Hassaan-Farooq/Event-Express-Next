@@ -18,7 +18,10 @@ const AboutPage = () => {
         <div className="container py-5">
           <div className="row h-100 align-items-center py-5">
             <div className="col-lg-6">
-              <h1 className="display-4" style={{ fontFamily: "sans-serif" }}>
+              <h1
+                className="display-4"
+                style={{ fontFamily: "sans-serif", color: "black" }}
+              >
                 Our Mission
               </h1>
               <p
@@ -26,8 +29,6 @@ const AboutPage = () => {
                 style={{
                   color: "black",
                   fontWeight: "bold",
-                  webKitTextStrokeWidth: "3px",
-                  webKitTextStrokeColor: "white",
                 }}
               >
                 Welcome to Event Express, where our mission is to revolutionize
@@ -141,7 +142,7 @@ const AboutPage = () => {
                   width="100"
                   className="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
                 />
-                <h5 className="mb-0">Hassaan Farooq</h5>
+                <h5 className="mb-0 text-dark">Hassaan Farooq</h5>
                 <span className="small text-uppercase text-muted">
                   CEO - Founder
                 </span>
@@ -177,7 +178,7 @@ const AboutPage = () => {
                   width="100"
                   className="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
                 />
-                <h5 className="mb-0">Shaheer Alam</h5>
+                <h5 className="mb-0 text-dark">Shaheer Alam</h5>
                 <span className="small text-uppercase text-muted">
                   Co-Founder
                 </span>
@@ -213,7 +214,7 @@ const AboutPage = () => {
                   width="100"
                   className="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
                 />
-                <h5 className="mb-0">Burhanuddin Markra</h5>
+                <h5 className="mb-0 text-dark">Burhanuddin Markra</h5>
                 <span className="small text-uppercase text-muted">
                   COO - Co-Founder
                 </span>
@@ -249,7 +250,7 @@ const AboutPage = () => {
                   width="100"
                   className="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
                 />
-                <h5 className="mb-0">Sami Ul Ahbab</h5>
+                <h5 className="mb-0 text-dark">Sami Ul Ahbab</h5>
                 <span className="small text-uppercase text-muted">
                   CEO - Technyx Solutions
                 </span>

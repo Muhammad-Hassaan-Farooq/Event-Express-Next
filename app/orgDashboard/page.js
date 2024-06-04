@@ -33,9 +33,7 @@ export default function orgHome() {
         .then((res) => {
           setEvents(res.data.data);
         })
-        .catch((error) => {
-          console.error("Error fetching events:", error);
-        });
+        .catch((error) => {});
     }
   }, []);
 
@@ -60,7 +58,7 @@ export default function orgHome() {
             marginRight: "1.5em",
           }}
         >
-          <h1>Your Dashboard</h1>
+          <h1 className="text-dark">Your Dashboard</h1>
           <button
             type="button"
             className="noselect"

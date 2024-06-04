@@ -71,6 +71,12 @@ a:hover {
     font-size: 1.75rem;
   }
 
+  .postcard__title:hover {
+    color: #0076bd;
+  }
+  postcard__bar:after {
+    color: #0076bd;
+  }
   .postcard__img {
     max-height: 180px;
     width: 100%;

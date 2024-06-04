@@ -4,7 +4,7 @@ import MainPage from "./components/MainPage";
 import PreviewButton from "./components/PreviewButton";
 import { useState } from "react";
 import Slider from "./components/Slider";
-import NavbarComponent from "../components/Navbar";
+import NavbarComponent from "../orgDashboard/components/Navbar";
 import { usePathname, useSearchParams } from "next/navigation";
 
 function Page({ event }) {

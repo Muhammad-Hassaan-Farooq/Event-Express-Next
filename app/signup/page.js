@@ -60,9 +60,6 @@ function LoginPage() {
       .post("http://localhost:3000/auth/login", input)
       .then((res) => {
         if (res.data.success) {
-          setTimeout(() => {
-            NotificationManager.success(res.data.message, "Success", 1500);
-          }, 1500);
           Cookies.set("token", res.data.token);
           router.push("/");
         } else {
@@ -158,7 +155,7 @@ function LoginPage() {
                             />
                             <i class="input-icon uil uil-lock-alt"></i>
                           </div>
-                          <a class="btn mt-4" onClick={handleLogin}>
+                          <a class="login-btn mt-4" onClick={handleLogin}>
                             Login
                           </a>
                           <p class="mb-0 mt-4 text-center">
@@ -195,14 +192,14 @@ function LoginPage() {
                                   <div className="modal-footer">
                                     <button
                                       type="button"
-                                      className="btn btn-secondary"
+                                      className="login-btn login-btn-secondary"
                                       onClick={() => setIsModalOpen(false)}
                                     >
                                       Close
                                     </button>
                                     <button
                                       type="button"
-                                      className="btn btn-primary"
+                                      className="login-btn login-btn-primary"
                                       onClick={handleSendResetLink}
                                     >
                                       Send Reset Link
@@ -267,7 +264,7 @@ function LoginPage() {
                             />
                             <i class="input-icon uil uil-lock-alt"></i>
                           </div>
-                          <a onClick={handleSignup} class="btn mt-4">
+                          <a onClick={handleSignup} class="login-btn mt-4">
                             SignUp
                           </a>
                         </div>

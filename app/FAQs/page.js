@@ -5,18 +5,24 @@ const FAQPage = () => {
   return (
     <div>
       <NavbarComponent />
-      <section class="bsb-faq-3 py-3 py-md-5 py-xl-8" style={{backgroundImage:"url('https://images.pexels.com/photos/7130555/pexels-photo-7130555.jpeg?cs=srgb&dl=pexels-codioful-7130555.jpg&fm=jpg')"}}>
+      <section
+        class="bsb-faq-3 py-3 py-md-5 py-xl-8"
+        style={{
+          backgroundImage:
+            "url('https://images.pexels.com/photos/7130555/pexels-photo-7130555.jpeg?cs=srgb&dl=pexels-codioful-7130555.jpg&fm=jpg')",
+        }}
+      >
         <div class="container">
           <div class="row justify-content-md-center">
             <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
-              <h2 class="mb-4 display-5 text-center">
+              <h2 class="mb-4 display-5 text-center text-dark">
                 Frequently Asked Questions
               </h2>
-              <p class="text-secondary text-center lead fs-4">
+              <p class="text-secondary text-center lead fs-4 text-dark">
                 Welcome to our FAQ page, your one-stop resource for answers to
                 commonly asked questions.
               </p>
-              <p class="mb-5 text-center">
+              <p class="mb-5 text-center text-dark">
                 Whether you're a new customer looking to learn more about what
                 we offer or a long-time user seeking clarification on specific
                 topics, this page has clear and concise information about our
@@ -32,7 +38,7 @@ const FAQPage = () => {
               <div class="col-11 col-xl-10">
                 <div class="d-flex align-items-end mb-5">
                   <i class="bi bi-person-gear me-3 lh-1 display-5"></i>
-                  <h3 class="m-0">Your Account</h3>
+                  <h3 class="m-0 text-dark">Your Account</h3>
                 </div>
               </div>
               <div class="col-11 col-xl-10">
@@ -190,7 +196,7 @@ const FAQPage = () => {
               <div class="col-11 col-xl-10">
                 <div class="d-flex align-items-end mb-5">
                   <i class="bi bi-cart-plus me-3 lh-1 display-5"></i>
-                  <h3 class="m-0 mt-3">Buying A Ticket</h3>
+                  <h3 class="m-0 mt-3 text-dark">Buying A Ticket</h3>
                 </div>
               </div>
               <div class="col-11 col-xl-10">
@@ -345,7 +351,7 @@ const FAQPage = () => {
               <div class="col-11 col-xl-10">
                 <div class="d-flex align-items-end mb-5">
                   <i class="bi bi-bag-dash me-3 lh-1 display-5"></i>
-                  <h3 class="m-0 mt-3">Event Details</h3>
+                  <h3 class="m-0 mt-3 text-dark">Event Details</h3>
                 </div>
               </div>
               <div class="col-11 col-xl-10">

@@ -30,7 +30,6 @@ const AdminDashboardUsersPage = () => {
         );
         if (response.data.success) {
           setUsers(response.data.data);
-          NotificationManager.success(response.data.message, "Success", 1500);
         } else {
           NotificationManager.error(response.data.message, "Error", 1500);
         }

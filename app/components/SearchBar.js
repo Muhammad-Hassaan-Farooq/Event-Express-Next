@@ -70,13 +70,12 @@ const SearchBar = ({ setEvents, events }) => {
 
   const handleSearchbyOrganizer = async () => {
     try {
-      console.log(organizer);
       const id = await axios.post(
         "http://localhost:3000/event/getOrganizerByName",
         { name: organizer },
         { headers: { Authorization: `Bearer ${token}` } }
       );
-      console.log(id.data.data[0]._id);
+
       const orgId = id.data.data[0]._id;
       const response = await axios.post(
         "http://localhost:3000/event/getByOrganizer",
@@ -87,7 +86,7 @@ const SearchBar = ({ setEvents, events }) => {
           },
         }
       );
-      console.log(response);
+
       if (response.data.success) {
         setEvents(response.data.data);
         NotificationManager.success(response.data.message, "Success");
@@ -104,7 +103,6 @@ const SearchBar = ({ setEvents, events }) => {
       let response = null;
 
       if (maxPrice === undefined || maxPrice === "") {
-        console.log("maxPrice is undefined");
         response = await axios.post(
           "http://localhost:3000/event/getByPrice",
           { minPrice: minPrice },
@@ -115,7 +113,6 @@ const SearchBar = ({ setEvents, events }) => {
           }
         );
       } else if (minPrice === undefined || minPrice === "") {
-        console.log("minPrice is undefined");
         response = await axios.post(
           "http://localhost:3000/event/getByPrice",
           { maxPrice: maxPrice },
@@ -126,14 +123,12 @@ const SearchBar = ({ setEvents, events }) => {
           }
         );
       } else if (parseInt(maxPrice) < parseInt(minPrice)) {
-        console.log("maxPrice is less than minPrice");
         NotificationManager.error(
           "Maximum price should be greater than minimum price",
           "Error"
         );
         return;
       } else {
-        console.log("both are defined");
         response = await axios.post(
           "http://localhost:3000/event/getByPrice",
           { maxPrice: maxPrice, minPrice: minPrice },
@@ -156,7 +151,6 @@ const SearchBar = ({ setEvents, events }) => {
   };
 
   const handleSearchbyName = async () => {
-    console.log(category);
     try {
       const response = await axios.post(
         "http://localhost:3000/event/getByName",

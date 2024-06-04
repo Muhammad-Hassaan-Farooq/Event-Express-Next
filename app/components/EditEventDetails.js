@@ -22,10 +22,8 @@ const EditEventDetails = (details) => {
   const token = Cookies.get("token");
   const { id } = useParams();
 
-  console.log(startDate);
   useEffect(() => {
     if (details) {
-      console.log(details);
       setTitle(details.details.title);
       setDescription(details.details.description);
       setDate(formatDate(new Date(details.details.startDate)));
@@ -81,10 +79,8 @@ const EditEventDetails = (details) => {
       }
     } catch (error) {
       if (error.response && error.response.data) {
-        console.error("Error response data:", error.response.data);
         NotificationManager.error(error.response.data.message, "Error", 1000);
       } else {
-        console.error("Unexpected error:", error);
         NotificationManager.error(
           "An unexpected error occurred",
           "Error",
@@ -96,7 +92,10 @@ const EditEventDetails = (details) => {
 
   return (
     <>
-      <h1>Edit New Event</h1>
+      <div className="d-flex justify-content-center">
+        <h1 className="text-dark">Edit Event</h1>
+      </div>
+
       <div
         style={{
           display: "flex",
@@ -118,6 +117,7 @@ const EditEventDetails = (details) => {
         >
           <div style={{ marginBottom: "15px" }}>
             <label
+              className="text-dark"
               htmlFor="title"
               style={{ display: "block", marginBottom: "5px" }}
             >
@@ -139,6 +139,7 @@ const EditEventDetails = (details) => {
           </div>
           <div style={{ marginBottom: "15px" }}>
             <label
+              className="text-dark"
               htmlFor="description"
               style={{ display: "block", marginBottom: "5px" }}
             >
@@ -159,6 +160,7 @@ const EditEventDetails = (details) => {
           </div>
           <div style={{ marginBottom: "15px" }}>
             <label
+              className="text-dark"
               htmlFor="date"
               style={{ display: "block", marginBottom: "5px" }}
             >
@@ -180,6 +182,7 @@ const EditEventDetails = (details) => {
           </div>
           <div style={{ marginBottom: "15px" }}>
             <label
+              className="text-dark"
               htmlFor="location"
               style={{ display: "block", marginBottom: "5px" }}
             >
@@ -201,6 +204,7 @@ const EditEventDetails = (details) => {
           </div>
           <div style={{ marginBottom: "15px" }}>
             <label
+              className="text-dark"
               htmlFor="price"
               style={{ display: "block", marginBottom: "5px" }}
             >
@@ -222,6 +226,7 @@ const EditEventDetails = (details) => {
           </div>
           <div style={{ marginBottom: "15px" }}>
             <label
+              className="text-dark"
               htmlFor="price"
               style={{ display: "block", marginBottom: "5px" }}
             >

@@ -32,7 +32,6 @@ const AdminDashboardOrganizerPage = () => {
         );
         if (response.data.success) {
           setOrganizers(response.data.data);
-          NotificationManager.success(response.data.message, "Success", 1500);
         } else {
           NotificationManager.error(response.data.message, "Error", 1500);
         }
@@ -53,7 +52,7 @@ const AdminDashboardOrganizerPage = () => {
           headers: { Authorization: `Bearer ${token}` },
         }
       );
-      console.log(response.data);
+
       if (response.data.success) {
         setOrganizers(response.data.data);
         NotificationManager.success(response.data.message, "Success", 1500);

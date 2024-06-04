@@ -42,10 +42,8 @@ const changePassword = () => {
       }
     } catch (error) {
       if (error.response && error.response.data) {
-        console.error("Error response data:", error.response.data);
         NotificationManager.error(error.response.data.message, "Error");
       } else {
-        console.error("Unexpected error:", error);
         NotificationManager.error("An unexpected error occurred", "Error");
       }
     }

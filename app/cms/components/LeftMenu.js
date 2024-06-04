@@ -41,18 +41,9 @@ function LeftMenu({
       );
 
       if (response.data.success) {
-        console.log("Event updated successfully");
-        router.push(`/event/${eventID}`);
-      } else {
-        console.error(response.data.message);
+        router.push(`/orgDashboard`);
       }
-    } catch (error) {
-      if (error.response && error.response.data) {
-        console.error("Error response data:", error.response.data);
-      } else {
-        console.error("Unexpected error:", error);
-      }
-    }
+    } catch (error) {}
   };
 
   const editableComponentMap = {
