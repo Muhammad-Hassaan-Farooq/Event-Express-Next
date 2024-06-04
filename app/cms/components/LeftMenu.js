@@ -13,6 +13,7 @@ import "../styles/LeftMenu.css";
 import Image from "next/image";
 import HeroSection1 from "./CMSComponents/HeroSection1";
 import EditableTicketSection from "./CMSComponents/editableCards/EditableTicketSection";
+import EditableTimelineSection1 from "./CMSComponents/editableCards/EditableTimelineSection1";
 
 function LeftMenu({
   currentlySelectedSection,
@@ -58,7 +59,7 @@ function LeftMenu({
     HeroSection1: EditableHeroSection1,
     HeroSection2: EditableHeroSection2,
     TicketSection4: EditableTicketSection,
-    TimelineSection1: EditableHeroSection2,
+    TimelineSection1: EditableTimelineSection1,
   };
 
   const renderEditableComponent = (section, componentId) => {
