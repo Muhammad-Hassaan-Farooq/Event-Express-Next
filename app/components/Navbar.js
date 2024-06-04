@@ -60,7 +60,7 @@ function NavbarComponent() {
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item href="/profile">View Profile</Dropdown.Item>
-                <Dropdown.Item href="/signup">Logout</Dropdown.Item>
+                <Dropdown.Item href="/signup" onClick={()=> {Cookies.remove("token")}}>Logout</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </Nav.Item>

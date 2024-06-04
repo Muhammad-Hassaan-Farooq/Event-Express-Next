@@ -5,6 +5,8 @@ import "./globals.css";
 import ReduxProvider from "../redux/provider";
 import 'react-notifications/lib/notifications.css';
 import Footer from "./components/Footer";
+import { Children } from "react";
+
 
 
 const inter = Inter({ subsets: ["latin"] });

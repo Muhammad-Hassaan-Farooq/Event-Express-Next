@@ -10,6 +10,7 @@ import {
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import "../users/profile-styles.css";
 
 const AdminDashboardOrganizerPage = () => {
   const [organizers, setOrganizers] = useState([]);
