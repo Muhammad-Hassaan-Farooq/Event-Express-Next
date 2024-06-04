@@ -168,13 +168,16 @@ function LoginPage() {
                               <div className="modal-dialog" role="document">
                                 <div className="modal-content">
                                   <div className="modal-header">
-                                    <h5 className="modal-title">
+                                    <h5 className="modal-title text-dark">
                                       Forgot Password
                                     </h5>
                                   </div>
-                                  <div className="modal-body">
+                                  <div className="modal-body ">
                                     <div className="mb-4">
-                                      <label htmlFor="forgotEmail">
+                                      <label
+                                        htmlFor="forgotEmail"
+                                        className="text-dark"
+                                      >
                                         Email address
                                       </label>
                                       <input
