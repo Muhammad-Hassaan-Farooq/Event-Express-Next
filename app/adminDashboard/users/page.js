@@ -177,7 +177,7 @@ const AdminDashboardUsersPage = () => {
                           type="button"
                           data-mdb-button-init
                           data-mdb-ripple-init
-                          class="btn btn-primary btn-sm mx-3"
+                          class="btn btn-primary btn-sm mx-auto"
                           onClick={() => handleChangeRole(user.email)}
                         >
                           Change Role To Organizer
