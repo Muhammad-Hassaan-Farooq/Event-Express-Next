@@ -136,15 +136,15 @@ const ProfilePage = ({
                 <div className="modal-dialog" role="document">
                   <div className="modal-content">
                     <div className="modal-header">
-                      <h5 className="modal-title">
+                      <h5 className="modal-title text-dark">
                         Delete Account Confirmation
                       </h5>
                     </div>
-                    <div className="modal-body">
+                    <div className="modal-body text-dark">
                       Are you sure you want to delete your account?
                     </div>
                     <div className="form-group mx-3">
-                      <label for="exampleInputPassword1">
+                      <label for="exampleInputPassword1" className="text-dark">
                         If "Yes" then enter your password
                       </label>
                       <input
