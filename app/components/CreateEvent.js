@@ -75,6 +75,7 @@ const CreateEvent = () => {
           justifyContent: "center",
           alignItems: "center",
           height: "min-content",
+          paddingBottom: "2em",
         }}
       >
         <form

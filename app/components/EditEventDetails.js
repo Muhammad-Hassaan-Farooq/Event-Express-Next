@@ -101,7 +101,8 @@ const EditEventDetails = (details) => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          height: "100vh",
+          height: "min-content",
+          paddingBottom: "2em",
         }}
       >
         <form
