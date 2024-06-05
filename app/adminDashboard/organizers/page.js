@@ -147,7 +147,7 @@ const AdminDashboardOrganizerPage = () => {
                 animationName: "fadeInUp",
               }}
             >
-              <h3>
+              <h3 className="text-dark">
                 Organizers <span> Team</span>
               </h3>
               <div class="line"></div>
@@ -172,16 +172,18 @@ const AdminDashboardOrganizerPage = () => {
                     </div>
 
                     <div class="single_advisor_details_info">
-                      <h6>
+                      <h6 className="text-dark">
                         {organizer.firstName} {organizer.lastName}
                       </h6>
-                      <p class="designation">{organizer.role.toUpperCase()}</p>
+                      <p class="designation text-dark">
+                        {organizer.role.toUpperCase()}
+                      </p>
                       <div className="d-flex mt-3">
                         <button
                           type="button"
                           data-mdb-button-init
                           data-mdb-ripple-init
-                          class="btn btn-primary btn-sm mx-3"
+                          class="btn btn-primary btn-sm mx-auto"
                           onClick={() => handleChangeRole(organizer.email)}
                         >
                           Change Role To User

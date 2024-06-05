@@ -143,7 +143,7 @@ const AdminDashboardUsersPage = () => {
                 animationName: "fadeInUp",
               }}
             >
-              <h3>Active Users</h3>
+              <h3 className="text-dark">Active Users</h3>
               <div class="line"></div>
             </div>
             <div class="d-flex flex-row flex-wrap justify-content-evenly">
@@ -166,10 +166,12 @@ const AdminDashboardUsersPage = () => {
                     </div>
 
                     <div class="single_advisor_details_info">
-                      <h6>
+                      <h6 className="text-dark">
                         {user.firstName} {user.lastName}
                       </h6>
-                      <p class="designation">{user.role.toUpperCase()}</p>
+                      <p class="designation" className="text-dark">
+                        {user.role.toUpperCase()}
+                      </p>
                       <div className="d-flex mt-3">
                         <button
                           type="button"
