@@ -20,7 +20,7 @@ const changePassword = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3000/profile/changePassword",
+        "https://event-express-one.vercel.app/profile/changePassword",
         {
           oldPassword: Oldpassword,
           newPassword: Newpassword,

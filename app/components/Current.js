@@ -18,7 +18,7 @@ const Current = () => {
     const fetchEvents = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/event/myCurrentEvents",
+          "https://event-express-one.vercel.app/event/myCurrentEvents",
           {
             headers: {
               Authorization: `Bearer ${token}`,

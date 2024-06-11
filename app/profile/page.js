@@ -8,7 +8,7 @@ const MyProfile = async () => {
 
   const decodedToken = jwtDecode(token.value);
   const response = await axios.post(
-    "http://localhost:3000/profile/viewProfile",
+    "https://event-express-one.vercel.app/profile/viewProfile",
     {
       id: decodedToken.id,
     },
@@ -23,7 +23,7 @@ const MyProfile = async () => {
     "use server";
     try {
       const response = await axios.post(
-        "http://localhost:3000/profile/deleteMyAccount",
+        "https://event-express-one.vercel.app/profile/deleteMyAccount",
         {
           id: decodedToken.id,
           password: password,

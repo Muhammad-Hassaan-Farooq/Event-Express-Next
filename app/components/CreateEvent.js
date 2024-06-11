@@ -30,7 +30,7 @@ const CreateEvent = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3000/event/createEvent",
+        "https://event-express-one.vercel.app/event/createEvent",
         {
           title,
           description,

@@ -27,7 +27,7 @@ const SearchBar = ({ setEvents, events }) => {
   const handleSearchbyDate = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/event/getByDate",
+        "https://event-express-one.vercel.app/event/getByDate",
         { date: date },
         {
           headers: {
@@ -49,7 +49,7 @@ const SearchBar = ({ setEvents, events }) => {
   const handleSearchbyLocation = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/event/getByLocation",
+        "https://event-express-one.vercel.app/event/getByLocation",
         { location: location },
         {
           headers: {
@@ -71,14 +71,14 @@ const SearchBar = ({ setEvents, events }) => {
   const handleSearchbyOrganizer = async () => {
     try {
       const id = await axios.post(
-        "http://localhost:3000/event/getOrganizerByName",
+        "https://event-express-one.vercel.app/event/getOrganizerByName",
         { name: organizer },
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
       const orgId = id.data.data[0]._id;
       const response = await axios.post(
-        "http://localhost:3000/event/getByOrganizer",
+        "https://event-express-one.vercel.app/event/getByOrganizer",
         { org_id: orgId },
         {
           headers: {
@@ -104,7 +104,7 @@ const SearchBar = ({ setEvents, events }) => {
 
       if (maxPrice === undefined || maxPrice === "") {
         response = await axios.post(
-          "http://localhost:3000/event/getByPrice",
+          "https://event-express-one.vercel.app/event/getByPrice",
           { minPrice: minPrice },
           {
             headers: {
@@ -114,7 +114,7 @@ const SearchBar = ({ setEvents, events }) => {
         );
       } else if (minPrice === undefined || minPrice === "") {
         response = await axios.post(
-          "http://localhost:3000/event/getByPrice",
+          "https://event-express-one.vercel.app/event/getByPrice",
           { maxPrice: maxPrice },
           {
             headers: {
@@ -130,7 +130,7 @@ const SearchBar = ({ setEvents, events }) => {
         return;
       } else {
         response = await axios.post(
-          "http://localhost:3000/event/getByPrice",
+          "https://event-express-one.vercel.app/event/getByPrice",
           { maxPrice: maxPrice, minPrice: minPrice },
           {
             headers: {
@@ -153,7 +153,7 @@ const SearchBar = ({ setEvents, events }) => {
   const handleSearchbyName = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/event/getByName",
+        "https://event-express-one.vercel.app/event/getByName",
         { name: name },
         {
           headers: {
@@ -175,7 +175,7 @@ const SearchBar = ({ setEvents, events }) => {
   const handleDefault = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3000/event/getEvents",
+        "https://event-express-one.vercel.app/event/getEvents",
         {
           headers: {
             Authorization: `Bearer ${token}`,

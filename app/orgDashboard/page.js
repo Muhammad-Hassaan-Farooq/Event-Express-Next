@@ -25,7 +25,7 @@ export default function orgHome() {
       setLoading(true);
     } else {
       axios
-        .get("http://localhost:3000/event/getEvent", {
+        .get("https://event-express-one.vercel.app/event/getEvent", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

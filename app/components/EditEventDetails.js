@@ -47,7 +47,7 @@ const EditEventDetails = (details) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `http://localhost:3000/event/changeEventDetails`,
+        `https://event-express-one.vercel.app/event/changeEventDetails`,
         {
           id: id,
           title,

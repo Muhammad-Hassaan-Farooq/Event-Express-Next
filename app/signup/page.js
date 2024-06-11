@@ -39,7 +39,7 @@ function LoginPage() {
 
   const handleSignup = async () => {
     await axios
-      .post("http://localhost:3000/auth/signUp", registerInput)
+      .post("https://event-express-one.vercel.app/auth/signUp", registerInput)
       .then((res) => {
         if (res.data.success) {
           setTimeout(() => {
@@ -57,7 +57,7 @@ function LoginPage() {
 
   const handleLogin = async () => {
     await axios
-      .post("http://localhost:3000/auth/login", input)
+      .post("https://event-express-one.vercel.app/auth/login", input)
       .then((res) => {
         if (res.data.success) {
           Cookies.set("token", res.data.token);
@@ -88,7 +88,7 @@ function LoginPage() {
   const handleSendResetLink = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/auth/forgetPassword",
+        "https://event-express-one.vercel.app/auth/forgetPassword",
         { email: forgotEmail }
       );
       if (response.data.success) {

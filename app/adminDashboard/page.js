@@ -20,7 +20,7 @@ const AdminDashboard = () => {
   const fetchData = async () => {
     try {
       const usersResponse = await axios.get(
-        "http://localhost:3000/accountManagement/countUsers",
+        "https://event-express-one.vercel.app/accountManagement/countUsers",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -28,7 +28,7 @@ const AdminDashboard = () => {
         }
       );
       const organizersResponse = await axios.get(
-        "http://localhost:3000/accountManagement/countOrganizers",
+        "https://event-express-one.vercel.app/accountManagement/countOrganizers",
         {
           headers: {
             Authorization: `Bearer ${token}`,

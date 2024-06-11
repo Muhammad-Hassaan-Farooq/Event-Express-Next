@@ -18,7 +18,7 @@ const DeleteEvent = () => {
   const deleteEvent = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/event/deleteEvent",
+        "https://event-express-one.vercel.app/event/deleteEvent",
         {
           id: id,
         },

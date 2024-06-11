@@ -20,7 +20,7 @@ const editEvent = async () => {
   const { id } = useParams();
 
   const response = await axios.post(
-    "http://localhost:3000/event/getById",
+    "https://event-express-one.vercel.app/event/getById",
     {
       id: id,
     },

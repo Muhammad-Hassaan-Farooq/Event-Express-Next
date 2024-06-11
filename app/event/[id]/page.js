@@ -9,7 +9,7 @@ import NavbarComponent from "@/app/components/Navbar";
 async function page({ params }) {
   try {
     const response = await axios.get(
-      `http://localhost:3000/eventPage/getEventPage/${params.id}`,
+      `https://event-express-one.vercel.app/eventPage/getEventPage/${params.id}`,
       {
         headers: {
           Authorization: `Bearer ${cookies().get("token").value}`,

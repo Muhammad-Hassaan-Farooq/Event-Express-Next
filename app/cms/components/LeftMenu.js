@@ -28,7 +28,7 @@ function LeftMenu({
 
     try {
       const response = await axios.post(
-        `http://localhost:3000/eventPage/setEventPage/${eventID}`,
+        `https://event-express-one.vercel.app/eventPage/setEventPage/${eventID}`,
         {
           sections: sections,
           componentStates: componentStates,

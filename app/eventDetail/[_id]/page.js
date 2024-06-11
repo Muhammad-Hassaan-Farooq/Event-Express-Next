@@ -5,7 +5,7 @@ const DetialPage = async ({ params }) => {
   const token = cookies().get("token");
 
   const response = await axios.get(
-    `http://localhost:3000/event/getEvent/${params._id}`,
+    `https://event-express-one.vercel.app/event/getEvent/${params._id}`,
     {
       headers: {
         Authorization: `Bearer ${token.value}`,

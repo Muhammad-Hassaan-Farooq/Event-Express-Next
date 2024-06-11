@@ -21,7 +21,7 @@ const AdminDashboardUsersPage = () => {
     const fetchUsers = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/accountManagement/getUsers",
+          "https://event-express-one.vercel.app/accountManagement/getUsers",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -44,7 +44,7 @@ const AdminDashboardUsersPage = () => {
   const findByName = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/accountManagement/getUserByName",
+        "https://event-express-one.vercel.app/accountManagement/getUserByName",
         { name: name },
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -64,7 +64,7 @@ const AdminDashboardUsersPage = () => {
   const handleChangeRole = async (email) => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/accountManagement/changeRole",
+        "https://event-express-one.vercel.app/accountManagement/changeRole",
         { email: email, role: "organizer" },
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -86,7 +86,7 @@ const AdminDashboardUsersPage = () => {
   const handleDeleteUser = async (email) => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/accountManagement/deleteAccount",
+        "https://event-express-one.vercel.app/accountManagement/deleteAccount",
         { email: email },
         {
           headers: { Authorization: `Bearer ${token}` },

@@ -12,44 +12,41 @@ import Cookies from "js-cookie";
 import axios from "axios";
 import EventListing from "@/app/components/EventListing";
 
-
-
 const History = () => {
-    const [events, setEvents] = useState([]);
-    const token = Cookies.get("token");
+  const [events, setEvents] = useState([]);
+  const token = Cookies.get("token");
 
-    useEffect(() => {
-        const fetchEvents = async () => {
-            try {
-                const response = await axios.get(
-                    "http://localhost:3000/event/myEvents",
-                    {
-                        headers: {
-                            Authorization: `Bearer ${token}`,
-                        },
-                    }
-                );
-                if (response.data.success) {
-                    setEvents(response.data.data);
-                } else {
-                    NotificationManager.error(response.data.message, "Error", 1500);
-                }
-            } catch (error) {
-                NotificationManager.error("Server Error", "Error", 1500);
-            }
-        };
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const response = await axios.get(
+          "https://event-express-one.vercel.app/event/myEvents",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        if (response.data.success) {
+          setEvents(response.data.data);
+        } else {
+          NotificationManager.error(response.data.message, "Error", 1500);
+        }
+      } catch (error) {
+        NotificationManager.error("Server Error", "Error", 1500);
+      }
+    };
 
-        fetchEvents();
-    }, []);
+    fetchEvents();
+  }, []);
 
-    return (
-        <>
-            <NavbarComponent />
-            <EventListing events={events}/>
-            <NotificationContainer />
-        </>
-    );
-
+  return (
+    <>
+      <NavbarComponent />
+      <EventListing events={events} />
+      <NotificationContainer />
+    </>
+  );
 };
 
 export default History;
