@@ -10,7 +10,7 @@ import EventListing from "./components/EventListing";
 import NewEvent from "./newEvent/page";
 import NavbarComponent from "./components/Navbar";
 
-export default function orgHome() {
+export default function OrgHome() {
   const token = Cookies.get("token");
 
   const [events, setEvents] = useState([]);

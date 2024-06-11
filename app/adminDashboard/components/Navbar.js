@@ -52,9 +52,8 @@ function NavbarComponent() {
             <Nav.Link href="/contact-us">Contact</Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href="/FAQs">FAQ's</Nav.Link>
+            <Nav.Link href="/FAQs">FAQ&apos;s</Nav.Link>
           </Nav.Item>
-
         </Nav>
         <Nav>
           <Nav.Item>
@@ -64,7 +63,14 @@ function NavbarComponent() {
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item href="/profile">View Profile</Dropdown.Item>
-                <Dropdown.Item href="/signup" onClick={()=> {Cookies.remove("token")}}>Logout</Dropdown.Item>
+                <Dropdown.Item
+                  href="/signup"
+                  onClick={() => {
+                    Cookies.remove("token");
+                  }}
+                >
+                  Logout
+                </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </Nav.Item>

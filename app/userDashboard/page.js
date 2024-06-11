@@ -8,7 +8,7 @@ import Loading from "../loading";
 import EventListing from "../components/EventListing";
 import SearchBar from "../components/SearchBar";
 
-export default function userHome() {
+export default function UserHome() {
   const token = Cookies.get("token");
 
   const [events, setEvents] = useState([]);

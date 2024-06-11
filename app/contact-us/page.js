@@ -54,7 +54,7 @@ const ContactUsPage = () => {
                 </span>
               </div>
               <h2>
-                We can't wait to help you plan your next event. Contact us
+                We can&apos;t wait to help you plan your next event. Contact us
                 today!
               </h2>
             </div>
@@ -113,7 +113,7 @@ const ContactUsPage = () => {
                 </span>
               </div>
               <h2>
-                "They made our wedding unforgettable!" <br />- Jane D.
+                &quot;They made our wedding unforgettable!&quot; <br />- Jane D.
               </h2>
             </div>
           </div>

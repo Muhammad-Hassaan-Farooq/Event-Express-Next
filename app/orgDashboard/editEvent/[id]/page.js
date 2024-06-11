@@ -13,7 +13,7 @@ import { jwtDecode } from "jwt-decode";
 import CreateEvent from "@/app/components/CreateEvent";
 import EditEventDetails from "@/app/components/EditEventDetails";
 
-const editEvent = async () => {
+const EditEvent = async () => {
   const token = Cookies.get("token");
   const router = useRouter();
 
@@ -39,4 +39,4 @@ const editEvent = async () => {
   );
 };
 
-export default editEvent;
+export default EditEvent;

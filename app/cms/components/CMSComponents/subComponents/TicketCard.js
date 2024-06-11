@@ -5,7 +5,7 @@ function TicketCard({ numberOfCards = 2 }) {
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3">
           {Array.from({ length: numberOfCards }).map((_, index) => {
             return (
-              <div class="col px-lg-2">
+              <div key={index} class="col px-lg-2">
                 <div class="card shadow h-100 border-0">
                   <div class="card-header p-4 bg-info border-0">
                     <div class="text-light">

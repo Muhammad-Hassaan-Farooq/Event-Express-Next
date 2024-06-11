@@ -145,7 +145,7 @@ const ProfilePage = ({
                     </div>
                     <div className="form-group mx-3">
                       <label for="exampleInputPassword1" className="text-dark">
-                        If "Yes" then enter your password
+                        If &quot;Yes&quot; then enter your password
                       </label>
                       <input
                         type="password"

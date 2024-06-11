@@ -5,7 +5,7 @@ function TimelineSection1({ numberOfEvents, events }) {
         <ul className="list-group list-group-flush">
           {Array.from({ length: numberOfEvents }).map((_, index) => {
             return (
-              <li className="list-group-item py-4">
+              <li key={index} className="list-group-item py-4">
                 <div className="row">
                   <div className="col-md-4">
                     <h5 className="row">

@@ -8,7 +8,7 @@ import {
 } from "react-notifications";
 import { useRouter } from "next/navigation";
 
-const changePassword = () => {
+const ChangePassword = () => {
   const token = Cookies.get("token");
   const router = useRouter();
 
@@ -119,4 +119,4 @@ const changePassword = () => {
   );
 };
 
-export default changePassword;
+export default ChangePassword;

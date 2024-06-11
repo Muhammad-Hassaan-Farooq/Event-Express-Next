@@ -12,7 +12,7 @@ import NavbarComponent from "../components/Navbar";
 import { jwtDecode } from "jwt-decode";
 import CreateEvent from "@/app/components/CreateEvent";
 
-const newEvent = () => {
+const NewEvent = () => {
   const token = Cookies.get("token");
   const router = useRouter();
 
@@ -24,4 +24,4 @@ const newEvent = () => {
   );
 };
 
-export default newEvent;
+export default NewEvent;

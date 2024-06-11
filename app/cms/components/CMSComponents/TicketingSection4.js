@@ -30,7 +30,7 @@ function TicketingSection4({ numberOfCards, cards }) {
 
                         {cards[index].perks.map((feature) => {
                           return (
-                            <p className="pb-2 mb-2">
+                            <p key={index} className="pb-2 mb-2">
                               <i className="fas fa-check-circle pr-2 text-info"></i>
                               {feature}
                             </p>

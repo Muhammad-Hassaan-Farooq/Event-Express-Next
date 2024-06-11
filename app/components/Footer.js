@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer
       className="text-center text-lg-start text-white"
-      style={{ backgroundColor: "#1c2331"}}
+      style={{ backgroundColor: "#1c2331" }}
     >
       {/* <section
         className="d-flex justify-content-between p-4"
@@ -84,7 +84,7 @@ const Footer = () => {
               </p>
               <p>
                 <a href="/FAQs" className="text-white">
-                  FAQ's
+                  FAQ&apos;s
                 </a>
               </p>
             </div>
@@ -120,7 +120,9 @@ const Footer = () => {
         className="text-center p-3"
         style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
       >
-        <p className="text-white">Copyrights &copy; all rights reserved 2024.</p>
+        <p className="text-white">
+          Copyrights &copy; all rights reserved 2024.
+        </p>
       </div>
     </footer>
   );

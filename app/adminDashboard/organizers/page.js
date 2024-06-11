@@ -154,7 +154,7 @@ const AdminDashboardOrganizerPage = () => {
             </div>
             <div class="d-flex flex-row flex-wrap justify-content-evenly">
               {organizers.map((organizer) => (
-                <div class="col-12 col-sm-6 col-lg-3 m-3">
+                <div key={organizer._id} class="col-12 col-sm-6 col-lg-3 m-3">
                   <div
                     class="single_advisor_profile wow fadeInUp"
                     data-wow-delay="0.2s"

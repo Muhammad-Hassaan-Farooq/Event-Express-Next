@@ -90,7 +90,7 @@ function NavbarComponent({ eventId }) {
             <Nav.Link href="/contact-us">Contact</Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href="/FAQs">FAQ's</Nav.Link>
+            <Nav.Link href="/FAQs">FAQ&apos;s</Nav.Link>
           </Nav.Item>
           <Nav.Item>
             <Nav.Link href="/userDashboard/MyEvents">My Events</Nav.Link>

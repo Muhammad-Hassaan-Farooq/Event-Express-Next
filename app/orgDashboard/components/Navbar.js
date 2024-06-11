@@ -46,7 +46,7 @@ function NavbarComponent() {
             <Nav.Link href="/contact-us">Contact</Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href="/FAQs">FAQ's</Nav.Link>
+            <Nav.Link href="/FAQs">FAQ&apos;s</Nav.Link>
           </Nav.Item>
           <Nav.Item>
             <Nav.Link href="/orgDashboard/History"> Past Event</Nav.Link>

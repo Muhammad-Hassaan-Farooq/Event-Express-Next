@@ -23,10 +23,10 @@ const FAQPage = () => {
                 commonly asked questions.
               </p>
               <p class="mb-5 text-center text-dark">
-                Whether you're a new customer looking to learn more about what
-                we offer or a long-time user seeking clarification on specific
-                topics, this page has clear and concise information about our
-                products and services.
+                Whether you&apos;re a new customer looking to learn more about
+                what we offer or a long-time user seeking clarification on
+                specific topics, this page has clear and concise information
+                about our products and services.
               </p>
               <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle" />
             </div>
@@ -92,9 +92,9 @@ const FAQPage = () => {
                       <div class="accordion-body">
                         <p>
                           To create an account, visit the website or application
-                          and look for a "Sign Up" or "Create Account" button.
-                          Follow the instructions to enter your information and
-                          create a username and password.
+                          and look for a &quot;Sign Up&quot; or &quot;Create
+                          Account&quot; button. Follow the instructions to enter
+                          your information and create a username and password.
                         </p>
                       </div>
                     </div>
@@ -150,9 +150,10 @@ const FAQPage = () => {
                       <div class="accordion-body">
                         <p>
                           If you forget your password, most websites and
-                          services offer a "Forgot Password" or "Reset Password"
-                          option. Follow the steps to reset your password, often
-                          involving an email or SMS verification.
+                          services offer a &quot;Forgot Password&quot; or
+                          &quot;Reset Password&quot; option. Follow the steps to
+                          reset your password, often involving an email or SMS
+                          verification.
                         </p>
                       </div>
                     </div>
@@ -238,7 +239,7 @@ const FAQPage = () => {
                         aria-expanded="false"
                         aria-controls="faqOrderCollapse2"
                       >
-                        Can I change or cancel my ticket after it's been
+                        Can I change or cancel my ticket after it&apos;s been
                         purchased?
                       </button>
                     </h2>
@@ -334,8 +335,8 @@ const FAQPage = () => {
                     >
                       <div class="accordion-body">
                         <p>
-                          You can check the "My Events" section in your account
-                          for your purchase details.
+                          You can check the &quot;My Events&quot; section in
+                          your account for your purchase details.
                         </p>
                       </div>
                     </div>
@@ -459,8 +460,8 @@ const FAQPage = () => {
                       <div class="accordion-body">
                         <p>
                           You can use the search and filter features on the
-                          "Events" page to find events by keywords, categories,
-                          dates, and more.
+                          &quot;Events&quot; page to find events by keywords,
+                          categories, dates, and more.
                         </p>
                       </div>
                     </div>

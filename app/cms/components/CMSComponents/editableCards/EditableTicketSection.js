@@ -34,7 +34,7 @@ function EditableTicketSection({
 
       {Array.from({ length: numberOfCards }).map((_, index) => {
         return (
-          <div className="card mt-3">
+          <div key={index} className="card mt-3">
             <div className="card-header">Card {index}</div>
             <div className="form-group p-3">
               <label for="exampleFormControlInput1">Title</label>
