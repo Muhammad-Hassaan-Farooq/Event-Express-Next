@@ -46,7 +46,7 @@ function NavbarComponent({ eventId }) {
       const decodedToken = jwtDecode(token);
       const userId = decodedToken.id;
       const response = await axios.post(
-        `http://localhost:3000/event/attendingEvent/`,
+        `https://event-express-one.vercel.app/event/attendingEvent/`,
         {
           id: eventId,
           userId: userId,
